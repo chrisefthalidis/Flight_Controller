@@ -11,6 +11,6 @@ these states to control a quadcopter UAV. There is also an additional 'Radio Con
 you will find on my GitHub page, which we can use to remotely control the quadcopter's altitude using the on-board
 potentiometer.
 
-P.S. These boards are not perfect in any way. They have a lot of design mistakes, as they were 2 of my first boards.
+P.S. These boards are not perfect in any way. They have a lot of design mistakes, since they were 2 of my first boards.
 I've learnt a lot since, and i keep getting better with each board that i design. If you have any questions, please
 contact me at chrisefthalidis@gmail.com
