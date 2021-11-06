@@ -5,6 +5,11 @@
         "dense": "c",
         "stdint.h": "c",
         "i2c.h": "c",
-        "core": "cpp"
+        "core": "cpp",
+        "KALMAN.C": "cpp",
+        "chrono": "c",
+        "random": "c",
+        "limits": "c",
+        "ranges": "c"
     }
 }

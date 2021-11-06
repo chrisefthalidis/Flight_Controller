@@ -40,6 +40,7 @@ Core/Src/main.c \
 Core/Src/MPU9250.c \
 Core/Src/SPL06.c \
 Core/Src/NRF24L01.c \
+Core/Src/PID.c \
 Core/Src/adc.c \
 Core/Src/gpio.c \
 Core/Src/i2c.c \
@@ -82,7 +83,6 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
 # C++ sources
 CPP_SOURCES =  \
 Core/Src/KALMAN.cpp \
-Core/Src/PID.cpp
 
 # ASM sources
 ASM_SOURCES =  \

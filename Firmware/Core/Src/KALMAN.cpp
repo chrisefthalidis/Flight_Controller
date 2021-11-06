@@ -1,4 +1,4 @@
-#include "kalman.h"
+#include "KALMAN.h"
 
 void KALMAN::Initialise(Eigen::MatrixXf object_A, Eigen::MatrixXf object_B, Eigen::MatrixXf object_C,
                         Eigen::MatrixXf object_Q, Eigen::MatrixXf object_R, Eigen::MatrixXf object_I,

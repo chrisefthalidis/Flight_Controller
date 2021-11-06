@@ -1,4 +1,4 @@
-#include "pid.h"
+#include "PID_CPP.h"
 
 void PID::Initialise(float object_kp, float object_ki, float object_kd, float object_max, float object_min)
 {
@@ -9,8 +9,7 @@ void PID::Initialise(float object_kp, float object_ki, float object_kd, float ob
     int_max = 0, int_min = 0,
     max = object_max, min = object_min,
     command = 0.f,
-    tau = 0.02f;
-    Ts = 0.01f;
+    tau = 0.02f, Ts = 0.01f;
 }
 
 float PID::Control(float setpoint, float measurement, float derivative)
