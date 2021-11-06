@@ -1,0 +1,338 @@
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"PID.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.PID_Initialise,"ax",%progbits
+  18              		.align	1
+  19              		.global	PID_Initialise
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	PID_Initialise:
+  27              	.LVL0:
+  28              	.LFB0:
+  29              		.file 1 "Core/Src/PID.c"
+   1:Core/Src/PID.c **** #include "PID_C.h"
+   2:Core/Src/PID.c **** 
+   3:Core/Src/PID.c **** void PID_Initialise(PID *controller, float object_kp, float object_ki, float object_kd, float objec
+   4:Core/Src/PID.c **** {
+  30              		.loc 1 4 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+   5:Core/Src/PID.c ****     controller->prev_measurement = 0.f,
+  35              		.loc 1 5 5 view .LVU1
+  36              		.loc 1 5 34 is_stmt 0 view .LVU2
+  37 0000 0023     		movs	r3, #0
+  38 0002 0360     		str	r3, [r0]	@ float
+   6:Core/Src/PID.c ****     controller->error = 0.f, controller->prev_error = 0.f,
+  39              		.loc 1 6 23 view .LVU3
+  40 0004 4360     		str	r3, [r0, #4]	@ float
+  41              		.loc 1 6 53 view .LVU4
+  42 0006 8360     		str	r3, [r0, #8]	@ float
+   7:Core/Src/PID.c ****     controller->kp = object_kp, controller->ki = object_ki, controller->kd = object_kd,
+  43              		.loc 1 7 20 view .LVU5
+  44 0008 80ED030A 		vstr.32	s0, [r0, #12]
+  45              		.loc 1 7 48 view .LVU6
+  46 000c C0ED040A 		vstr.32	s1, [r0, #16]
+  47              		.loc 1 7 76 view .LVU7
+  48 0010 80ED051A 		vstr.32	s2, [r0, #20]
+   8:Core/Src/PID.c ****     controller->p = 0.f, controller->i = 0.f, controller->d = 0.f,
+  49              		.loc 1 8 19 view .LVU8
+  50 0014 8361     		str	r3, [r0, #24]	@ float
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 2
+
+
+  51              		.loc 1 8 40 view .LVU9
+  52 0016 C361     		str	r3, [r0, #28]	@ float
+  53              		.loc 1 8 61 view .LVU10
+  54 0018 0362     		str	r3, [r0, #32]	@ float
+   9:Core/Src/PID.c ****     controller->int_max = 0, controller->int_min = 0,
+  55              		.loc 1 9 25 view .LVU11
+  56 001a 4362     		str	r3, [r0, #36]	@ float
+  57              		.loc 1 9 50 view .LVU12
+  58 001c 8362     		str	r3, [r0, #40]	@ float
+  10:Core/Src/PID.c ****     controller->max = object_max, controller->min = object_min,
+  59              		.loc 1 10 21 view .LVU13
+  60 001e C0ED0B1A 		vstr.32	s3, [r0, #44]
+  61              		.loc 1 10 51 view .LVU14
+  62 0022 80ED0C2A 		vstr.32	s4, [r0, #48]
+  11:Core/Src/PID.c ****     controller->command = 0.f,
+  63              		.loc 1 11 25 view .LVU15
+  64 0026 4363     		str	r3, [r0, #52]	@ float
+  12:Core/Src/PID.c ****     controller->tau = 0.02f, controller->Ts = 0.01f;
+  65              		.loc 1 12 21 view .LVU16
+  66 0028 024B     		ldr	r3, .L2
+  67 002a 8363     		str	r3, [r0, #56]	@ float
+  68              		.loc 1 12 45 view .LVU17
+  69 002c 024B     		ldr	r3, .L2+4
+  70 002e C363     		str	r3, [r0, #60]	@ float
+  13:Core/Src/PID.c **** }
+  71              		.loc 1 13 1 view .LVU18
+  72 0030 7047     		bx	lr
+  73              	.L3:
+  74 0032 00BF     		.align	2
+  75              	.L2:
+  76 0034 0AD7A33C 		.word	1017370378
+  77 0038 0AD7233C 		.word	1008981770
+  78              		.cfi_endproc
+  79              	.LFE0:
+  81              		.section	.text.PID_Control,"ax",%progbits
+  82              		.align	1
+  83              		.global	PID_Control
+  84              		.syntax unified
+  85              		.thumb
+  86              		.thumb_func
+  87              		.fpu fpv4-sp-d16
+  89              	PID_Control:
+  90              	.LVL1:
+  91              	.LFB1:
+  14:Core/Src/PID.c **** 
+  15:Core/Src/PID.c **** float PID_Control(PID *controller, float setpoint, float measurement, float derivative)
+  16:Core/Src/PID.c **** {
+  92              		.loc 1 16 1 is_stmt 1 view -0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 0
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96              		@ link register save eliminated.
+  17:Core/Src/PID.c ****     // Error calculation
+  18:Core/Src/PID.c ****     controller->error = setpoint - measurement;
+  97              		.loc 1 18 5 view .LVU20
+  98              		.loc 1 18 34 is_stmt 0 view .LVU21
+  99 0000 30EE600A 		vsub.f32	s0, s0, s1
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 3
+
+
+ 100              	.LVL2:
+ 101              		.loc 1 18 23 view .LVU22
+ 102 0004 80ED010A 		vstr.32	s0, [r0, #4]
+  19:Core/Src/PID.c **** 
+  20:Core/Src/PID.c ****     // PID implementation
+  21:Core/Src/PID.c ****     controller->p = controller->kp * controller->error;
+ 103              		.loc 1 21 5 is_stmt 1 view .LVU23
+ 104              		.loc 1 21 31 is_stmt 0 view .LVU24
+ 105 0008 90ED037A 		vldr.32	s14, [r0, #12]
+ 106              		.loc 1 21 36 view .LVU25
+ 107 000c 20EE077A 		vmul.f32	s14, s0, s14
+ 108              		.loc 1 21 19 view .LVU26
+ 109 0010 80ED067A 		vstr.32	s14, [r0, #24]
+  22:Core/Src/PID.c ****     controller->i = controller->ki * 0.5f * (controller->error + controller->prev_error) * controll
+ 110              		.loc 1 22 5 is_stmt 1 view .LVU27
+ 111              		.loc 1 22 31 is_stmt 0 view .LVU28
+ 112 0014 D0ED047A 		vldr.32	s15, [r0, #16]
+ 113              		.loc 1 22 36 view .LVU29
+ 114 0018 F6EE006A 		vmov.f32	s13, #5.0e-1
+ 115 001c 67EEA67A 		vmul.f32	s15, s15, s13
+ 116              		.loc 1 22 76 view .LVU30
+ 117 0020 D0ED026A 		vldr.32	s13, [r0, #8]
+ 118              		.loc 1 22 64 view .LVU31
+ 119 0024 70EE266A 		vadd.f32	s13, s0, s13
+ 120              		.loc 1 22 43 view .LVU32
+ 121 0028 67EEA67A 		vmul.f32	s15, s15, s13
+ 122              		.loc 1 22 102 view .LVU33
+ 123 002c D0ED0F6A 		vldr.32	s13, [r0, #60]
+ 124              		.loc 1 22 90 view .LVU34
+ 125 0030 67EEA67A 		vmul.f32	s15, s15, s13
+ 126              		.loc 1 22 119 view .LVU35
+ 127 0034 D0ED076A 		vldr.32	s13, [r0, #28]
+ 128              		.loc 1 22 107 view .LVU36
+ 129 0038 77EEA67A 		vadd.f32	s15, s15, s13
+ 130              		.loc 1 22 19 view .LVU37
+ 131 003c C0ED077A 		vstr.32	s15, [r0, #28]
+  23:Core/Src/PID.c ****     controller->d = -controller->kd * derivative;
+ 132              		.loc 1 23 5 is_stmt 1 view .LVU38
+ 133              		.loc 1 23 32 is_stmt 0 view .LVU39
+ 134 0040 D0ED056A 		vldr.32	s13, [r0, #20]
+ 135              		.loc 1 23 37 view .LVU40
+ 136 0044 26EEC11A 		vnmul.f32	s2, s13, s2
+ 137              	.LVL3:
+ 138              		.loc 1 23 19 view .LVU41
+ 139 0048 80ED081A 		vstr.32	s2, [r0, #32]
+  24:Core/Src/PID.c ****     // d = -(2 * kd * (measurement - prev_measurement) + (2 * tau - Ts) * d) / (2 * tau + Ts);
+  25:Core/Src/PID.c **** 
+  26:Core/Src/PID.c ****     // Anti-windup limit calculation
+  27:Core/Src/PID.c ****     if (controller->max > controller->p)
+ 140              		.loc 1 27 5 is_stmt 1 view .LVU42
+ 141              		.loc 1 27 19 is_stmt 0 view .LVU43
+ 142 004c D0ED0B6A 		vldr.32	s13, [r0, #44]
+ 143              		.loc 1 27 8 view .LVU44
+ 144 0050 B4EEE67A 		vcmpe.f32	s14, s13
+ 145 0054 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 146 0058 2DD5     		bpl	.L25
+  28:Core/Src/PID.c ****         controller->int_max = controller->max - controller->p;
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 4
+
+
+ 147              		.loc 1 28 9 is_stmt 1 view .LVU45
+ 148              		.loc 1 28 47 is_stmt 0 view .LVU46
+ 149 005a 36EEC76A 		vsub.f32	s12, s13, s14
+ 150              		.loc 1 28 29 view .LVU47
+ 151 005e 80ED096A 		vstr.32	s12, [r0, #36]
+ 152              	.L7:
+  29:Core/Src/PID.c ****     else
+  30:Core/Src/PID.c ****         controller->int_max = 0.f;
+  31:Core/Src/PID.c **** 
+  32:Core/Src/PID.c ****     if (controller->min < controller->p)
+ 153              		.loc 1 32 5 is_stmt 1 view .LVU48
+ 154              		.loc 1 32 19 is_stmt 0 view .LVU49
+ 155 0062 90ED0C6A 		vldr.32	s12, [r0, #48]
+ 156              		.loc 1 32 8 view .LVU50
+ 157 0066 B4EEC67A 		vcmpe.f32	s14, s12
+ 158 006a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 159 006e 25DD     		ble	.L26
+  33:Core/Src/PID.c ****         controller->int_min = controller->min + controller->p;
+ 160              		.loc 1 33 9 is_stmt 1 view .LVU51
+ 161              		.loc 1 33 47 is_stmt 0 view .LVU52
+ 162 0070 77EE065A 		vadd.f32	s11, s14, s12
+ 163              		.loc 1 33 29 view .LVU53
+ 164 0074 C0ED0A5A 		vstr.32	s11, [r0, #40]
+ 165              	.L10:
+  34:Core/Src/PID.c ****     else
+  35:Core/Src/PID.c ****         controller->int_min = 0.f;
+  36:Core/Src/PID.c **** 
+  37:Core/Src/PID.c ****     // Anti-windup implementation
+  38:Core/Src/PID.c ****     if (controller->i > controller->int_max)
+ 166              		.loc 1 38 5 is_stmt 1 view .LVU54
+ 167              		.loc 1 38 35 is_stmt 0 view .LVU55
+ 168 0078 D0ED095A 		vldr.32	s11, [r0, #36]
+ 169              		.loc 1 38 8 view .LVU56
+ 170 007c F4EEE57A 		vcmpe.f32	s15, s11
+ 171 0080 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 172 0084 1DDD     		ble	.L27
+  39:Core/Src/PID.c ****         controller->i = controller->int_max;
+ 173              		.loc 1 39 9 is_stmt 1 view .LVU57
+ 174              		.loc 1 39 23 is_stmt 0 view .LVU58
+ 175 0086 C0ED075A 		vstr.32	s11, [r0, #28]
+ 176              	.L13:
+  40:Core/Src/PID.c ****     else if (controller->i < controller->int_min)
+  41:Core/Src/PID.c ****         controller->i = controller->int_min;
+  42:Core/Src/PID.c **** 
+  43:Core/Src/PID.c ****     // Control command
+  44:Core/Src/PID.c ****     controller->command = controller->p + controller->i + controller->d;
+ 177              		.loc 1 44 5 is_stmt 1 view .LVU59
+ 178              		.loc 1 44 53 is_stmt 0 view .LVU60
+ 179 008a D0ED077A 		vldr.32	s15, [r0, #28]
+ 180              		.loc 1 44 41 view .LVU61
+ 181 008e 37EE277A 		vadd.f32	s14, s14, s15
+ 182              		.loc 1 44 57 view .LVU62
+ 183 0092 31EE077A 		vadd.f32	s14, s2, s14
+ 184              		.loc 1 44 25 view .LVU63
+ 185 0096 80ED0D7A 		vstr.32	s14, [r0, #52]
+  45:Core/Src/PID.c **** 
+  46:Core/Src/PID.c ****     if (controller->command > controller->max)
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 5
+
+
+ 186              		.loc 1 46 5 is_stmt 1 view .LVU64
+ 187              		.loc 1 46 8 is_stmt 0 view .LVU65
+ 188 009a F4EEC76A 		vcmpe.f32	s13, s14
+ 189 009e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 190 00a2 18D5     		bpl	.L28
+  47:Core/Src/PID.c ****         controller->command = controller->max;
+ 191              		.loc 1 47 9 is_stmt 1 view .LVU66
+ 192              		.loc 1 47 29 is_stmt 0 view .LVU67
+ 193 00a4 C0ED0D6A 		vstr.32	s13, [r0, #52]
+ 194              	.L17:
+  48:Core/Src/PID.c ****     else if (controller->command < controller->min)
+  49:Core/Src/PID.c ****         controller->command = controller->min;
+  50:Core/Src/PID.c **** 
+  51:Core/Src/PID.c ****     controller->prev_error = controller->error;
+ 195              		.loc 1 51 5 is_stmt 1 view .LVU68
+ 196              		.loc 1 51 28 is_stmt 0 view .LVU69
+ 197 00a8 80ED020A 		vstr.32	s0, [r0, #8]
+  52:Core/Src/PID.c ****     controller->prev_measurement = measurement;
+ 198              		.loc 1 52 5 is_stmt 1 view .LVU70
+ 199              		.loc 1 52 34 is_stmt 0 view .LVU71
+ 200 00ac C0ED000A 		vstr.32	s1, [r0]
+  53:Core/Src/PID.c **** 
+  54:Core/Src/PID.c ****     return controller->command;
+ 201              		.loc 1 54 5 is_stmt 1 view .LVU72
+  55:Core/Src/PID.c **** }...
+ 202              		.loc 1 55 1 is_stmt 0 view .LVU73
+ 203 00b0 90ED0D0A 		vldr.32	s0, [r0, #52]
+ 204 00b4 7047     		bx	lr
+ 205              	.L25:
+  30:Core/Src/PID.c ****         controller->int_max = 0.f;
+ 206              		.loc 1 30 9 is_stmt 1 view .LVU74
+  30:Core/Src/PID.c ****         controller->int_max = 0.f;
+ 207              		.loc 1 30 29 is_stmt 0 view .LVU75
+ 208 00b6 0023     		movs	r3, #0
+ 209 00b8 4362     		str	r3, [r0, #36]	@ float
+ 210 00ba D2E7     		b	.L7
+ 211              	.L26:
+  35:Core/Src/PID.c ****         controller->int_min = 0.f;
+ 212              		.loc 1 35 9 is_stmt 1 view .LVU76
+  35:Core/Src/PID.c ****         controller->int_min = 0.f;
+ 213              		.loc 1 35 29 is_stmt 0 view .LVU77
+ 214 00bc 0023     		movs	r3, #0
+ 215 00be 8362     		str	r3, [r0, #40]	@ float
+ 216 00c0 DAE7     		b	.L10
+ 217              	.L27:
+  40:Core/Src/PID.c ****     else if (controller->i < controller->int_min)
+ 218              		.loc 1 40 10 is_stmt 1 view .LVU78
+  40:Core/Src/PID.c ****     else if (controller->i < controller->int_min)
+ 219              		.loc 1 40 40 is_stmt 0 view .LVU79
+ 220 00c2 D0ED0A5A 		vldr.32	s11, [r0, #40]
+  40:Core/Src/PID.c ****     else if (controller->i < controller->int_min)
+ 221              		.loc 1 40 13 view .LVU80
+ 222 00c6 F4EEE57A 		vcmpe.f32	s15, s11
+ 223 00ca F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 224 00ce DCD5     		bpl	.L13
+  41:Core/Src/PID.c ****         controller->i = controller->int_min;
+ 225              		.loc 1 41 9 is_stmt 1 view .LVU81
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 6
+
+
+  41:Core/Src/PID.c ****         controller->i = controller->int_min;
+ 226              		.loc 1 41 23 is_stmt 0 view .LVU82
+ 227 00d0 C0ED075A 		vstr.32	s11, [r0, #28]
+ 228 00d4 D9E7     		b	.L13
+ 229              	.L28:
+  48:Core/Src/PID.c ****     else if (controller->command < controller->min)
+ 230              		.loc 1 48 10 is_stmt 1 view .LVU83
+  48:Core/Src/PID.c ****     else if (controller->command < controller->min)
+ 231              		.loc 1 48 13 is_stmt 0 view .LVU84
+ 232 00d6 B4EEC76A 		vcmpe.f32	s12, s14
+ 233 00da F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 234 00de E3DD     		ble	.L17
+  49:Core/Src/PID.c ****         controller->command = controller->min;
+ 235              		.loc 1 49 9 is_stmt 1 view .LVU85
+  49:Core/Src/PID.c ****         controller->command = controller->min;
+ 236              		.loc 1 49 29 is_stmt 0 view .LVU86
+ 237 00e0 80ED0D6A 		vstr.32	s12, [r0, #52]
+ 238 00e4 E0E7     		b	.L17
+ 239              		.cfi_endproc
+ 240              	.LFE1:
+ 242              		.text
+ 243              	.Letext0:
+ 244              		.file 2 "Core/Inc/PID_C.h"
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 PID.c
+C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s:18     .text.PID_Initialise:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s:26     .text.PID_Initialise:00000000 PID_Initialise
+C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s:76     .text.PID_Initialise:00000034 $d
+C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s:82     .text.PID_Control:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccbjzv2e.s:89     .text.PID_Control:00000000 PID_Control
+
+NO UNDEFINED SYMBOLS

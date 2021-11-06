@@ -1,0 +1,969 @@
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"SPL06.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SPL06_Read_Register,"ax",%progbits
+  18              		.align	1
+  19              		.global	SPL06_Read_Register
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	SPL06_Read_Register:
+  27              	.LVL0:
+  28              	.LFB235:
+  29              		.file 1 "Core/Src/SPL06.c"
+   1:Core/Src/SPL06.c **** #include "SPL06.h"
+   2:Core/Src/SPL06.c **** 
+   3:Core/Src/SPL06.c **** void SPL06_Read_Register(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
+   4:Core/Src/SPL06.c **** {
+  30              		.loc 1 4 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 4 1 is_stmt 0 view .LVU1
+  35 0000 00B5     		push	{lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 14, -4
+  39 0002 85B0     		sub	sp, sp, #20
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 24
+   5:Core/Src/SPL06.c ****   HAL_I2C_Mem_Read(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, 1, HAL_MAX_DELAY);
+  42              		.loc 1 5 3 is_stmt 1 view .LVU2
+  43 0004 4FF0FF33 		mov	r3, #-1
+  44 0008 0293     		str	r3, [sp, #8]
+  45 000a 0123     		movs	r3, #1
+  46 000c 0193     		str	r3, [sp, #4]
+  47 000e 0092     		str	r2, [sp]
+  48 0010 0A46     		mov	r2, r1
+  49              	.LVL1:
+  50              		.loc 1 5 3 is_stmt 0 view .LVU3
+  51 0012 0146     		mov	r1, r0
+  52              	.LVL2:
+  53              		.loc 1 5 3 view .LVU4
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 2
+
+
+  54 0014 0248     		ldr	r0, .L3
+  55              	.LVL3:
+  56              		.loc 1 5 3 view .LVU5
+  57 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+  58              	.LVL4:
+   6:Core/Src/SPL06.c **** }
+  59              		.loc 1 6 1 view .LVU6
+  60 001a 05B0     		add	sp, sp, #20
+  61              	.LCFI2:
+  62              		.cfi_def_cfa_offset 4
+  63              		@ sp needed
+  64 001c 5DF804FB 		ldr	pc, [sp], #4
+  65              	.L4:
+  66              		.align	2
+  67              	.L3:
+  68 0020 00000000 		.word	hi2c1
+  69              		.cfi_endproc
+  70              	.LFE235:
+  72              		.section	.text.SPL06_Read_Registers,"ax",%progbits
+  73              		.align	1
+  74              		.global	SPL06_Read_Registers
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  78              		.fpu fpv4-sp-d16
+  80              	SPL06_Read_Registers:
+  81              	.LVL5:
+  82              	.LFB236:
+   7:Core/Src/SPL06.c **** 
+   8:Core/Src/SPL06.c **** void SPL06_Read_Registers(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
+   9:Core/Src/SPL06.c **** {
+  83              		.loc 1 9 1 is_stmt 1 view -0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87              		.loc 1 9 1 is_stmt 0 view .LVU8
+  88 0000 10B5     		push	{r4, lr}
+  89              	.LCFI3:
+  90              		.cfi_def_cfa_offset 8
+  91              		.cfi_offset 4, -8
+  92              		.cfi_offset 14, -4
+  93 0002 84B0     		sub	sp, sp, #16
+  94              	.LCFI4:
+  95              		.cfi_def_cfa_offset 24
+  10:Core/Src/SPL06.c ****   HAL_I2C_Mem_Read(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, length, HAL_MAX_DELAY);
+  96              		.loc 1 10 3 is_stmt 1 view .LVU9
+  97 0004 4FF0FF34 		mov	r4, #-1
+  98 0008 0294     		str	r4, [sp, #8]
+  99 000a 0193     		str	r3, [sp, #4]
+ 100 000c 0092     		str	r2, [sp]
+ 101 000e 0123     		movs	r3, #1
+ 102              	.LVL6:
+ 103              		.loc 1 10 3 is_stmt 0 view .LVU10
+ 104 0010 0A46     		mov	r2, r1
+ 105              	.LVL7:
+ 106              		.loc 1 10 3 view .LVU11
+ 107 0012 0146     		mov	r1, r0
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 3
+
+
+ 108              	.LVL8:
+ 109              		.loc 1 10 3 view .LVU12
+ 110 0014 0248     		ldr	r0, .L7
+ 111              	.LVL9:
+ 112              		.loc 1 10 3 view .LVU13
+ 113 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 114              	.LVL10:
+  11:Core/Src/SPL06.c **** }
+ 115              		.loc 1 11 1 view .LVU14
+ 116 001a 04B0     		add	sp, sp, #16
+ 117              	.LCFI5:
+ 118              		.cfi_def_cfa_offset 8
+ 119              		@ sp needed
+ 120 001c 10BD     		pop	{r4, pc}
+ 121              	.L8:
+ 122 001e 00BF     		.align	2
+ 123              	.L7:
+ 124 0020 00000000 		.word	hi2c1
+ 125              		.cfi_endproc
+ 126              	.LFE236:
+ 128              		.section	.text.SPL06_Write_Register,"ax",%progbits
+ 129              		.align	1
+ 130              		.global	SPL06_Write_Register
+ 131              		.syntax unified
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.fpu fpv4-sp-d16
+ 136              	SPL06_Write_Register:
+ 137              	.LVL11:
+ 138              	.LFB237:
+  12:Core/Src/SPL06.c **** 
+  13:Core/Src/SPL06.c **** void SPL06_Write_Register(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
+  14:Core/Src/SPL06.c **** {
+ 139              		.loc 1 14 1 is_stmt 1 view -0
+ 140              		.cfi_startproc
+ 141              		@ args = 0, pretend = 0, frame = 0
+ 142              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143              		.loc 1 14 1 is_stmt 0 view .LVU16
+ 144 0000 00B5     		push	{lr}
+ 145              	.LCFI6:
+ 146              		.cfi_def_cfa_offset 4
+ 147              		.cfi_offset 14, -4
+ 148 0002 85B0     		sub	sp, sp, #20
+ 149              	.LCFI7:
+ 150              		.cfi_def_cfa_offset 24
+  15:Core/Src/SPL06.c ****   HAL_I2C_Mem_Write(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, 1, HAL_MAX_DELAY);
+ 151              		.loc 1 15 3 is_stmt 1 view .LVU17
+ 152 0004 4FF0FF33 		mov	r3, #-1
+ 153 0008 0293     		str	r3, [sp, #8]
+ 154 000a 0123     		movs	r3, #1
+ 155 000c 0193     		str	r3, [sp, #4]
+ 156 000e 0092     		str	r2, [sp]
+ 157 0010 0A46     		mov	r2, r1
+ 158              	.LVL12:
+ 159              		.loc 1 15 3 is_stmt 0 view .LVU18
+ 160 0012 0146     		mov	r1, r0
+ 161              	.LVL13:
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 4
+
+
+ 162              		.loc 1 15 3 view .LVU19
+ 163 0014 0248     		ldr	r0, .L11
+ 164              	.LVL14:
+ 165              		.loc 1 15 3 view .LVU20
+ 166 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 167              	.LVL15:
+  16:Core/Src/SPL06.c **** }
+ 168              		.loc 1 16 1 view .LVU21
+ 169 001a 05B0     		add	sp, sp, #20
+ 170              	.LCFI8:
+ 171              		.cfi_def_cfa_offset 4
+ 172              		@ sp needed
+ 173 001c 5DF804FB 		ldr	pc, [sp], #4
+ 174              	.L12:
+ 175              		.align	2
+ 176              	.L11:
+ 177 0020 00000000 		.word	hi2c1
+ 178              		.cfi_endproc
+ 179              	.LFE237:
+ 181              		.section	.text.SPL06_Write_Registers,"ax",%progbits
+ 182              		.align	1
+ 183              		.global	SPL06_Write_Registers
+ 184              		.syntax unified
+ 185              		.thumb
+ 186              		.thumb_func
+ 187              		.fpu fpv4-sp-d16
+ 189              	SPL06_Write_Registers:
+ 190              	.LVL16:
+ 191              	.LFB238:
+  17:Core/Src/SPL06.c **** 
+  18:Core/Src/SPL06.c **** void SPL06_Write_Registers(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
+  19:Core/Src/SPL06.c **** {
+ 192              		.loc 1 19 1 is_stmt 1 view -0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              		.loc 1 19 1 is_stmt 0 view .LVU23
+ 197 0000 10B5     		push	{r4, lr}
+ 198              	.LCFI9:
+ 199              		.cfi_def_cfa_offset 8
+ 200              		.cfi_offset 4, -8
+ 201              		.cfi_offset 14, -4
+ 202 0002 84B0     		sub	sp, sp, #16
+ 203              	.LCFI10:
+ 204              		.cfi_def_cfa_offset 24
+  20:Core/Src/SPL06.c ****   HAL_I2C_Mem_Write(&hi2c1, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, length, HAL_MAX_DELAY);
+ 205              		.loc 1 20 3 is_stmt 1 view .LVU24
+ 206 0004 4FF0FF34 		mov	r4, #-1
+ 207 0008 0294     		str	r4, [sp, #8]
+ 208 000a 0193     		str	r3, [sp, #4]
+ 209 000c 0092     		str	r2, [sp]
+ 210 000e 0123     		movs	r3, #1
+ 211              	.LVL17:
+ 212              		.loc 1 20 3 is_stmt 0 view .LVU25
+ 213 0010 0A46     		mov	r2, r1
+ 214              	.LVL18:
+ 215              		.loc 1 20 3 view .LVU26
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 5
+
+
+ 216 0012 0146     		mov	r1, r0
+ 217              	.LVL19:
+ 218              		.loc 1 20 3 view .LVU27
+ 219 0014 0248     		ldr	r0, .L15
+ 220              	.LVL20:
+ 221              		.loc 1 20 3 view .LVU28
+ 222 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 223              	.LVL21:
+  21:Core/Src/SPL06.c **** }
+ 224              		.loc 1 21 1 view .LVU29
+ 225 001a 04B0     		add	sp, sp, #16
+ 226              	.LCFI11:
+ 227              		.cfi_def_cfa_offset 8
+ 228              		@ sp needed
+ 229 001c 10BD     		pop	{r4, pc}
+ 230              	.L16:
+ 231 001e 00BF     		.align	2
+ 232              	.L15:
+ 233 0020 00000000 		.word	hi2c1
+ 234              		.cfi_endproc
+ 235              	.LFE238:
+ 237              		.section	.text.SPL06_Initialise,"ax",%progbits
+ 238              		.align	1
+ 239              		.global	SPL06_Initialise
+ 240              		.syntax unified
+ 241              		.thumb
+ 242              		.thumb_func
+ 243              		.fpu fpv4-sp-d16
+ 245              	SPL06_Initialise:
+ 246              	.LVL22:
+ 247              	.LFB239:
+  22:Core/Src/SPL06.c **** 
+  23:Core/Src/SPL06.c **** void SPL06_Initialise(SPL06 *dev)
+  24:Core/Src/SPL06.c **** {
+ 248              		.loc 1 24 1 is_stmt 1 view -0
+ 249              		.cfi_startproc
+ 250              		@ args = 0, pretend = 0, frame = 16
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252              		.loc 1 24 1 is_stmt 0 view .LVU31
+ 253 0000 10B5     		push	{r4, lr}
+ 254              	.LCFI12:
+ 255              		.cfi_def_cfa_offset 8
+ 256              		.cfi_offset 4, -8
+ 257              		.cfi_offset 14, -4
+ 258 0002 84B0     		sub	sp, sp, #16
+ 259              	.LCFI13:
+ 260              		.cfi_def_cfa_offset 24
+ 261 0004 0446     		mov	r4, r0
+  25:Core/Src/SPL06.c ****   dev->c00 = 0;
+ 262              		.loc 1 25 3 is_stmt 1 view .LVU32
+ 263              		.loc 1 25 12 is_stmt 0 view .LVU33
+ 264 0006 0023     		movs	r3, #0
+ 265 0008 0360     		str	r3, [r0]
+  26:Core/Src/SPL06.c ****   dev->c10 = 0;
+ 266              		.loc 1 26 3 is_stmt 1 view .LVU34
+ 267              		.loc 1 26 12 is_stmt 0 view .LVU35
+ 268 000a 4360     		str	r3, [r0, #4]
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 6
+
+
+  27:Core/Src/SPL06.c **** 
+  28:Core/Src/SPL06.c ****   dev->c20 = 0;
+ 269              		.loc 1 28 3 is_stmt 1 view .LVU36
+ 270              		.loc 1 28 12 is_stmt 0 view .LVU37
+ 271 000c 8381     		strh	r3, [r0, #12]	@ movhi
+  29:Core/Src/SPL06.c ****   dev->c30 = 0;
+ 272              		.loc 1 29 3 is_stmt 1 view .LVU38
+ 273              		.loc 1 29 12 is_stmt 0 view .LVU39
+ 274 000e 0382     		strh	r3, [r0, #16]	@ movhi
+  30:Core/Src/SPL06.c ****   dev->c01 = 0;
+ 275              		.loc 1 30 3 is_stmt 1 view .LVU40
+ 276              		.loc 1 30 12 is_stmt 0 view .LVU41
+ 277 0010 0381     		strh	r3, [r0, #8]	@ movhi
+  31:Core/Src/SPL06.c ****   dev->c11 = 0;
+ 278              		.loc 1 31 3 is_stmt 1 view .LVU42
+ 279              		.loc 1 31 12 is_stmt 0 view .LVU43
+ 280 0012 4381     		strh	r3, [r0, #10]	@ movhi
+  32:Core/Src/SPL06.c ****   dev->c21 = 0;
+ 281              		.loc 1 32 3 is_stmt 1 view .LVU44
+ 282              		.loc 1 32 12 is_stmt 0 view .LVU45
+ 283 0014 C381     		strh	r3, [r0, #14]	@ movhi
+  33:Core/Src/SPL06.c **** 
+  34:Core/Src/SPL06.c ****   dev->bar_bias = 0.f;
+ 284              		.loc 1 34 3 is_stmt 1 view .LVU46
+ 285              		.loc 1 34 17 is_stmt 0 view .LVU47
+ 286 0016 0023     		movs	r3, #0
+ 287 0018 4361     		str	r3, [r0, #20]	@ float
+  35:Core/Src/SPL06.c ****   dev->bar_alt_m = 0.f;
+ 288              		.loc 1 35 3 is_stmt 1 view .LVU48
+ 289              		.loc 1 35 18 is_stmt 0 view .LVU49
+ 290 001a 8361     		str	r3, [r0, #24]	@ float
+  36:Core/Src/SPL06.c **** 
+  37:Core/Src/SPL06.c ****   uint8_t tx_data, rx_data[15];
+ 291              		.loc 1 37 3 is_stmt 1 view .LVU50
+  38:Core/Src/SPL06.c **** 
+  39:Core/Src/SPL06.c ****   tx_data = 0x61; // Pressure measurement rate: 64, Pressure oversampling rate: 2
+ 292              		.loc 1 39 3 view .LVU51
+ 293              		.loc 1 39 11 is_stmt 0 view .LVU52
+ 294 001c 6123     		movs	r3, #97
+ 295 001e 8DF80F30 		strb	r3, [sp, #15]
+  40:Core/Src/SPL06.c ****   SPL06_Write_Register(SPL06_ADDR, SPL06_REG_PRS_CFG, &tx_data);
+ 296              		.loc 1 40 3 is_stmt 1 view .LVU53
+ 297 0022 0DF10F02 		add	r2, sp, #15
+ 298 0026 0621     		movs	r1, #6
+ 299 0028 EE20     		movs	r0, #238
+ 300              	.LVL23:
+ 301              		.loc 1 40 3 is_stmt 0 view .LVU54
+ 302 002a FFF7FEFF 		bl	SPL06_Write_Register
+ 303              	.LVL24:
+  41:Core/Src/SPL06.c **** 
+  42:Core/Src/SPL06.c ****   tx_data = 0xA1; // Temperature measurement rate: 4, Temperature oversampling rate: 2
+ 304              		.loc 1 42 3 is_stmt 1 view .LVU55
+ 305              		.loc 1 42 11 is_stmt 0 view .LVU56
+ 306 002e A123     		movs	r3, #161
+ 307 0030 8DF80F30 		strb	r3, [sp, #15]
+  43:Core/Src/SPL06.c ****   SPL06_Write_Register(SPL06_ADDR, SPL06_REG_TMP_CFG, &tx_data);
+ 308              		.loc 1 43 3 is_stmt 1 view .LVU57
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 7
+
+
+ 309 0034 0DF10F02 		add	r2, sp, #15
+ 310 0038 0721     		movs	r1, #7
+ 311 003a EE20     		movs	r0, #238
+ 312 003c FFF7FEFF 		bl	SPL06_Write_Register
+ 313              	.LVL25:
+  44:Core/Src/SPL06.c **** 
+  45:Core/Src/SPL06.c ****   tx_data = 0b0111; // Continuous pressure and temperature measurement
+ 314              		.loc 1 45 3 view .LVU58
+ 315              		.loc 1 45 11 is_stmt 0 view .LVU59
+ 316 0040 0723     		movs	r3, #7
+ 317 0042 8DF80F30 		strb	r3, [sp, #15]
+  46:Core/Src/SPL06.c ****   SPL06_Write_Register(SPL06_ADDR, SPL06_REG_MEAS_CFG, &tx_data);
+ 318              		.loc 1 46 3 is_stmt 1 view .LVU60
+ 319 0046 0DF10F02 		add	r2, sp, #15
+ 320 004a 0821     		movs	r1, #8
+ 321 004c EE20     		movs	r0, #238
+ 322 004e FFF7FEFF 		bl	SPL06_Write_Register
+ 323              	.LVL26:
+  47:Core/Src/SPL06.c **** 
+  48:Core/Src/SPL06.c ****   // Read the Calibration Coefficients register
+  49:Core/Src/SPL06.c ****   SPL06_Read_Registers(SPL06_ADDR, SPL06_REG_COEF, rx_data, sizeof(rx_data));
+ 324              		.loc 1 49 3 view .LVU61
+ 325 0052 0F23     		movs	r3, #15
+ 326 0054 6A46     		mov	r2, sp
+ 327 0056 1321     		movs	r1, #19
+ 328 0058 EE20     		movs	r0, #238
+ 329 005a FFF7FEFF 		bl	SPL06_Read_Registers
+ 330              	.LVL27:
+  50:Core/Src/SPL06.c **** 
+  51:Core/Src/SPL06.c ****   // Calculate the Calibration Coefficients
+  52:Core/Src/SPL06.c ****   dev->c00 = ((uint32_t)rx_data[0] << 12) | ((uint16_t)rx_data[1] << 4) | ((uint16_t)rx_data[2] >> 
+ 331              		.loc 1 52 3 view .LVU62
+ 332              		.loc 1 52 32 is_stmt 0 view .LVU63
+ 333 005e 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 334              		.loc 1 52 63 view .LVU64
+ 335 0062 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
+ 336              		.loc 1 52 67 view .LVU65
+ 337 0066 1201     		lsls	r2, r2, #4
+ 338              		.loc 1 52 43 view .LVU66
+ 339 0068 42EA0332 		orr	r2, r2, r3, lsl #12
+ 340              		.loc 1 52 93 view .LVU67
+ 341 006c 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 342              		.loc 1 52 73 view .LVU68
+ 343 0070 42EA1312 		orr	r2, r2, r3, lsr #4
+ 344              		.loc 1 52 12 view .LVU69
+ 345 0074 2260     		str	r2, [r4]
+  53:Core/Src/SPL06.c ****   dev->c10 = ((uint32_t)(rx_data[2] & 0x0F)) << 16 | ((uint16_t)rx_data[3] << 8) | rx_data[4];
+ 346              		.loc 1 53 3 is_stmt 1 view .LVU70
+ 347              		.loc 1 53 46 is_stmt 0 view .LVU71
+ 348 0076 1B04     		lsls	r3, r3, #16
+ 349 0078 03F47023 		and	r3, r3, #983040
+ 350              		.loc 1 53 72 view .LVU72
+ 351 007c 9DF80310 		ldrb	r1, [sp, #3]	@ zero_extendqisi2
+ 352              		.loc 1 53 52 view .LVU73
+ 353 0080 43EA0123 		orr	r3, r3, r1, lsl #8
+ 354              		.loc 1 53 91 view .LVU74
+ 355 0084 9DF80410 		ldrb	r1, [sp, #4]	@ zero_extendqisi2
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 8
+
+
+ 356              		.loc 1 53 82 view .LVU75
+ 357 0088 0B43     		orrs	r3, r3, r1
+ 358              		.loc 1 53 12 view .LVU76
+ 359 008a 6360     		str	r3, [r4, #4]
+  54:Core/Src/SPL06.c ****   dev->c01 = ((uint16_t)rx_data[5] << 8) | rx_data[6];
+ 360              		.loc 1 54 3 is_stmt 1 view .LVU77
+ 361              		.loc 1 54 32 is_stmt 0 view .LVU78
+ 362 008c 9DF80500 		ldrb	r0, [sp, #5]	@ zero_extendqisi2
+ 363              		.loc 1 54 51 view .LVU79
+ 364 0090 9DF80610 		ldrb	r1, [sp, #6]	@ zero_extendqisi2
+ 365              		.loc 1 54 42 view .LVU80
+ 366 0094 41EA0021 		orr	r1, r1, r0, lsl #8
+ 367              		.loc 1 54 12 view .LVU81
+ 368 0098 2181     		strh	r1, [r4, #8]	@ movhi
+  55:Core/Src/SPL06.c ****   dev->c11 = ((uint16_t)rx_data[7] << 8) | rx_data[8];
+ 369              		.loc 1 55 3 is_stmt 1 view .LVU82
+ 370              		.loc 1 55 32 is_stmt 0 view .LVU83
+ 371 009a 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 372              		.loc 1 55 51 view .LVU84
+ 373 009e 9DF80810 		ldrb	r1, [sp, #8]	@ zero_extendqisi2
+ 374              		.loc 1 55 42 view .LVU85
+ 375 00a2 41EA0021 		orr	r1, r1, r0, lsl #8
+ 376              		.loc 1 55 12 view .LVU86
+ 377 00a6 6181     		strh	r1, [r4, #10]	@ movhi
+  56:Core/Src/SPL06.c ****   dev->c20 = ((uint16_t)rx_data[9] << 8) | rx_data[10];
+ 378              		.loc 1 56 3 is_stmt 1 view .LVU87
+ 379              		.loc 1 56 32 is_stmt 0 view .LVU88
+ 380 00a8 9DF80900 		ldrb	r0, [sp, #9]	@ zero_extendqisi2
+ 381              		.loc 1 56 51 view .LVU89
+ 382 00ac 9DF80A10 		ldrb	r1, [sp, #10]	@ zero_extendqisi2
+ 383              		.loc 1 56 42 view .LVU90
+ 384 00b0 41EA0021 		orr	r1, r1, r0, lsl #8
+ 385              		.loc 1 56 12 view .LVU91
+ 386 00b4 A181     		strh	r1, [r4, #12]	@ movhi
+  57:Core/Src/SPL06.c ****   dev->c21 = ((uint16_t)rx_data[11] << 8) | rx_data[12];
+ 387              		.loc 1 57 3 is_stmt 1 view .LVU92
+ 388              		.loc 1 57 32 is_stmt 0 view .LVU93
+ 389 00b6 9DF80B00 		ldrb	r0, [sp, #11]	@ zero_extendqisi2
+ 390              		.loc 1 57 52 view .LVU94
+ 391 00ba 9DF80C10 		ldrb	r1, [sp, #12]	@ zero_extendqisi2
+ 392              		.loc 1 57 43 view .LVU95
+ 393 00be 41EA0021 		orr	r1, r1, r0, lsl #8
+ 394              		.loc 1 57 12 view .LVU96
+ 395 00c2 E181     		strh	r1, [r4, #14]	@ movhi
+  58:Core/Src/SPL06.c ****   dev->c30 = ((uint16_t)rx_data[13] << 8) | rx_data[14];
+ 396              		.loc 1 58 3 is_stmt 1 view .LVU97
+ 397              		.loc 1 58 32 is_stmt 0 view .LVU98
+ 398 00c4 9DF80D00 		ldrb	r0, [sp, #13]	@ zero_extendqisi2
+ 399              		.loc 1 58 52 view .LVU99
+ 400 00c8 9DF80E10 		ldrb	r1, [sp, #14]	@ zero_extendqisi2
+ 401              		.loc 1 58 43 view .LVU100
+ 402 00cc 41EA0021 		orr	r1, r1, r0, lsl #8
+ 403              		.loc 1 58 12 view .LVU101
+ 404 00d0 2182     		strh	r1, [r4, #16]	@ movhi
+  59:Core/Src/SPL06.c **** 
+  60:Core/Src/SPL06.c ****   if (dev->c00 & (1 << 19))
+ 405              		.loc 1 60 3 is_stmt 1 view .LVU102
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 9
+
+
+ 406              		.loc 1 60 6 is_stmt 0 view .LVU103
+ 407 00d2 12F4002F 		tst	r2, #524288
+ 408 00d6 04D0     		beq	.L18
+  61:Core/Src/SPL06.c ****     dev->c00 = dev->c00 | 0xFFF00000;
+ 409              		.loc 1 61 5 is_stmt 1 view .LVU104
+ 410              		.loc 1 61 25 is_stmt 0 view .LVU105
+ 411 00d8 6FEA0232 		mvn	r2, r2, lsl #12
+ 412 00dc 6FEA1232 		mvn	r2, r2, lsr #12
+ 413              		.loc 1 61 14 view .LVU106
+ 414 00e0 2260     		str	r2, [r4]
+ 415              	.L18:
+  62:Core/Src/SPL06.c **** 
+  63:Core/Src/SPL06.c ****   if (dev->c10 & (1 << 19))
+ 416              		.loc 1 63 3 is_stmt 1 view .LVU107
+ 417              		.loc 1 63 6 is_stmt 0 view .LVU108
+ 418 00e2 13F4002F 		tst	r3, #524288
+ 419 00e6 04D0     		beq	.L17
+  64:Core/Src/SPL06.c ****     dev->c10 = dev->c10 | 0xFFF00000;
+ 420              		.loc 1 64 5 is_stmt 1 view .LVU109
+ 421              		.loc 1 64 25 is_stmt 0 view .LVU110
+ 422 00e8 6FEA0333 		mvn	r3, r3, lsl #12
+ 423 00ec 6FEA1333 		mvn	r3, r3, lsr #12
+ 424              		.loc 1 64 14 view .LVU111
+ 425 00f0 6360     		str	r3, [r4, #4]
+ 426              	.L17:
+  65:Core/Src/SPL06.c **** }
+ 427              		.loc 1 65 1 view .LVU112
+ 428 00f2 04B0     		add	sp, sp, #16
+ 429              	.LCFI14:
+ 430              		.cfi_def_cfa_offset 8
+ 431              		@ sp needed
+ 432 00f4 10BD     		pop	{r4, pc}
+ 433              		.loc 1 65 1 view .LVU113
+ 434              		.cfi_endproc
+ 435              	.LFE239:
+ 437              		.section	.text.SPL06_Read,"ax",%progbits
+ 438              		.align	1
+ 439              		.global	SPL06_Read
+ 440              		.syntax unified
+ 441              		.thumb
+ 442              		.thumb_func
+ 443              		.fpu fpv4-sp-d16
+ 445              	SPL06_Read:
+ 446              	.LVL28:
+ 447              	.LFB241:
+  66:Core/Src/SPL06.c **** 
+  67:Core/Src/SPL06.c **** void SPL06_Calibrate(SPL06 *dev)
+  68:Core/Src/SPL06.c **** {
+  69:Core/Src/SPL06.c ****   float avg_bar_bias = 0;
+  70:Core/Src/SPL06.c **** 
+  71:Core/Src/SPL06.c ****   // Take 2000 measurements and average them to get the bias
+  72:Core/Src/SPL06.c ****   for (int i = 0; i < 2000; i++)
+  73:Core/Src/SPL06.c ****   {
+  74:Core/Src/SPL06.c ****     SPL06_Read(dev);
+  75:Core/Src/SPL06.c **** 
+  76:Core/Src/SPL06.c ****     if (i >= 10)
+  77:Core/Src/SPL06.c ****       avg_bar_bias += dev->bar_alt_m;
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 10
+
+
+  78:Core/Src/SPL06.c **** 
+  79:Core/Src/SPL06.c ****     HAL_Delay(10);
+  80:Core/Src/SPL06.c ****   }
+  81:Core/Src/SPL06.c **** 
+  82:Core/Src/SPL06.c ****   dev->bar_bias = avg_bar_bias / 2000;
+  83:Core/Src/SPL06.c **** }
+  84:Core/Src/SPL06.c **** 
+  85:Core/Src/SPL06.c **** void SPL06_Read(SPL06 *dev)
+  86:Core/Src/SPL06.c **** {
+ 448              		.loc 1 86 1 is_stmt 1 view -0
+ 449              		.cfi_startproc
+ 450              		@ args = 0, pretend = 0, frame = 8
+ 451              		@ frame_needed = 0, uses_anonymous_args = 0
+ 452              		.loc 1 86 1 is_stmt 0 view .LVU115
+ 453 0000 10B5     		push	{r4, lr}
+ 454              	.LCFI15:
+ 455              		.cfi_def_cfa_offset 8
+ 456              		.cfi_offset 4, -8
+ 457              		.cfi_offset 14, -4
+ 458 0002 82B0     		sub	sp, sp, #8
+ 459              	.LCFI16:
+ 460              		.cfi_def_cfa_offset 16
+ 461 0004 0446     		mov	r4, r0
+  87:Core/Src/SPL06.c ****   uint8_t data[6];
+ 462              		.loc 1 87 3 is_stmt 1 view .LVU116
+  88:Core/Src/SPL06.c ****   int32_t press_raw = 0, temp_raw = 0;
+ 463              		.loc 1 88 3 view .LVU117
+ 464              	.LVL29:
+  89:Core/Src/SPL06.c ****   float press_raw_scaled = 0.f, temp_raw_scaled = 0.f, press_hPa = 0.f;
+ 465              		.loc 1 89 3 view .LVU118
+  90:Core/Src/SPL06.c **** 
+  91:Core/Src/SPL06.c ****   // Read all the data registers
+  92:Core/Src/SPL06.c ****   SPL06_Read_Registers(SPL06_ADDR, SPL06_REG_PSR_B2, data, sizeof(data));
+ 466              		.loc 1 92 3 view .LVU119
+ 467 0006 0623     		movs	r3, #6
+ 468 0008 6A46     		mov	r2, sp
+ 469 000a 0021     		movs	r1, #0
+ 470 000c EE20     		movs	r0, #238
+ 471              	.LVL30:
+ 472              		.loc 1 92 3 is_stmt 0 view .LVU120
+ 473 000e FFF7FEFF 		bl	SPL06_Read_Registers
+ 474              	.LVL31:
+  93:Core/Src/SPL06.c **** 
+  94:Core/Src/SPL06.c ****   // Calculate raw pressure and temperature values
+  95:Core/Src/SPL06.c ****   press_raw = ((uint32_t)data[0] << 16) | ((uint16_t)data[1] << 8) | data[2];
+ 475              		.loc 1 95 3 is_stmt 1 view .LVU121
+ 476              		.loc 1 95 30 is_stmt 0 view .LVU122
+ 477 0012 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 478              		.loc 1 95 58 view .LVU123
+ 479 0016 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
+ 480              		.loc 1 95 62 view .LVU124
+ 481 001a 1202     		lsls	r2, r2, #8
+ 482              		.loc 1 95 41 view .LVU125
+ 483 001c 42EA0342 		orr	r2, r2, r3, lsl #16
+ 484              		.loc 1 95 74 view .LVU126
+ 485 0020 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 486              		.loc 1 95 68 view .LVU127
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 11
+
+
+ 487 0024 1A43     		orrs	r2, r2, r3
+ 488              		.loc 1 95 13 view .LVU128
+ 489 0026 1046     		mov	r0, r2
+ 490              	.LVL32:
+  96:Core/Src/SPL06.c ****   temp_raw = ((uint32_t)data[3] << 16) | ((uint16_t)data[4] << 8) | data[5];
+ 491              		.loc 1 96 3 is_stmt 1 view .LVU129
+ 492              		.loc 1 96 29 is_stmt 0 view .LVU130
+ 493 0028 9DF80310 		ldrb	r1, [sp, #3]	@ zero_extendqisi2
+ 494              		.loc 1 96 57 view .LVU131
+ 495 002c 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 496              		.loc 1 96 61 view .LVU132
+ 497 0030 1B02     		lsls	r3, r3, #8
+ 498              		.loc 1 96 40 view .LVU133
+ 499 0032 43EA0143 		orr	r3, r3, r1, lsl #16
+ 500              		.loc 1 96 73 view .LVU134
+ 501 0036 9DF80510 		ldrb	r1, [sp, #5]	@ zero_extendqisi2
+ 502              		.loc 1 96 67 view .LVU135
+ 503 003a 0B43     		orrs	r3, r3, r1
+ 504              		.loc 1 96 12 view .LVU136
+ 505 003c 1946     		mov	r1, r3
+ 506              	.LVL33:
+  97:Core/Src/SPL06.c **** 
+  98:Core/Src/SPL06.c ****   if (press_raw & (1 << 23))
+ 507              		.loc 1 98 3 is_stmt 1 view .LVU137
+ 508              		.loc 1 98 6 is_stmt 0 view .LVU138
+ 509 003e 12F4000F 		tst	r2, #8388608
+ 510 0042 01D0     		beq	.L22
+  99:Core/Src/SPL06.c ****     press_raw = press_raw | 0xFF000000;
+ 511              		.loc 1 99 5 is_stmt 1 view .LVU139
+ 512              		.loc 1 99 27 is_stmt 0 view .LVU140
+ 513 0044 42F07F40 		orr	r0, r2, #-16777216
+ 514              	.LVL34:
+ 515              	.L22:
+ 100:Core/Src/SPL06.c **** 
+ 101:Core/Src/SPL06.c ****   if (temp_raw & (1 << 23))
+ 516              		.loc 1 101 3 is_stmt 1 view .LVU141
+ 517              		.loc 1 101 6 is_stmt 0 view .LVU142
+ 518 0048 13F4000F 		tst	r3, #8388608
+ 519 004c 01D0     		beq	.L23
+ 102:Core/Src/SPL06.c ****     temp_raw = temp_raw | 0xFF000000;
+ 520              		.loc 1 102 5 is_stmt 1 view .LVU143
+ 521              		.loc 1 102 25 is_stmt 0 view .LVU144
+ 522 004e 43F07F41 		orr	r1, r3, #-16777216
+ 523              	.LVL35:
+ 524              	.L23:
+ 103:Core/Src/SPL06.c **** 
+ 104:Core/Src/SPL06.c ****   press_raw_scaled = (float)press_raw / 1572864.f;
+ 525              		.loc 1 104 3 is_stmt 1 view .LVU145
+ 526              		.loc 1 104 22 is_stmt 0 view .LVU146
+ 527 0052 07EE900A 		vmov	s15, r0	@ int
+ 528 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 529              		.loc 1 104 20 view .LVU147
+ 530 005a 9FED347A 		vldr.32	s14, .L25
+ 531 005e C7EE875A 		vdiv.f32	s11, s15, s14
+ 532              	.LVL36:
+ 105:Core/Src/SPL06.c ****   temp_raw_scaled = (float)temp_raw / 1572864.f;
+ 533              		.loc 1 105 3 is_stmt 1 view .LVU148
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 12
+
+
+ 534              		.loc 1 105 21 is_stmt 0 view .LVU149
+ 535 0062 07EE901A 		vmov	s15, r1	@ int
+ 536 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 537              		.loc 1 105 19 view .LVU150
+ 538 006a 87EE876A 		vdiv.f32	s12, s15, s14
+ 539              	.LVL37:
+ 106:Core/Src/SPL06.c **** 
+ 107:Core/Src/SPL06.c ****   // Convert the raw values into pressure in hPa
+ 108:Core/Src/SPL06.c ****   press_hPa = ((float)dev->c00 + press_raw_scaled * ((float)dev->c10 + press_raw_scaled * ((float)d
+ 540              		.loc 1 108 3 is_stmt 1 view .LVU151
+ 541              		.loc 1 108 16 is_stmt 0 view .LVU152
+ 542 006e D4ED007A 		vldr.32	s15, [r4]	@ int
+ 543 0072 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 544              		.loc 1 108 54 view .LVU153
+ 545 0076 94ED017A 		vldr.32	s14, [r4, #4]	@ int
+ 546 007a B8EEC77A 		vcvt.f32.s32	s14, s14
+ 547              		.loc 1 108 102 view .LVU154
+ 548 007e B4F90C30 		ldrsh	r3, [r4, #12]
+ 549 0082 06EE903A 		vmov	s13, r3	@ int
+ 550              		.loc 1 108 92 view .LVU155
+ 551 0086 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 552              		.loc 1 108 139 view .LVU156
+ 553 008a B4F91030 		ldrsh	r3, [r4, #16]
+ 554 008e 05EE103A 		vmov	s10, r3	@ int
+ 555              		.loc 1 108 129 view .LVU157
+ 556 0092 B8EEC55A 		vcvt.f32.s32	s10, s10
+ 557              		.loc 1 108 127 view .LVU158
+ 558 0096 25EE255A 		vmul.f32	s10, s10, s11
+ 559              		.loc 1 108 108 view .LVU159
+ 560 009a 76EE856A 		vadd.f32	s13, s13, s10
+ 561              		.loc 1 108 89 view .LVU160
+ 562 009e 66EEA56A 		vmul.f32	s13, s13, s11
+ 563              		.loc 1 108 70 view .LVU161
+ 564 00a2 37EE267A 		vadd.f32	s14, s14, s13
+ 565              		.loc 1 108 51 view .LVU162
+ 566 00a6 27EE257A 		vmul.f32	s14, s14, s11
+ 567              		.loc 1 108 32 view .LVU163
+ 568 00aa 77EE877A 		vadd.f32	s15, s15, s14
+ 109:Core/Src/SPL06.c ****                temp_raw_scaled * (float)dev->c01 + temp_raw_scaled * press_raw_scaled * ((float)dev
+ 569              		.loc 1 109 44 view .LVU164
+ 570 00ae B4F90830 		ldrsh	r3, [r4, #8]
+ 571 00b2 07EE103A 		vmov	s14, r3	@ int
+ 572              		.loc 1 109 34 view .LVU165
+ 573 00b6 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 574              		.loc 1 109 32 view .LVU166
+ 575 00ba 27EE067A 		vmul.f32	s14, s14, s12
+ 108:Core/Src/SPL06.c ****                temp_raw_scaled * (float)dev->c01 + temp_raw_scaled * press_raw_scaled * ((float)dev
+ 576              		.loc 1 108 147 view .LVU167
+ 577 00be 77EE877A 		vadd.f32	s15, s15, s14
+ 578              		.loc 1 109 68 view .LVU168
+ 579 00c2 25EE866A 		vmul.f32	s12, s11, s12
+ 580              	.LVL38:
+ 581              		.loc 1 109 100 view .LVU169
+ 582 00c6 B4F90A30 		ldrsh	r3, [r4, #10]
+ 583 00ca 07EE103A 		vmov	s14, r3	@ int
+ 584              		.loc 1 109 90 view .LVU170
+ 585 00ce B8EEC77A 		vcvt.f32.s32	s14, s14
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 13
+
+
+ 586              		.loc 1 109 137 view .LVU171
+ 587 00d2 B4F90E30 		ldrsh	r3, [r4, #14]
+ 588 00d6 06EE903A 		vmov	s13, r3	@ int
+ 589              		.loc 1 109 127 view .LVU172
+ 590 00da F8EEE66A 		vcvt.f32.s32	s13, s13
+ 591              		.loc 1 109 125 view .LVU173
+ 592 00de 66EEA56A 		vmul.f32	s13, s13, s11
+ 593              		.loc 1 109 106 view .LVU174
+ 594 00e2 37EE267A 		vadd.f32	s14, s14, s13
+ 595              		.loc 1 109 87 view .LVU175
+ 596 00e6 26EE076A 		vmul.f32	s12, s12, s14
+ 597              		.loc 1 109 50 view .LVU176
+ 598 00ea 77EE867A 		vadd.f32	s15, s15, s12
+ 108:Core/Src/SPL06.c ****                temp_raw_scaled * (float)dev->c01 + temp_raw_scaled * press_raw_scaled * ((float)dev
+ 599              		.loc 1 108 13 view .LVU177
+ 600 00ee 9FED107A 		vldr.32	s14, .L25+4
+ 601 00f2 87EE870A 		vdiv.f32	s0, s15, s14
+ 602              	.LVL39:
+ 110:Core/Src/SPL06.c ****               100.f;
+ 111:Core/Src/SPL06.c **** 
+ 112:Core/Src/SPL06.c ****   // Convert the pressure in hPa into altitude in meters
+ 113:Core/Src/SPL06.c ****   dev->bar_alt_m = 44330.f * (1.f - powf(press_hPa / 1013.25f, 1.f / 5.255f));
+ 603              		.loc 1 113 3 is_stmt 1 view .LVU178
+ 604              		.loc 1 113 37 is_stmt 0 view .LVU179
+ 605 00f6 DFED0F0A 		vldr.32	s1, .L25+8
+ 606 00fa DFED0F7A 		vldr.32	s15, .L25+12
+ 607 00fe 80EE270A 		vdiv.f32	s0, s0, s15
+ 608              	.LVL40:
+ 609              		.loc 1 113 37 view .LVU180
+ 610 0102 FFF7FEFF 		bl	powf
+ 611              	.LVL41:
+ 612              		.loc 1 113 35 view .LVU181
+ 613 0106 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 614 010a 37EEC00A 		vsub.f32	s0, s15, s0
+ 615              		.loc 1 113 28 view .LVU182
+ 616 010e DFED0B7A 		vldr.32	s15, .L25+16
+ 617 0112 20EE270A 		vmul.f32	s0, s0, s15
+ 618              		.loc 1 113 18 view .LVU183
+ 619 0116 84ED060A 		vstr.32	s0, [r4, #24]
+ 114:Core/Src/SPL06.c **** 
+ 115:Core/Src/SPL06.c ****   // Subtract the bias
+ 116:Core/Src/SPL06.c ****   dev->bar_alt_m -= dev->bar_bias;
+ 620              		.loc 1 116 3 is_stmt 1 view .LVU184
+ 621              		.loc 1 116 24 is_stmt 0 view .LVU185
+ 622 011a D4ED057A 		vldr.32	s15, [r4, #20]
+ 623              		.loc 1 116 18 view .LVU186
+ 624 011e 30EE670A 		vsub.f32	s0, s0, s15
+ 625 0122 84ED060A 		vstr.32	s0, [r4, #24]
+ 117:Core/Src/SPL06.c **** }
+ 626              		.loc 1 117 1 view .LVU187
+ 627 0126 02B0     		add	sp, sp, #8
+ 628              	.LCFI17:
+ 629              		.cfi_def_cfa_offset 8
+ 630              		@ sp needed
+ 631 0128 10BD     		pop	{r4, pc}
+ 632              	.LVL42:
+ 633              	.L26:
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 14
+
+
+ 634              		.loc 1 117 1 view .LVU188
+ 635 012a 00BF     		.align	2
+ 636              	.L25:
+ 637 012c 0000C049 		.word	1237319680
+ 638 0130 0000C842 		.word	1120403456
+ 639 0134 AEDC423E 		.word	1044569262
+ 640 0138 00507D44 		.word	1149063168
+ 641 013c 002A2D47 		.word	1194142208
+ 642              		.cfi_endproc
+ 643              	.LFE241:
+ 645              		.section	.text.SPL06_Calibrate,"ax",%progbits
+ 646              		.align	1
+ 647              		.global	SPL06_Calibrate
+ 648              		.syntax unified
+ 649              		.thumb
+ 650              		.thumb_func
+ 651              		.fpu fpv4-sp-d16
+ 653              	SPL06_Calibrate:
+ 654              	.LVL43:
+ 655              	.LFB240:
+  68:Core/Src/SPL06.c ****   float avg_bar_bias = 0;
+ 656              		.loc 1 68 1 is_stmt 1 view -0
+ 657              		.cfi_startproc
+ 658              		@ args = 0, pretend = 0, frame = 0
+ 659              		@ frame_needed = 0, uses_anonymous_args = 0
+  68:Core/Src/SPL06.c ****   float avg_bar_bias = 0;
+ 660              		.loc 1 68 1 is_stmt 0 view .LVU190
+ 661 0000 38B5     		push	{r3, r4, r5, lr}
+ 662              	.LCFI18:
+ 663              		.cfi_def_cfa_offset 16
+ 664              		.cfi_offset 3, -16
+ 665              		.cfi_offset 4, -12
+ 666              		.cfi_offset 5, -8
+ 667              		.cfi_offset 14, -4
+ 668 0002 2DED028B 		vpush.64	{d8}
+ 669              	.LCFI19:
+ 670              		.cfi_def_cfa_offset 24
+ 671              		.cfi_offset 80, -24
+ 672              		.cfi_offset 81, -20
+ 673 0006 0546     		mov	r5, r0
+  69:Core/Src/SPL06.c **** 
+ 674              		.loc 1 69 3 is_stmt 1 view .LVU191
+ 675              	.LVL44:
+  72:Core/Src/SPL06.c ****   {
+ 676              		.loc 1 72 3 view .LVU192
+ 677              	.LBB2:
+  72:Core/Src/SPL06.c ****   {
+ 678              		.loc 1 72 8 view .LVU193
+  72:Core/Src/SPL06.c ****   {
+ 679              		.loc 1 72 12 is_stmt 0 view .LVU194
+ 680 0008 0024     		movs	r4, #0
+ 681              	.LBE2:
+  69:Core/Src/SPL06.c **** 
+ 682              		.loc 1 69 9 view .LVU195
+ 683 000a 9FED0E8A 		vldr.32	s16, .L33
+ 684              	.LBB3:
+  72:Core/Src/SPL06.c ****   {
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 15
+
+
+ 685              		.loc 1 72 3 view .LVU196
+ 686 000e 03E0     		b	.L28
+ 687              	.LVL45:
+ 688              	.L29:
+  79:Core/Src/SPL06.c ****   }
+ 689              		.loc 1 79 5 is_stmt 1 discriminator 2 view .LVU197
+ 690 0010 0A20     		movs	r0, #10
+ 691 0012 FFF7FEFF 		bl	HAL_Delay
+ 692              	.LVL46:
+  72:Core/Src/SPL06.c ****   {
+ 693              		.loc 1 72 29 discriminator 2 view .LVU198
+  72:Core/Src/SPL06.c ****   {
+ 694              		.loc 1 72 30 is_stmt 0 discriminator 2 view .LVU199
+ 695 0016 0134     		adds	r4, r4, #1
+ 696              	.LVL47:
+ 697              	.L28:
+  72:Core/Src/SPL06.c ****   {
+ 698              		.loc 1 72 19 is_stmt 1 discriminator 1 view .LVU200
+  72:Core/Src/SPL06.c ****   {
+ 699              		.loc 1 72 3 is_stmt 0 discriminator 1 view .LVU201
+ 700 0018 B4F5FA6F 		cmp	r4, #2000
+ 701 001c 09DA     		bge	.L32
+  74:Core/Src/SPL06.c **** 
+ 702              		.loc 1 74 5 is_stmt 1 view .LVU202
+ 703 001e 2846     		mov	r0, r5
+ 704 0020 FFF7FEFF 		bl	SPL06_Read
+ 705              	.LVL48:
+  76:Core/Src/SPL06.c ****       avg_bar_bias += dev->bar_alt_m;
+ 706              		.loc 1 76 5 view .LVU203
+  76:Core/Src/SPL06.c ****       avg_bar_bias += dev->bar_alt_m;
+ 707              		.loc 1 76 8 is_stmt 0 view .LVU204
+ 708 0024 092C     		cmp	r4, #9
+ 709 0026 F3DD     		ble	.L29
+  77:Core/Src/SPL06.c **** 
+ 710              		.loc 1 77 7 is_stmt 1 view .LVU205
+  77:Core/Src/SPL06.c **** 
+ 711              		.loc 1 77 26 is_stmt 0 view .LVU206
+ 712 0028 D5ED067A 		vldr.32	s15, [r5, #24]
+  77:Core/Src/SPL06.c **** 
+ 713              		.loc 1 77 20 view .LVU207
+ 714 002c 38EE278A 		vadd.f32	s16, s16, s15
+ 715              	.LVL49:
+  77:Core/Src/SPL06.c **** 
+ 716              		.loc 1 77 20 view .LVU208
+ 717 0030 EEE7     		b	.L29
+ 718              	.L32:
+  77:Core/Src/SPL06.c **** 
+ 719              		.loc 1 77 20 view .LVU209
+ 720              	.LBE3:
+  82:Core/Src/SPL06.c **** }
+ 721              		.loc 1 82 3 is_stmt 1 view .LVU210
+  82:Core/Src/SPL06.c **** }
+ 722              		.loc 1 82 32 is_stmt 0 view .LVU211
+ 723 0032 9FED057A 		vldr.32	s14, .L33+4
+ 724 0036 C8EE077A 		vdiv.f32	s15, s16, s14
+  82:Core/Src/SPL06.c **** }
+ 725              		.loc 1 82 17 view .LVU212
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 16
+
+
+ 726 003a C5ED057A 		vstr.32	s15, [r5, #20]
+  83:Core/Src/SPL06.c **** 
+ 727              		.loc 1 83 1 view .LVU213
+ 728 003e BDEC028B 		vldm	sp!, {d8}
+ 729              	.LCFI20:
+ 730              		.cfi_restore 80
+ 731              		.cfi_restore 81
+ 732              		.cfi_def_cfa_offset 16
+ 733              	.LVL50:
+  83:Core/Src/SPL06.c **** 
+ 734              		.loc 1 83 1 view .LVU214
+ 735 0042 38BD     		pop	{r3, r4, r5, pc}
+ 736              	.LVL51:
+ 737              	.L34:
+  83:Core/Src/SPL06.c **** 
+ 738              		.loc 1 83 1 view .LVU215
+ 739              		.align	2
+ 740              	.L33:
+ 741 0044 00000000 		.word	0
+ 742 0048 0000FA44 		.word	1157234688
+ 743              		.cfi_endproc
+ 744              	.LFE240:
+ 746              		.text
+ 747              	.Letext0:
+ 748              		.file 2 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\inc
+ 749              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\inc
+ 750              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 751              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 752              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 753              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 754              		.file 8 "Core/Inc/SPL06.h"
+ 755              		.file 9 "Core/Inc/i2c.h"
+ 756              		.file 10 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\in
+ 757              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 SPL06.c
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:18     .text.SPL06_Read_Register:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:26     .text.SPL06_Read_Register:00000000 SPL06_Read_Register
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:68     .text.SPL06_Read_Register:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:73     .text.SPL06_Read_Registers:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:80     .text.SPL06_Read_Registers:00000000 SPL06_Read_Registers
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:124    .text.SPL06_Read_Registers:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:129    .text.SPL06_Write_Register:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:136    .text.SPL06_Write_Register:00000000 SPL06_Write_Register
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:177    .text.SPL06_Write_Register:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:182    .text.SPL06_Write_Registers:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:189    .text.SPL06_Write_Registers:00000000 SPL06_Write_Registers
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:233    .text.SPL06_Write_Registers:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:238    .text.SPL06_Initialise:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:245    .text.SPL06_Initialise:00000000 SPL06_Initialise
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:438    .text.SPL06_Read:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:445    .text.SPL06_Read:00000000 SPL06_Read
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:637    .text.SPL06_Read:0000012c $d
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:646    .text.SPL06_Calibrate:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:653    .text.SPL06_Calibrate:00000000 SPL06_Calibrate
+C:\Users\user-pc\AppData\Local\Temp\ccj6nMJc.s:741    .text.SPL06_Calibrate:00000044 $d
+
+UNDEFINED SYMBOLS
+HAL_I2C_Mem_Read
+hi2c1
+HAL_I2C_Mem_Write
+powf
+HAL_Delay
