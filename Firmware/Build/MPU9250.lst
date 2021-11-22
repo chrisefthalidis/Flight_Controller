@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,17 +27,20 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
   24              		.fpu fpv4-sp-d16
   26              	MPU9250_Read_Register:
   27              	.LVL0:
-  28              	.LFB235:
+  28              	.LFB239:
   29              		.file 1 "Core/Src/MPU9250.c"
    1:Core/Src/MPU9250.c **** #include "MPU9250.h"
    2:Core/Src/MPU9250.c **** 
-   3:Core/Src/MPU9250.c **** void MPU9250_Read_Register(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
-   4:Core/Src/MPU9250.c **** {
-  30              		.loc 1 4 1 view -0
+   3:Core/Src/MPU9250.c **** #include "usb_device.h"
+   4:Core/Src/MPU9250.c **** #include "usbd_cdc_if.h"
+   5:Core/Src/MPU9250.c **** 
+   6:Core/Src/MPU9250.c **** void MPU9250_Read_Register(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
+   7:Core/Src/MPU9250.c **** {
+  30              		.loc 1 7 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 4 1 is_stmt 0 view .LVU1
+  34              		.loc 1 7 1 is_stmt 0 view .LVU1
   35 0000 00B5     		push	{lr}
   36              	.LCFI0:
   37              		.cfi_def_cfa_offset 4
@@ -45,8 +48,8 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
   39 0002 85B0     		sub	sp, sp, #20
   40              	.LCFI1:
   41              		.cfi_def_cfa_offset 24
-   5:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Read(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, 1, HAL_MAX_DELAY);
-  42              		.loc 1 5 5 is_stmt 1 view .LVU2
+   8:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Read(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, 1, HAL_MAX_DELAY);
+  42              		.loc 1 8 5 is_stmt 1 view .LVU2
   43 0004 4FF0FF33 		mov	r3, #-1
   44 0008 0293     		str	r3, [sp, #8]
   45 000a 0123     		movs	r3, #1
@@ -54,20 +57,20 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
   47 000e 0092     		str	r2, [sp]
   48 0010 0A46     		mov	r2, r1
   49              	.LVL1:
-  50              		.loc 1 5 5 is_stmt 0 view .LVU3
+  50              		.loc 1 8 5 is_stmt 0 view .LVU3
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 2
+
+
   51 0012 0146     		mov	r1, r0
   52              	.LVL2:
-  53              		.loc 1 5 5 view .LVU4
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 2
-
-
+  53              		.loc 1 8 5 view .LVU4
   54 0014 0248     		ldr	r0, .L3
   55              	.LVL3:
-  56              		.loc 1 5 5 view .LVU5
+  56              		.loc 1 8 5 view .LVU5
   57 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
   58              	.LVL4:
-   6:Core/Src/MPU9250.c **** }
-  59              		.loc 1 6 1 view .LVU6
+   9:Core/Src/MPU9250.c **** }
+  59              		.loc 1 9 1 view .LVU6
   60 001a 05B0     		add	sp, sp, #20
   61              	.LCFI2:
   62              		.cfi_def_cfa_offset 4
@@ -78,7 +81,7 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
   67              	.L3:
   68 0020 00000000 		.word	hi2c2
   69              		.cfi_endproc
-  70              	.LFE235:
+  70              	.LFE239:
   72              		.section	.text.MPU9250_Read_Registers,"ax",%progbits
   73              		.align	1
   74              		.global	MPU9250_Read_Registers
@@ -88,15 +91,15 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
   78              		.fpu fpv4-sp-d16
   80              	MPU9250_Read_Registers:
   81              	.LVL5:
-  82              	.LFB236:
-   7:Core/Src/MPU9250.c **** 
-   8:Core/Src/MPU9250.c **** void MPU9250_Read_Registers(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
-   9:Core/Src/MPU9250.c **** {
-  83              		.loc 1 9 1 is_stmt 1 view -0
+  82              	.LFB240:
+  10:Core/Src/MPU9250.c **** 
+  11:Core/Src/MPU9250.c **** void MPU9250_Read_Registers(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
+  12:Core/Src/MPU9250.c **** {
+  83              		.loc 1 12 1 is_stmt 1 view -0
   84              		.cfi_startproc
   85              		@ args = 0, pretend = 0, frame = 0
   86              		@ frame_needed = 0, uses_anonymous_args = 0
-  87              		.loc 1 9 1 is_stmt 0 view .LVU8
+  87              		.loc 1 12 1 is_stmt 0 view .LVU8
   88 0000 10B5     		push	{r4, lr}
   89              	.LCFI3:
   90              		.cfi_def_cfa_offset 8
@@ -105,31 +108,31 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
   93 0002 84B0     		sub	sp, sp, #16
   94              	.LCFI4:
   95              		.cfi_def_cfa_offset 24
-  10:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Read(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, length, HAL_MAX_DELAY)
-  96              		.loc 1 10 5 is_stmt 1 view .LVU9
+  13:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Read(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, length, HAL_MAX_DELAY)
+  96              		.loc 1 13 5 is_stmt 1 view .LVU9
   97 0004 4FF0FF34 		mov	r4, #-1
   98 0008 0294     		str	r4, [sp, #8]
   99 000a 0193     		str	r3, [sp, #4]
  100 000c 0092     		str	r2, [sp]
  101 000e 0123     		movs	r3, #1
  102              	.LVL6:
- 103              		.loc 1 10 5 is_stmt 0 view .LVU10
+ 103              		.loc 1 13 5 is_stmt 0 view .LVU10
  104 0010 0A46     		mov	r2, r1
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 3
+
+
  105              	.LVL7:
- 106              		.loc 1 10 5 view .LVU11
+ 106              		.loc 1 13 5 view .LVU11
  107 0012 0146     		mov	r1, r0
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 3
-
-
  108              	.LVL8:
- 109              		.loc 1 10 5 view .LVU12
+ 109              		.loc 1 13 5 view .LVU12
  110 0014 0248     		ldr	r0, .L7
  111              	.LVL9:
- 112              		.loc 1 10 5 view .LVU13
+ 112              		.loc 1 13 5 view .LVU13
  113 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
  114              	.LVL10:
-  11:Core/Src/MPU9250.c **** }
- 115              		.loc 1 11 1 view .LVU14
+  14:Core/Src/MPU9250.c **** }
+ 115              		.loc 1 14 1 view .LVU14
  116 001a 04B0     		add	sp, sp, #16
  117              	.LCFI5:
  118              		.cfi_def_cfa_offset 8
@@ -140,7 +143,7 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  123              	.L7:
  124 0020 00000000 		.word	hi2c2
  125              		.cfi_endproc
- 126              	.LFE236:
+ 126              	.LFE240:
  128              		.section	.text.MPU9250_Write_Register,"ax",%progbits
  129              		.align	1
  130              		.global	MPU9250_Write_Register
@@ -150,15 +153,15 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  134              		.fpu fpv4-sp-d16
  136              	MPU9250_Write_Register:
  137              	.LVL11:
- 138              	.LFB237:
-  12:Core/Src/MPU9250.c **** 
-  13:Core/Src/MPU9250.c **** void MPU9250_Write_Register(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
-  14:Core/Src/MPU9250.c **** {
- 139              		.loc 1 14 1 is_stmt 1 view -0
+ 138              	.LFB241:
+  15:Core/Src/MPU9250.c **** 
+  16:Core/Src/MPU9250.c **** void MPU9250_Write_Register(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data)
+  17:Core/Src/MPU9250.c **** {
+ 139              		.loc 1 17 1 is_stmt 1 view -0
  140              		.cfi_startproc
  141              		@ args = 0, pretend = 0, frame = 0
  142              		@ frame_needed = 0, uses_anonymous_args = 0
- 143              		.loc 1 14 1 is_stmt 0 view .LVU16
+ 143              		.loc 1 17 1 is_stmt 0 view .LVU16
  144 0000 00B5     		push	{lr}
  145              	.LCFI6:
  146              		.cfi_def_cfa_offset 4
@@ -166,8 +169,8 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  148 0002 85B0     		sub	sp, sp, #20
  149              	.LCFI7:
  150              		.cfi_def_cfa_offset 24
-  15:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Write(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, 1, HAL_MAX_DELAY);
- 151              		.loc 1 15 5 is_stmt 1 view .LVU17
+  18:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Write(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, 1, HAL_MAX_DELAY);
+ 151              		.loc 1 18 5 is_stmt 1 view .LVU17
  152 0004 4FF0FF33 		mov	r3, #-1
  153 0008 0293     		str	r3, [sp, #8]
  154 000a 0123     		movs	r3, #1
@@ -175,20 +178,20 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  156 000e 0092     		str	r2, [sp]
  157 0010 0A46     		mov	r2, r1
  158              	.LVL12:
- 159              		.loc 1 15 5 is_stmt 0 view .LVU18
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 4
+
+
+ 159              		.loc 1 18 5 is_stmt 0 view .LVU18
  160 0012 0146     		mov	r1, r0
  161              	.LVL13:
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 4
-
-
- 162              		.loc 1 15 5 view .LVU19
+ 162              		.loc 1 18 5 view .LVU19
  163 0014 0248     		ldr	r0, .L11
  164              	.LVL14:
- 165              		.loc 1 15 5 view .LVU20
+ 165              		.loc 1 18 5 view .LVU20
  166 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  167              	.LVL15:
-  16:Core/Src/MPU9250.c **** }
- 168              		.loc 1 16 1 view .LVU21
+  19:Core/Src/MPU9250.c **** }
+ 168              		.loc 1 19 1 view .LVU21
  169 001a 05B0     		add	sp, sp, #20
  170              	.LCFI8:
  171              		.cfi_def_cfa_offset 4
@@ -199,7 +202,7 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  176              	.L11:
  177 0020 00000000 		.word	hi2c2
  178              		.cfi_endproc
- 179              	.LFE237:
+ 179              	.LFE241:
  181              		.section	.text.MPU9250_Write_Registers,"ax",%progbits
  182              		.align	1
  183              		.global	MPU9250_Write_Registers
@@ -209,15 +212,15 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  187              		.fpu fpv4-sp-d16
  189              	MPU9250_Write_Registers:
  190              	.LVL16:
- 191              	.LFB238:
-  17:Core/Src/MPU9250.c **** 
-  18:Core/Src/MPU9250.c **** void MPU9250_Write_Registers(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
-  19:Core/Src/MPU9250.c **** {
- 192              		.loc 1 19 1 is_stmt 1 view -0
+ 191              	.LFB242:
+  20:Core/Src/MPU9250.c **** 
+  21:Core/Src/MPU9250.c **** void MPU9250_Write_Registers(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t length)
+  22:Core/Src/MPU9250.c **** {
+ 192              		.loc 1 22 1 is_stmt 1 view -0
  193              		.cfi_startproc
  194              		@ args = 0, pretend = 0, frame = 0
  195              		@ frame_needed = 0, uses_anonymous_args = 0
- 196              		.loc 1 19 1 is_stmt 0 view .LVU23
+ 196              		.loc 1 22 1 is_stmt 0 view .LVU23
  197 0000 10B5     		push	{r4, lr}
  198              	.LCFI9:
  199              		.cfi_def_cfa_offset 8
@@ -226,31 +229,31 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  202 0002 84B0     		sub	sp, sp, #16
  203              	.LCFI10:
  204              		.cfi_def_cfa_offset 24
-  20:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Write(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, length, HAL_MAX_DELAY
- 205              		.loc 1 20 5 is_stmt 1 view .LVU24
+  23:Core/Src/MPU9250.c ****     HAL_I2C_Mem_Write(&hi2c2, dev_addr, reg_addr, I2C_MEMADD_SIZE_8BIT, data, length, HAL_MAX_DELAY
+ 205              		.loc 1 23 5 is_stmt 1 view .LVU24
  206 0004 4FF0FF34 		mov	r4, #-1
  207 0008 0294     		str	r4, [sp, #8]
  208 000a 0193     		str	r3, [sp, #4]
  209 000c 0092     		str	r2, [sp]
  210 000e 0123     		movs	r3, #1
  211              	.LVL17:
- 212              		.loc 1 20 5 is_stmt 0 view .LVU25
+ 212              		.loc 1 23 5 is_stmt 0 view .LVU25
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 5
+
+
  213 0010 0A46     		mov	r2, r1
  214              	.LVL18:
- 215              		.loc 1 20 5 view .LVU26
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 5
-
-
+ 215              		.loc 1 23 5 view .LVU26
  216 0012 0146     		mov	r1, r0
  217              	.LVL19:
- 218              		.loc 1 20 5 view .LVU27
+ 218              		.loc 1 23 5 view .LVU27
  219 0014 0248     		ldr	r0, .L15
  220              	.LVL20:
- 221              		.loc 1 20 5 view .LVU28
+ 221              		.loc 1 23 5 view .LVU28
  222 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  223              	.LVL21:
-  21:Core/Src/MPU9250.c **** }
- 224              		.loc 1 21 1 view .LVU29
+  24:Core/Src/MPU9250.c **** }
+ 224              		.loc 1 24 1 view .LVU29
  225 001a 04B0     		add	sp, sp, #16
  226              	.LCFI11:
  227              		.cfi_def_cfa_offset 8
@@ -261,7 +264,7 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  232              	.L15:
  233 0020 00000000 		.word	hi2c2
  234              		.cfi_endproc
- 235              	.LFE238:
+ 235              	.LFE242:
  237              		.section	.text.MPU9250_Initialise,"ax",%progbits
  238              		.align	1
  239              		.global	MPU9250_Initialise
@@ -271,1289 +274,1714 @@ ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 1
  243              		.fpu fpv4-sp-d16
  245              	MPU9250_Initialise:
  246              	.LVL22:
- 247              	.LFB239:
-  22:Core/Src/MPU9250.c **** 
-  23:Core/Src/MPU9250.c **** void MPU9250_Initialise(MPU9250 *dev)
-  24:Core/Src/MPU9250.c **** {
- 248              		.loc 1 24 1 is_stmt 1 view -0
+ 247              	.LFB243:
+  25:Core/Src/MPU9250.c **** 
+  26:Core/Src/MPU9250.c **** void MPU9250_Initialise(MPU9250 *dev)
+  27:Core/Src/MPU9250.c **** {
+ 248              		.loc 1 27 1 is_stmt 1 view -0
  249              		.cfi_startproc
  250              		@ args = 0, pretend = 0, frame = 8
  251              		@ frame_needed = 0, uses_anonymous_args = 0
- 252              		.loc 1 24 1 is_stmt 0 view .LVU31
- 253 0000 00B5     		push	{lr}
+ 252              		.loc 1 27 1 is_stmt 0 view .LVU31
+ 253 0000 70B5     		push	{r4, r5, r6, lr}
  254              	.LCFI12:
- 255              		.cfi_def_cfa_offset 4
- 256              		.cfi_offset 14, -4
- 257 0002 83B0     		sub	sp, sp, #12
- 258              	.LCFI13:
- 259              		.cfi_def_cfa_offset 16
-  25:Core/Src/MPU9250.c ****     /*uint8_t CNTL1[2] = {0x0A, 0x1F};
-  26:Core/Src/MPU9250.c ****     uint8_t ASAX = 0x10;
-  27:Core/Src/MPU9250.c **** 
-  28:Core/Src/MPU9250.c ****     HAL_I2C_Master_Transmit(&hi2c2, MAG_ADDR << 1, &CNTL1[0], sizeof(CNTL1), 10);
-  29:Core/Src/MPU9250.c ****     HAL_I2C_Master_Transmit(&hi2c2, MAG_ADDR << 1, &ASAX, sizeof(ASAX), 10);
-  30:Core/Src/MPU9250.c ****     HAL_I2C_Master_Receive(&hi2c2, MAG_ADDR << 1, &mag_coef[0], sizeof(mag_coef), 10);
-  31:Core/Src/MPU9250.c ****     CNTL1[1] = 0x16;
-  32:Core/Src/MPU9250.c ****     HAL_I2C_Master_Transmit(&hi2c2, MAG_ADDR << 1, &CNTL1[0], sizeof(CNTL1), 10);*/
-  33:Core/Src/MPU9250.c **** 
-  34:Core/Src/MPU9250.c ****     dev->mag_coef_x = 0;
- 260              		.loc 1 34 5 is_stmt 1 view .LVU32
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 6
+ 255              		.cfi_def_cfa_offset 16
+ 256              		.cfi_offset 4, -16
+ 257              		.cfi_offset 5, -12
+ 258              		.cfi_offset 6, -8
+ 259              		.cfi_offset 14, -4
+ 260 0002 82B0     		sub	sp, sp, #8
+ 261              	.LCFI13:
+ 262              		.cfi_def_cfa_offset 24
+ 263 0004 0446     		mov	r4, r0
+  28:Core/Src/MPU9250.c ****     dev->mag_coef_x = 0u;
+ 264              		.loc 1 28 5 is_stmt 1 view .LVU32
+ 265              		.loc 1 28 21 is_stmt 0 view .LVU33
+ 266 0006 0023     		movs	r3, #0
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 6
 
 
- 261              		.loc 1 34 21 is_stmt 0 view .LVU33
- 262 0004 0023     		movs	r3, #0
- 263 0006 0370     		strb	r3, [r0]
-  35:Core/Src/MPU9250.c ****     dev->mag_coef_y = 0;
- 264              		.loc 1 35 5 is_stmt 1 view .LVU34
- 265              		.loc 1 35 21 is_stmt 0 view .LVU35
- 266 0008 4370     		strb	r3, [r0, #1]
-  36:Core/Src/MPU9250.c ****     dev->mag_coef_z = 0;
- 267              		.loc 1 36 5 is_stmt 1 view .LVU36
- 268              		.loc 1 36 21 is_stmt 0 view .LVU37
- 269 000a 8370     		strb	r3, [r0, #2]
-  37:Core/Src/MPU9250.c **** 
-  38:Core/Src/MPU9250.c ****     dev->ang_vel_raw_x = 0;
- 270              		.loc 1 38 5 is_stmt 1 view .LVU38
- 271              		.loc 1 38 24 is_stmt 0 view .LVU39
- 272 000c 8380     		strh	r3, [r0, #4]	@ movhi
-  39:Core/Src/MPU9250.c ****     dev->ang_vel_raw_y = 0;
- 273              		.loc 1 39 5 is_stmt 1 view .LVU40
- 274              		.loc 1 39 24 is_stmt 0 view .LVU41
- 275 000e C380     		strh	r3, [r0, #6]	@ movhi
-  40:Core/Src/MPU9250.c ****     dev->ang_vel_raw_z = 0;
- 276              		.loc 1 40 5 is_stmt 1 view .LVU42
- 277              		.loc 1 40 24 is_stmt 0 view .LVU43
- 278 0010 0381     		strh	r3, [r0, #8]	@ movhi
-  41:Core/Src/MPU9250.c **** 
-  42:Core/Src/MPU9250.c ****     dev->gyro_bias_x = 0.f;
- 279              		.loc 1 42 5 is_stmt 1 view .LVU44
- 280              		.loc 1 42 22 is_stmt 0 view .LVU45
- 281 0012 0023     		movs	r3, #0
- 282 0014 C360     		str	r3, [r0, #12]	@ float
-  43:Core/Src/MPU9250.c ****     dev->gyro_bias_y = 0.f;
- 283              		.loc 1 43 5 is_stmt 1 view .LVU46
- 284              		.loc 1 43 22 is_stmt 0 view .LVU47
- 285 0016 0361     		str	r3, [r0, #16]	@ float
-  44:Core/Src/MPU9250.c ****     dev->gyro_bias_z = 0.f;
- 286              		.loc 1 44 5 is_stmt 1 view .LVU48
- 287              		.loc 1 44 22 is_stmt 0 view .LVU49
- 288 0018 4361     		str	r3, [r0, #20]	@ float
-  45:Core/Src/MPU9250.c **** 
-  46:Core/Src/MPU9250.c ****     dev->ang_vel_dps_x = 0.f;
- 289              		.loc 1 46 5 is_stmt 1 view .LVU50
- 290              		.loc 1 46 24 is_stmt 0 view .LVU51
- 291 001a 8361     		str	r3, [r0, #24]	@ float
-  47:Core/Src/MPU9250.c ****     dev->ang_vel_dps_y = 0.f;
- 292              		.loc 1 47 5 is_stmt 1 view .LVU52
- 293              		.loc 1 47 24 is_stmt 0 view .LVU53
- 294 001c C361     		str	r3, [r0, #28]	@ float
-  48:Core/Src/MPU9250.c ****     dev->ang_vel_dps_z = 0.f;
- 295              		.loc 1 48 5 is_stmt 1 view .LVU54
- 296              		.loc 1 48 24 is_stmt 0 view .LVU55
- 297 001e 0362     		str	r3, [r0, #32]	@ float
-  49:Core/Src/MPU9250.c **** 
-  50:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_x = 0.f;
- 298              		.loc 1 50 5 is_stmt 1 view .LVU56
- 299              		.loc 1 50 27 is_stmt 0 view .LVU57
- 300 0020 4362     		str	r3, [r0, #36]	@ float
-  51:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_y = 0.f;
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 7
+ 267 0008 0370     		strb	r3, [r0]
+  29:Core/Src/MPU9250.c ****     dev->mag_coef_y = 0u;
+ 268              		.loc 1 29 5 is_stmt 1 view .LVU34
+ 269              		.loc 1 29 21 is_stmt 0 view .LVU35
+ 270 000a 4370     		strb	r3, [r0, #1]
+  30:Core/Src/MPU9250.c ****     dev->mag_coef_z = 0u;
+ 271              		.loc 1 30 5 is_stmt 1 view .LVU36
+ 272              		.loc 1 30 21 is_stmt 0 view .LVU37
+ 273 000c 8370     		strb	r3, [r0, #2]
+  31:Core/Src/MPU9250.c **** 
+  32:Core/Src/MPU9250.c ****     dev->ang_vel_raw_x = 0;
+ 274              		.loc 1 32 5 is_stmt 1 view .LVU38
+ 275              		.loc 1 32 24 is_stmt 0 view .LVU39
+ 276 000e 8380     		strh	r3, [r0, #4]	@ movhi
+  33:Core/Src/MPU9250.c ****     dev->ang_vel_raw_y = 0;
+ 277              		.loc 1 33 5 is_stmt 1 view .LVU40
+ 278              		.loc 1 33 24 is_stmt 0 view .LVU41
+ 279 0010 C380     		strh	r3, [r0, #6]	@ movhi
+  34:Core/Src/MPU9250.c ****     dev->ang_vel_raw_z = 0;
+ 280              		.loc 1 34 5 is_stmt 1 view .LVU42
+ 281              		.loc 1 34 24 is_stmt 0 view .LVU43
+ 282 0012 0381     		strh	r3, [r0, #8]	@ movhi
+  35:Core/Src/MPU9250.c **** 
+  36:Core/Src/MPU9250.c ****     dev->gyro_bias_x = 0.f;
+ 283              		.loc 1 36 5 is_stmt 1 view .LVU44
+ 284              		.loc 1 36 22 is_stmt 0 view .LVU45
+ 285 0014 0023     		movs	r3, #0
+ 286 0016 C360     		str	r3, [r0, #12]	@ float
+  37:Core/Src/MPU9250.c ****     dev->gyro_bias_y = 0.f;
+ 287              		.loc 1 37 5 is_stmt 1 view .LVU46
+ 288              		.loc 1 37 22 is_stmt 0 view .LVU47
+ 289 0018 0361     		str	r3, [r0, #16]	@ float
+  38:Core/Src/MPU9250.c ****     dev->gyro_bias_z = 0.f;
+ 290              		.loc 1 38 5 is_stmt 1 view .LVU48
+ 291              		.loc 1 38 22 is_stmt 0 view .LVU49
+ 292 001a 4361     		str	r3, [r0, #20]	@ float
+  39:Core/Src/MPU9250.c **** 
+  40:Core/Src/MPU9250.c ****     dev->ang_vel_dps_x = 0.f;
+ 293              		.loc 1 40 5 is_stmt 1 view .LVU50
+ 294              		.loc 1 40 24 is_stmt 0 view .LVU51
+ 295 001c 8361     		str	r3, [r0, #24]	@ float
+  41:Core/Src/MPU9250.c ****     dev->ang_vel_dps_y = 0.f;
+ 296              		.loc 1 41 5 is_stmt 1 view .LVU52
+ 297              		.loc 1 41 24 is_stmt 0 view .LVU53
+ 298 001e C361     		str	r3, [r0, #28]	@ float
+  42:Core/Src/MPU9250.c ****     dev->ang_vel_dps_z = 0.f;
+ 299              		.loc 1 42 5 is_stmt 1 view .LVU54
+ 300              		.loc 1 42 24 is_stmt 0 view .LVU55
+ 301 0020 0362     		str	r3, [r0, #32]	@ float
+  43:Core/Src/MPU9250.c **** 
+  44:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_x = 0.f;
+ 302              		.loc 1 44 5 is_stmt 1 view .LVU56
+ 303              		.loc 1 44 27 is_stmt 0 view .LVU57
+ 304 0022 4362     		str	r3, [r0, #36]	@ float
+  45:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_y = 0.f;
+ 305              		.loc 1 45 5 is_stmt 1 view .LVU58
+ 306              		.loc 1 45 27 is_stmt 0 view .LVU59
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 7
 
 
- 301              		.loc 1 51 5 is_stmt 1 view .LVU58
- 302              		.loc 1 51 27 is_stmt 0 view .LVU59
- 303 0022 8362     		str	r3, [r0, #40]	@ float
-  52:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_z = 0.f;
- 304              		.loc 1 52 5 is_stmt 1 view .LVU60
- 305              		.loc 1 52 27 is_stmt 0 view .LVU61
- 306 0024 C362     		str	r3, [r0, #44]	@ float
-  53:Core/Src/MPU9250.c **** 
-  54:Core/Src/MPU9250.c ****     dev->accel_angle_deg_x = 0.f;
- 307              		.loc 1 54 5 is_stmt 1 view .LVU62
- 308              		.loc 1 54 28 is_stmt 0 view .LVU63
- 309 0026 0363     		str	r3, [r0, #48]	@ float
-  55:Core/Src/MPU9250.c ****     dev->accel_angle_deg_y = 0.f;
- 310              		.loc 1 55 5 is_stmt 1 view .LVU64
- 311              		.loc 1 55 28 is_stmt 0 view .LVU65
- 312 0028 4363     		str	r3, [r0, #52]	@ float
-  56:Core/Src/MPU9250.c ****     dev->mag_angle_deg_z = 0.f;
- 313              		.loc 1 56 5 is_stmt 1 view .LVU66
- 314              		.loc 1 56 26 is_stmt 0 view .LVU67
- 315 002a 8363     		str	r3, [r0, #56]	@ float
+ 307 0024 8362     		str	r3, [r0, #40]	@ float
+  46:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_z = 0.f;
+ 308              		.loc 1 46 5 is_stmt 1 view .LVU60
+ 309              		.loc 1 46 27 is_stmt 0 view .LVU61
+ 310 0026 C362     		str	r3, [r0, #44]	@ float
+  47:Core/Src/MPU9250.c **** 
+  48:Core/Src/MPU9250.c ****     dev->accel_angle_deg_x = 0.f;
+ 311              		.loc 1 48 5 is_stmt 1 view .LVU62
+ 312              		.loc 1 48 28 is_stmt 0 view .LVU63
+ 313 0028 0363     		str	r3, [r0, #48]	@ float
+  49:Core/Src/MPU9250.c ****     dev->accel_angle_deg_y = 0.f;
+ 314              		.loc 1 49 5 is_stmt 1 view .LVU64
+ 315              		.loc 1 49 28 is_stmt 0 view .LVU65
+ 316 002a 4363     		str	r3, [r0, #52]	@ float
+  50:Core/Src/MPU9250.c ****     dev->mag_angle_deg_z = 0.f;
+ 317              		.loc 1 50 5 is_stmt 1 view .LVU66
+ 318              		.loc 1 50 26 is_stmt 0 view .LVU67
+ 319 002c 8363     		str	r3, [r0, #56]	@ float
+  51:Core/Src/MPU9250.c **** 
+  52:Core/Src/MPU9250.c ****     dev->roll = 0.f;
+ 320              		.loc 1 52 5 is_stmt 1 view .LVU68
+ 321              		.loc 1 52 15 is_stmt 0 view .LVU69
+ 322 002e C363     		str	r3, [r0, #60]	@ float
+  53:Core/Src/MPU9250.c ****     dev->pitch = 0.f;
+ 323              		.loc 1 53 5 is_stmt 1 view .LVU70
+ 324              		.loc 1 53 16 is_stmt 0 view .LVU71
+ 325 0030 0364     		str	r3, [r0, #64]	@ float
+  54:Core/Src/MPU9250.c ****     dev->yaw = 0.f;
+ 326              		.loc 1 54 5 is_stmt 1 view .LVU72
+ 327              		.loc 1 54 14 is_stmt 0 view .LVU73
+ 328 0032 4364     		str	r3, [r0, #68]	@ float
+  55:Core/Src/MPU9250.c **** 
+  56:Core/Src/MPU9250.c ****     uint8_t tx_data, rx_data[3];
+ 329              		.loc 1 56 5 is_stmt 1 view .LVU74
   57:Core/Src/MPU9250.c **** 
-  58:Core/Src/MPU9250.c ****     dev->roll = 0.f;
- 316              		.loc 1 58 5 is_stmt 1 view .LVU68
- 317              		.loc 1 58 15 is_stmt 0 view .LVU69
- 318 002c C363     		str	r3, [r0, #60]	@ float
-  59:Core/Src/MPU9250.c ****     dev->pitch = 0.f;
- 319              		.loc 1 59 5 is_stmt 1 view .LVU70
- 320              		.loc 1 59 16 is_stmt 0 view .LVU71
- 321 002e 0364     		str	r3, [r0, #64]	@ float
-  60:Core/Src/MPU9250.c ****     dev->yaw = 0.f;
- 322              		.loc 1 60 5 is_stmt 1 view .LVU72
- 323              		.loc 1 60 14 is_stmt 0 view .LVU73
- 324 0030 4364     		str	r3, [r0, #68]	@ float
-  61:Core/Src/MPU9250.c **** 
-  62:Core/Src/MPU9250.c ****     uint8_t data;
- 325              		.loc 1 62 5 is_stmt 1 view .LVU74
+  58:Core/Src/MPU9250.c ****     tx_data = 0x03;
+ 330              		.loc 1 58 5 view .LVU75
+ 331              		.loc 1 58 13 is_stmt 0 view .LVU76
+ 332 0034 0326     		movs	r6, #3
+ 333 0036 8DF80760 		strb	r6, [sp, #7]
+  59:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_CONFIG, &tx_data);
+ 334              		.loc 1 59 5 is_stmt 1 view .LVU77
+ 335 003a 0DF10702 		add	r2, sp, #7
+ 336 003e 1A21     		movs	r1, #26
+ 337 0040 D220     		movs	r0, #210
+ 338              	.LVL23:
+ 339              		.loc 1 59 5 is_stmt 0 view .LVU78
+ 340 0042 FFF7FEFF 		bl	MPU9250_Write_Register
+ 341              	.LVL24:
+  60:Core/Src/MPU9250.c **** 
+  61:Core/Src/MPU9250.c ****     tx_data = 0x08;
+ 342              		.loc 1 61 5 is_stmt 1 view .LVU79
+ 343              		.loc 1 61 13 is_stmt 0 view .LVU80
+ 344 0046 0823     		movs	r3, #8
+ 345 0048 8DF80730 		strb	r3, [sp, #7]
+  62:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_GYRO_CONFIG, &tx_data);
+ 346              		.loc 1 62 5 is_stmt 1 view .LVU81
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 8
+
+
+ 347 004c 0DF10702 		add	r2, sp, #7
+ 348 0050 1B21     		movs	r1, #27
+ 349 0052 D220     		movs	r0, #210
+ 350 0054 FFF7FEFF 		bl	MPU9250_Write_Register
+ 351              	.LVL25:
   63:Core/Src/MPU9250.c **** 
-  64:Core/Src/MPU9250.c ****     data = 0x03;
- 326              		.loc 1 64 5 view .LVU75
- 327              		.loc 1 64 10 is_stmt 0 view .LVU76
- 328 0032 0323     		movs	r3, #3
- 329 0034 8DF80730 		strb	r3, [sp, #7]
-  65:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_CONFIG, &data);
- 330              		.loc 1 65 5 is_stmt 1 view .LVU77
- 331 0038 0DF10702 		add	r2, sp, #7
- 332 003c 1A21     		movs	r1, #26
- 333 003e D220     		movs	r0, #210
- 334              	.LVL23:
- 335              		.loc 1 65 5 is_stmt 0 view .LVU78
- 336 0040 FFF7FEFF 		bl	MPU9250_Write_Register
- 337              	.LVL24:
+  64:Core/Src/MPU9250.c ****     tx_data = 0x10;
+ 352              		.loc 1 64 5 view .LVU82
+ 353              		.loc 1 64 13 is_stmt 0 view .LVU83
+ 354 0058 1025     		movs	r5, #16
+ 355 005a 8DF80750 		strb	r5, [sp, #7]
+  65:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_ACCEL_CONFIG, &tx_data);
+ 356              		.loc 1 65 5 is_stmt 1 view .LVU84
+ 357 005e 0DF10702 		add	r2, sp, #7
+ 358 0062 1C21     		movs	r1, #28
+ 359 0064 D220     		movs	r0, #210
+ 360 0066 FFF7FEFF 		bl	MPU9250_Write_Register
+ 361              	.LVL26:
   66:Core/Src/MPU9250.c **** 
-  67:Core/Src/MPU9250.c ****     data = 0x08;
- 338              		.loc 1 67 5 is_stmt 1 view .LVU79
- 339              		.loc 1 67 10 is_stmt 0 view .LVU80
- 340 0044 0823     		movs	r3, #8
- 341 0046 8DF80730 		strb	r3, [sp, #7]
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 8
-
-
-  68:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_GYRO_CONFIG, &data);
- 342              		.loc 1 68 5 is_stmt 1 view .LVU81
- 343 004a 0DF10702 		add	r2, sp, #7
- 344 004e 1B21     		movs	r1, #27
- 345 0050 D220     		movs	r0, #210
- 346 0052 FFF7FEFF 		bl	MPU9250_Write_Register
- 347              	.LVL25:
+  67:Core/Src/MPU9250.c ****     tx_data = 0x05;
+ 362              		.loc 1 67 5 view .LVU85
+ 363              		.loc 1 67 13 is_stmt 0 view .LVU86
+ 364 006a 0523     		movs	r3, #5
+ 365 006c 8DF80730 		strb	r3, [sp, #7]
+  68:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_ACCEL_CONFIG_2, &tx_data);
+ 366              		.loc 1 68 5 is_stmt 1 view .LVU87
+ 367 0070 0DF10702 		add	r2, sp, #7
+ 368 0074 1D21     		movs	r1, #29
+ 369 0076 D220     		movs	r0, #210
+ 370 0078 FFF7FEFF 		bl	MPU9250_Write_Register
+ 371              	.LVL27:
   69:Core/Src/MPU9250.c **** 
-  70:Core/Src/MPU9250.c ****     data = 0x10;
- 348              		.loc 1 70 5 view .LVU82
- 349              		.loc 1 70 10 is_stmt 0 view .LVU83
- 350 0056 1023     		movs	r3, #16
- 351 0058 8DF80730 		strb	r3, [sp, #7]
-  71:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_ACCEL_CONFIG, &data);
- 352              		.loc 1 71 5 is_stmt 1 view .LVU84
- 353 005c 0DF10702 		add	r2, sp, #7
- 354 0060 1C21     		movs	r1, #28
- 355 0062 D220     		movs	r0, #210
- 356 0064 FFF7FEFF 		bl	MPU9250_Write_Register
- 357              	.LVL26:
+  70:Core/Src/MPU9250.c ****     tx_data = 0x02;
+ 372              		.loc 1 70 5 view .LVU88
+ 373              		.loc 1 70 13 is_stmt 0 view .LVU89
+ 374 007c 0223     		movs	r3, #2
+ 375 007e 8DF80730 		strb	r3, [sp, #7]
+  71:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_INT_PIN_CFG, &tx_data);
+ 376              		.loc 1 71 5 is_stmt 1 view .LVU90
+ 377 0082 0DF10702 		add	r2, sp, #7
+ 378 0086 3721     		movs	r1, #55
+ 379 0088 D220     		movs	r0, #210
+ 380 008a FFF7FEFF 		bl	MPU9250_Write_Register
+ 381              	.LVL28:
   72:Core/Src/MPU9250.c **** 
-  73:Core/Src/MPU9250.c ****     data = 0x05;
- 358              		.loc 1 73 5 view .LVU85
- 359              		.loc 1 73 10 is_stmt 0 view .LVU86
- 360 0068 0523     		movs	r3, #5
- 361 006a 8DF80730 		strb	r3, [sp, #7]
-  74:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_ACCEL_CONFIG_2, &data);
- 362              		.loc 1 74 5 is_stmt 1 view .LVU87
- 363 006e 0DF10702 		add	r2, sp, #7
- 364 0072 1D21     		movs	r1, #29
- 365 0074 D220     		movs	r0, #210
- 366 0076 FFF7FEFF 		bl	MPU9250_Write_Register
- 367              	.LVL27:
+  73:Core/Src/MPU9250.c ****     tx_data = 0x1F;
+ 382              		.loc 1 73 5 view .LVU91
+ 383              		.loc 1 73 13 is_stmt 0 view .LVU92
+ 384 008e 1F23     		movs	r3, #31
+ 385 0090 8DF80730 		strb	r3, [sp, #7]
+  74:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_MAG_ADDR, MPU9250_MAG_REG_CNTL, &tx_data); // Fuse ROM access mo
+ 386              		.loc 1 74 5 is_stmt 1 view .LVU93
+ 387 0094 0DF10702 		add	r2, sp, #7
+ 388 0098 0A21     		movs	r1, #10
+ 389 009a 1820     		movs	r0, #24
+ 390 009c FFF7FEFF 		bl	MPU9250_Write_Register
+ 391              	.LVL29:
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 9
+
+
   75:Core/Src/MPU9250.c **** 
-  76:Core/Src/MPU9250.c ****     data = 0x02;
- 368              		.loc 1 76 5 view .LVU88
- 369              		.loc 1 76 10 is_stmt 0 view .LVU89
- 370 007a 0223     		movs	r3, #2
- 371 007c 8DF80730 		strb	r3, [sp, #7]
-  77:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_IMU_ADDR, MPU9250_IMU_REG_INT_PIN_CFG, &data);
- 372              		.loc 1 77 5 is_stmt 1 view .LVU90
- 373 0080 0DF10702 		add	r2, sp, #7
- 374 0084 3721     		movs	r1, #55
- 375 0086 D220     		movs	r0, #210
- 376 0088 FFF7FEFF 		bl	MPU9250_Write_Register
- 377              	.LVL28:
-  78:Core/Src/MPU9250.c **** }
- 378              		.loc 1 78 1 is_stmt 0 view .LVU91
- 379 008c 03B0     		add	sp, sp, #12
- 380              	.LCFI14:
- 381              		.cfi_def_cfa_offset 4
- 382              		@ sp needed
- 383 008e 5DF804FB 		ldr	pc, [sp], #4
- 384              		.cfi_endproc
- 385              	.LFE239:
- 387              		.section	.text.MPU9250_Read_Gyroscope,"ax",%progbits
- 388              		.align	1
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 9
+  76:Core/Src/MPU9250.c ****     HAL_Delay(100);
+ 392              		.loc 1 76 5 view .LVU94
+ 393 00a0 6420     		movs	r0, #100
+ 394 00a2 FFF7FEFF 		bl	HAL_Delay
+ 395              	.LVL30:
+  77:Core/Src/MPU9250.c **** 
+  78:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_MAG_ADDR, MPU9250_MAG_REG_ASAX, &rx_data[0], sizeof(rx_data));
+ 396              		.loc 1 78 5 view .LVU95
+ 397 00a6 3346     		mov	r3, r6
+ 398 00a8 01AA     		add	r2, sp, #4
+ 399 00aa 2946     		mov	r1, r5
+ 400 00ac 1820     		movs	r0, #24
+ 401 00ae FFF7FEFF 		bl	MPU9250_Read_Registers
+ 402              	.LVL31:
+  79:Core/Src/MPU9250.c ****     dev->mag_coef_x = rx_data[0];
+ 403              		.loc 1 79 5 view .LVU96
+ 404              		.loc 1 79 30 is_stmt 0 view .LVU97
+ 405 00b2 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 406              		.loc 1 79 21 view .LVU98
+ 407 00b6 2370     		strb	r3, [r4]
+  80:Core/Src/MPU9250.c ****     dev->mag_coef_y = rx_data[1];
+ 408              		.loc 1 80 5 is_stmt 1 view .LVU99
+ 409              		.loc 1 80 30 is_stmt 0 view .LVU100
+ 410 00b8 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 411              		.loc 1 80 21 view .LVU101
+ 412 00bc 6370     		strb	r3, [r4, #1]
+  81:Core/Src/MPU9250.c ****     dev->mag_coef_z = rx_data[2];
+ 413              		.loc 1 81 5 is_stmt 1 view .LVU102
+ 414              		.loc 1 81 30 is_stmt 0 view .LVU103
+ 415 00be 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 416              		.loc 1 81 21 view .LVU104
+ 417 00c2 A370     		strb	r3, [r4, #2]
+  82:Core/Src/MPU9250.c **** 
+  83:Core/Src/MPU9250.c ****     HAL_Delay(100);
+ 418              		.loc 1 83 5 is_stmt 1 view .LVU105
+ 419 00c4 6420     		movs	r0, #100
+ 420 00c6 FFF7FEFF 		bl	HAL_Delay
+ 421              	.LVL32:
+  84:Core/Src/MPU9250.c **** 
+  85:Core/Src/MPU9250.c ****     tx_data = 0x16;
+ 422              		.loc 1 85 5 view .LVU106
+ 423              		.loc 1 85 13 is_stmt 0 view .LVU107
+ 424 00ca 1623     		movs	r3, #22
+ 425 00cc 8DF80730 		strb	r3, [sp, #7]
+  86:Core/Src/MPU9250.c ****     MPU9250_Write_Register(MPU9250_MAG_ADDR, MPU9250_MAG_REG_CNTL, &tx_data); // Continuous mode OD
+ 426              		.loc 1 86 5 is_stmt 1 view .LVU108
+ 427 00d0 0DF10702 		add	r2, sp, #7
+ 428 00d4 0A21     		movs	r1, #10
+ 429 00d6 1820     		movs	r0, #24
+ 430 00d8 FFF7FEFF 		bl	MPU9250_Write_Register
+ 431              	.LVL33:
+  87:Core/Src/MPU9250.c **** }
+ 432              		.loc 1 87 1 is_stmt 0 view .LVU109
+ 433 00dc 02B0     		add	sp, sp, #8
+ 434              	.LCFI14:
+ 435              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 10
 
 
- 389              		.global	MPU9250_Read_Gyroscope
- 390              		.syntax unified
- 391              		.thumb
- 392              		.thumb_func
- 393              		.fpu fpv4-sp-d16
- 395              	MPU9250_Read_Gyroscope:
- 396              	.LVL29:
- 397              	.LFB241:
-  79:Core/Src/MPU9250.c **** 
-  80:Core/Src/MPU9250.c **** void MPU9250_Calibrate(MPU9250 *dev)
-  81:Core/Src/MPU9250.c **** {
-  82:Core/Src/MPU9250.c ****     float avg_gyro_bias_x = 0, avg_gyro_bias_y = 0, avg_gyro_bias_z = 0;
-  83:Core/Src/MPU9250.c **** 
-  84:Core/Src/MPU9250.c ****     for (int i = 0; i < 2000; i++)
-  85:Core/Src/MPU9250.c ****     {
-  86:Core/Src/MPU9250.c ****         MPU9250_Read_Gyroscope(dev);
-  87:Core/Src/MPU9250.c **** 
-  88:Core/Src/MPU9250.c ****         avg_gyro_bias_x += dev->ang_vel_raw_x;
-  89:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
-  90:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
-  91:Core/Src/MPU9250.c **** 
-  92:Core/Src/MPU9250.c ****         MPU9250_Read_Accelerometer(dev);
+ 436              		@ sp needed
+ 437 00de 70BD     		pop	{r4, r5, r6, pc}
+ 438              		.loc 1 87 1 view .LVU110
+ 439              		.cfi_endproc
+ 440              	.LFE243:
+ 442              		.section	.text.MPU9250_Read_Gyroscope,"ax",%progbits
+ 443              		.align	1
+ 444              		.global	MPU9250_Read_Gyroscope
+ 445              		.syntax unified
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.fpu fpv4-sp-d16
+ 450              	MPU9250_Read_Gyroscope:
+ 451              	.LVL34:
+ 452              	.LFB245:
+  88:Core/Src/MPU9250.c **** 
+  89:Core/Src/MPU9250.c **** void MPU9250_Calibrate(MPU9250 *dev)
+  90:Core/Src/MPU9250.c **** {
+  91:Core/Src/MPU9250.c ****     float avg_gyro_bias_x = 0, avg_gyro_bias_y = 0, avg_gyro_bias_z = 0;
+  92:Core/Src/MPU9250.c ****     float mag_temp[3] = {0}, mag_min[3] = {0}, mag_max[3] = {0}, avg_radius = 0;
   93:Core/Src/MPU9250.c **** 
-  94:Core/Src/MPU9250.c ****         HAL_Delay(10);
-  95:Core/Src/MPU9250.c ****     }
-  96:Core/Src/MPU9250.c **** 
-  97:Core/Src/MPU9250.c ****     dev->gyro_bias_x = avg_gyro_bias_x / 2000;
-  98:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
-  99:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
- 100:Core/Src/MPU9250.c **** 
- 101:Core/Src/MPU9250.c ****     dev->roll = dev->accel_angle_deg_x;
- 102:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
- 103:Core/Src/MPU9250.c **** }
- 104:Core/Src/MPU9250.c **** 
- 105:Core/Src/MPU9250.c **** void MPU9250_Read_Gyroscope(MPU9250 *dev)
- 106:Core/Src/MPU9250.c **** {
- 398              		.loc 1 106 1 is_stmt 1 view -0
- 399              		.cfi_startproc
- 400              		@ args = 0, pretend = 0, frame = 8
- 401              		@ frame_needed = 0, uses_anonymous_args = 0
- 402              		.loc 1 106 1 is_stmt 0 view .LVU93
- 403 0000 10B5     		push	{r4, lr}
- 404              	.LCFI15:
- 405              		.cfi_def_cfa_offset 8
- 406              		.cfi_offset 4, -8
- 407              		.cfi_offset 14, -4
- 408 0002 82B0     		sub	sp, sp, #8
- 409              	.LCFI16:
- 410              		.cfi_def_cfa_offset 16
- 411 0004 0446     		mov	r4, r0
- 107:Core/Src/MPU9250.c ****     uint8_t data[6];
- 412              		.loc 1 107 5 is_stmt 1 view .LVU94
- 108:Core/Src/MPU9250.c ****     static const float Ts = 0.01f;
- 413              		.loc 1 108 5 view .LVU95
- 109:Core/Src/MPU9250.c **** 
- 110:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_IMU_ADDR, MPU9250_IMU_REG_GYRO_XOUT_H, data, sizeof(data));
- 414              		.loc 1 110 5 view .LVU96
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 10
+  94:Core/Src/MPU9250.c ****     for (uint16_t i = 0; i < 2000; i++)
+  95:Core/Src/MPU9250.c ****     {
+  96:Core/Src/MPU9250.c ****         MPU9250_Read_Gyroscope(dev);
+  97:Core/Src/MPU9250.c **** 
+  98:Core/Src/MPU9250.c ****         avg_gyro_bias_x += dev->ang_vel_raw_x;
+  99:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
+ 100:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
+ 101:Core/Src/MPU9250.c **** 
+ 102:Core/Src/MPU9250.c ****         MPU9250_Read_Accelerometer(dev);
+ 103:Core/Src/MPU9250.c **** 
+ 104:Core/Src/MPU9250.c ****         MPU9250_Read_Magnetometer(dev);
+ 105:Core/Src/MPU9250.c **** 
+ 106:Core/Src/MPU9250.c ****         HAL_Delay(10);
+ 107:Core/Src/MPU9250.c ****     }
+ 108:Core/Src/MPU9250.c **** 
+ 109:Core/Src/MPU9250.c ****     dev->gyro_bias_x = avg_gyro_bias_x / 2000;
+ 110:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
+ 111:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
+ 112:Core/Src/MPU9250.c **** 
+ 113:Core/Src/MPU9250.c ****     dev->roll = dev->accel_angle_deg_x;
+ 114:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
+ 115:Core/Src/MPU9250.c ****     dev->yaw = dev->mag_angle_deg_z;
+ 116:Core/Src/MPU9250.c **** }
+ 117:Core/Src/MPU9250.c **** 
+ 118:Core/Src/MPU9250.c **** void MPU9250_Read_Gyroscope(MPU9250 *dev)
+ 119:Core/Src/MPU9250.c **** {
+ 453              		.loc 1 119 1 is_stmt 1 view -0
+ 454              		.cfi_startproc
+ 455              		@ args = 0, pretend = 0, frame = 8
+ 456              		@ frame_needed = 0, uses_anonymous_args = 0
+ 457              		.loc 1 119 1 is_stmt 0 view .LVU112
+ 458 0000 10B5     		push	{r4, lr}
+ 459              	.LCFI15:
+ 460              		.cfi_def_cfa_offset 8
+ 461              		.cfi_offset 4, -8
+ 462              		.cfi_offset 14, -4
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 11
 
 
- 415 0006 0623     		movs	r3, #6
- 416 0008 6A46     		mov	r2, sp
- 417 000a 4321     		movs	r1, #67
- 418 000c D220     		movs	r0, #210
- 419              	.LVL30:
- 420              		.loc 1 110 5 is_stmt 0 view .LVU97
- 421 000e FFF7FEFF 		bl	MPU9250_Read_Registers
- 422              	.LVL31:
- 111:Core/Src/MPU9250.c **** 
- 112:Core/Src/MPU9250.c ****     dev->ang_vel_raw_x = ((int16_t)data[0] << 8) | data[1];
- 423              		.loc 1 112 5 is_stmt 1 view .LVU98
- 424              		.loc 1 112 40 is_stmt 0 view .LVU99
- 425 0012 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
- 426              		.loc 1 112 56 view .LVU100
- 427 0016 9DF80110 		ldrb	r1, [sp, #1]	@ zero_extendqisi2
- 428              		.loc 1 112 50 view .LVU101
- 429 001a 41EA0321 		orr	r1, r1, r3, lsl #8
- 430 001e 09B2     		sxth	r1, r1
- 431              		.loc 1 112 24 view .LVU102
- 432 0020 A180     		strh	r1, [r4, #4]	@ movhi
- 113:Core/Src/MPU9250.c ****     dev->ang_vel_raw_y = ((int16_t)data[2] << 8) | data[3];
- 433              		.loc 1 113 5 is_stmt 1 view .LVU103
- 434              		.loc 1 113 40 is_stmt 0 view .LVU104
- 435 0022 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
- 436              		.loc 1 113 56 view .LVU105
- 437 0026 9DF80320 		ldrb	r2, [sp, #3]	@ zero_extendqisi2
- 438              		.loc 1 113 50 view .LVU106
- 439 002a 42EA0322 		orr	r2, r2, r3, lsl #8
- 440 002e 12B2     		sxth	r2, r2
- 441              		.loc 1 113 24 view .LVU107
- 442 0030 E280     		strh	r2, [r4, #6]	@ movhi
- 114:Core/Src/MPU9250.c ****     dev->ang_vel_raw_z = ((int16_t)data[4] << 8) | data[5];
- 443              		.loc 1 114 5 is_stmt 1 view .LVU108
- 444              		.loc 1 114 40 is_stmt 0 view .LVU109
- 445 0032 9DF80400 		ldrb	r0, [sp, #4]	@ zero_extendqisi2
- 446              		.loc 1 114 56 view .LVU110
- 447 0036 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
- 448              		.loc 1 114 50 view .LVU111
- 449 003a 43EA0023 		orr	r3, r3, r0, lsl #8
- 450 003e 1BB2     		sxth	r3, r3
- 451              		.loc 1 114 24 view .LVU112
- 452 0040 2381     		strh	r3, [r4, #8]	@ movhi
- 115:Core/Src/MPU9250.c **** 
- 116:Core/Src/MPU9250.c ****     dev->ang_vel_raw_x -= dev->gyro_bias_x;
- 453              		.loc 1 116 5 is_stmt 1 view .LVU113
- 454              		.loc 1 116 30 is_stmt 0 view .LVU114
- 455 0042 94ED037A 		vldr.32	s14, [r4, #12]
- 456              		.loc 1 116 24 view .LVU115
- 457 0046 07EE901A 		vmov	s15, r1	@ int
- 458 004a F8EEE77A 		vcvt.f32.s32	s15, s15
- 459 004e 77EEC77A 		vsub.f32	s15, s15, s14
- 460 0052 FDEEE77A 		vcvt.s32.f32	s15, s15
- 461 0056 17EE901A 		vmov	r1, s15	@ int
- 462 005a 09B2     		sxth	r1, r1
- 463 005c A180     		strh	r1, [r4, #4]	@ movhi
- 117:Core/Src/MPU9250.c ****     dev->ang_vel_raw_y -= dev->gyro_bias_y;
- 464              		.loc 1 117 5 is_stmt 1 view .LVU116
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 11
-
-
- 465              		.loc 1 117 30 is_stmt 0 view .LVU117
- 466 005e 94ED047A 		vldr.32	s14, [r4, #16]
- 467              		.loc 1 117 24 view .LVU118
- 468 0062 07EE902A 		vmov	s15, r2	@ int
- 469 0066 F8EEE77A 		vcvt.f32.s32	s15, s15
- 470 006a 77EEC77A 		vsub.f32	s15, s15, s14
- 471 006e FDEEE77A 		vcvt.s32.f32	s15, s15
- 472 0072 17EE902A 		vmov	r2, s15	@ int
- 473 0076 12B2     		sxth	r2, r2
- 474 0078 E280     		strh	r2, [r4, #6]	@ movhi
- 118:Core/Src/MPU9250.c ****     dev->ang_vel_raw_z -= dev->gyro_bias_z;
- 475              		.loc 1 118 5 is_stmt 1 view .LVU119
- 476              		.loc 1 118 30 is_stmt 0 view .LVU120
- 477 007a 94ED057A 		vldr.32	s14, [r4, #20]
- 478              		.loc 1 118 24 view .LVU121
- 479 007e 07EE903A 		vmov	s15, r3	@ int
- 480 0082 F8EEE77A 		vcvt.f32.s32	s15, s15
- 481 0086 77EEC77A 		vsub.f32	s15, s15, s14
- 482 008a FDEEE77A 		vcvt.s32.f32	s15, s15
- 483 008e 17EE903A 		vmov	r3, s15	@ int
- 484 0092 1BB2     		sxth	r3, r3
- 485 0094 2381     		strh	r3, [r4, #8]	@ movhi
- 119:Core/Src/MPU9250.c **** 
- 120:Core/Src/MPU9250.c ****     dev->ang_vel_dps_x = (float)dev->ang_vel_raw_x / 65.5f;
- 486              		.loc 1 120 5 is_stmt 1 view .LVU122
- 487              		.loc 1 120 26 is_stmt 0 view .LVU123
- 488 0096 07EE901A 		vmov	s15, r1	@ int
- 489 009a F8EEE77A 		vcvt.f32.s32	s15, s15
- 490              		.loc 1 120 52 view .LVU124
- 491 009e DFED195A 		vldr.32	s11, .L21
- 492 00a2 87EEA56A 		vdiv.f32	s12, s15, s11
- 493              		.loc 1 120 24 view .LVU125
- 494 00a6 84ED066A 		vstr.32	s12, [r4, #24]
- 121:Core/Src/MPU9250.c ****     dev->ang_vel_dps_y = (float)dev->ang_vel_raw_y / 65.5f;
- 495              		.loc 1 121 5 is_stmt 1 view .LVU126
- 496              		.loc 1 121 26 is_stmt 0 view .LVU127
- 497 00aa 07EE902A 		vmov	s15, r2	@ int
- 498 00ae F8EEE77A 		vcvt.f32.s32	s15, s15
- 499              		.loc 1 121 52 view .LVU128
- 500 00b2 C7EEA56A 		vdiv.f32	s13, s15, s11
- 501              		.loc 1 121 24 view .LVU129
- 502 00b6 C4ED076A 		vstr.32	s13, [r4, #28]
- 122:Core/Src/MPU9250.c ****     dev->ang_vel_dps_z = (float)dev->ang_vel_raw_z / 65.5f;
- 503              		.loc 1 122 5 is_stmt 1 view .LVU130
- 504              		.loc 1 122 26 is_stmt 0 view .LVU131
- 505 00ba 07EE903A 		vmov	s15, r3	@ int
- 506 00be F8EEE77A 		vcvt.f32.s32	s15, s15
- 507              		.loc 1 122 52 view .LVU132
- 508 00c2 87EEA57A 		vdiv.f32	s14, s15, s11
- 509              		.loc 1 122 24 view .LVU133
- 510 00c6 84ED087A 		vstr.32	s14, [r4, #32]
+ 463 0002 2DED0A8B 		vpush.64	{d8, d9, d10, d11, d12}
+ 464              	.LCFI16:
+ 465              		.cfi_def_cfa_offset 48
+ 466              		.cfi_offset 80, -48
+ 467              		.cfi_offset 81, -44
+ 468              		.cfi_offset 82, -40
+ 469              		.cfi_offset 83, -36
+ 470              		.cfi_offset 84, -32
+ 471              		.cfi_offset 85, -28
+ 472              		.cfi_offset 86, -24
+ 473              		.cfi_offset 87, -20
+ 474              		.cfi_offset 88, -16
+ 475              		.cfi_offset 89, -12
+ 476 0006 82B0     		sub	sp, sp, #8
+ 477              	.LCFI17:
+ 478              		.cfi_def_cfa_offset 56
+ 479 0008 0446     		mov	r4, r0
+ 120:Core/Src/MPU9250.c ****     uint8_t data[6];
+ 480              		.loc 1 120 5 is_stmt 1 view .LVU113
+ 121:Core/Src/MPU9250.c ****     static const float Ts = 0.01f;
+ 481              		.loc 1 121 5 view .LVU114
+ 122:Core/Src/MPU9250.c ****     float ang_vel_dps_ned_x = 0.f, ang_vel_dps_ned_y = 0.f, ang_vel_dps_ned_z = 0.f;
+ 482              		.loc 1 122 5 view .LVU115
+ 483              	.LVL35:
  123:Core/Src/MPU9250.c **** 
- 124:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_x = dev->ang_vel_dps_x * Ts + dev->roll;
- 511              		.loc 1 124 5 is_stmt 1 view .LVU134
- 512              		.loc 1 124 48 is_stmt 0 view .LVU135
- 513 00ca DFED0F7A 		vldr.32	s15, .L21+4
- 514 00ce 26EE276A 		vmul.f32	s12, s12, s15
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 12
+ 124:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_IMU_ADDR, MPU9250_IMU_REG_GYRO_XOUT_H, data, sizeof(data));
+ 484              		.loc 1 124 5 view .LVU116
+ 485 000a 0623     		movs	r3, #6
+ 486 000c 6A46     		mov	r2, sp
+ 487 000e 4321     		movs	r1, #67
+ 488 0010 D220     		movs	r0, #210
+ 489              	.LVL36:
+ 490              		.loc 1 124 5 is_stmt 0 view .LVU117
+ 491 0012 FFF7FEFF 		bl	MPU9250_Read_Registers
+ 492              	.LVL37:
+ 125:Core/Src/MPU9250.c **** 
+ 126:Core/Src/MPU9250.c ****     dev->ang_vel_raw_x = ((int16_t)data[0] << 8) | data[1];
+ 493              		.loc 1 126 5 is_stmt 1 view .LVU118
+ 494              		.loc 1 126 40 is_stmt 0 view .LVU119
+ 495 0016 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 496              		.loc 1 126 56 view .LVU120
+ 497 001a 9DF80110 		ldrb	r1, [sp, #1]	@ zero_extendqisi2
+ 498              		.loc 1 126 50 view .LVU121
+ 499 001e 41EA0321 		orr	r1, r1, r3, lsl #8
+ 500 0022 09B2     		sxth	r1, r1
+ 501              		.loc 1 126 24 view .LVU122
+ 502 0024 A180     		strh	r1, [r4, #4]	@ movhi
+ 127:Core/Src/MPU9250.c ****     dev->ang_vel_raw_y = ((int16_t)data[2] << 8) | data[3];
+ 503              		.loc 1 127 5 is_stmt 1 view .LVU123
+ 504              		.loc 1 127 40 is_stmt 0 view .LVU124
+ 505 0026 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 506              		.loc 1 127 56 view .LVU125
+ 507 002a 9DF80320 		ldrb	r2, [sp, #3]	@ zero_extendqisi2
+ 508              		.loc 1 127 50 view .LVU126
+ 509 002e 42EA0322 		orr	r2, r2, r3, lsl #8
+ 510 0032 12B2     		sxth	r2, r2
+ 511              		.loc 1 127 24 view .LVU127
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 12
 
 
- 515              		.loc 1 124 58 view .LVU136
- 516 00d2 D4ED0F5A 		vldr.32	s11, [r4, #60]
- 517              		.loc 1 124 53 view .LVU137
- 518 00d6 36EE256A 		vadd.f32	s12, s12, s11
- 519              		.loc 1 124 27 view .LVU138
- 520 00da 84ED096A 		vstr.32	s12, [r4, #36]
- 125:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_y = dev->ang_vel_dps_y * Ts + dev->pitch;
- 521              		.loc 1 125 5 is_stmt 1 view .LVU139
- 522              		.loc 1 125 48 is_stmt 0 view .LVU140
- 523 00de 66EEA76A 		vmul.f32	s13, s13, s15
- 524              		.loc 1 125 58 view .LVU141
- 525 00e2 94ED106A 		vldr.32	s12, [r4, #64]
- 526              		.loc 1 125 53 view .LVU142
- 527 00e6 76EE866A 		vadd.f32	s13, s13, s12
- 528              		.loc 1 125 27 view .LVU143
- 529 00ea C4ED0A6A 		vstr.32	s13, [r4, #40]
- 126:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_z = dev->ang_vel_dps_z * Ts + dev->yaw;
- 530              		.loc 1 126 5 is_stmt 1 view .LVU144
- 531              		.loc 1 126 48 is_stmt 0 view .LVU145
- 532 00ee 27EE277A 		vmul.f32	s14, s14, s15
- 533              		.loc 1 126 58 view .LVU146
- 534 00f2 D4ED117A 		vldr.32	s15, [r4, #68]
- 535              		.loc 1 126 53 view .LVU147
- 536 00f6 37EE277A 		vadd.f32	s14, s14, s15
- 537              		.loc 1 126 27 view .LVU148
- 538 00fa 84ED0B7A 		vstr.32	s14, [r4, #44]
- 127:Core/Src/MPU9250.c **** }
- 539              		.loc 1 127 1 view .LVU149
- 540 00fe 02B0     		add	sp, sp, #8
- 541              	.LCFI17:
- 542              		.cfi_def_cfa_offset 8
- 543              		@ sp needed
- 544 0100 10BD     		pop	{r4, pc}
- 545              	.LVL32:
- 546              	.L22:
- 547              		.loc 1 127 1 view .LVU150
- 548 0102 00BF     		.align	2
- 549              	.L21:
- 550 0104 00008342 		.word	1115881472
- 551 0108 0AD7233C 		.word	1008981770
- 552              		.cfi_endproc
- 553              	.LFE241:
- 555              		.section	.text.MPU9250_Read_Accelerometer,"ax",%progbits
- 556              		.align	1
- 557              		.global	MPU9250_Read_Accelerometer
- 558              		.syntax unified
- 559              		.thumb
- 560              		.thumb_func
- 561              		.fpu fpv4-sp-d16
- 563              	MPU9250_Read_Accelerometer:
- 564              	.LVL33:
- 565              	.LFB242:
- 128:Core/Src/MPU9250.c **** 
- 129:Core/Src/MPU9250.c **** void MPU9250_Read_Accelerometer(MPU9250 *dev)
- 130:Core/Src/MPU9250.c **** {
- 566              		.loc 1 130 1 is_stmt 1 view -0
- 567              		.cfi_startproc
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 13
+ 512 0034 E280     		strh	r2, [r4, #6]	@ movhi
+ 128:Core/Src/MPU9250.c ****     dev->ang_vel_raw_z = ((int16_t)data[4] << 8) | data[5];
+ 513              		.loc 1 128 5 is_stmt 1 view .LVU128
+ 514              		.loc 1 128 40 is_stmt 0 view .LVU129
+ 515 0036 9DF80400 		ldrb	r0, [sp, #4]	@ zero_extendqisi2
+ 516              		.loc 1 128 56 view .LVU130
+ 517 003a 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 518              		.loc 1 128 50 view .LVU131
+ 519 003e 43EA0023 		orr	r3, r3, r0, lsl #8
+ 520 0042 1BB2     		sxth	r3, r3
+ 521              		.loc 1 128 24 view .LVU132
+ 522 0044 2381     		strh	r3, [r4, #8]	@ movhi
+ 129:Core/Src/MPU9250.c **** 
+ 130:Core/Src/MPU9250.c ****     dev->ang_vel_raw_x -= dev->gyro_bias_x;
+ 523              		.loc 1 130 5 is_stmt 1 view .LVU133
+ 524              		.loc 1 130 30 is_stmt 0 view .LVU134
+ 525 0046 94ED037A 		vldr.32	s14, [r4, #12]
+ 526              		.loc 1 130 24 view .LVU135
+ 527 004a 07EE901A 		vmov	s15, r1	@ int
+ 528 004e F8EEE77A 		vcvt.f32.s32	s15, s15
+ 529 0052 77EEC77A 		vsub.f32	s15, s15, s14
+ 530 0056 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 531 005a 17EE901A 		vmov	r1, s15	@ int
+ 532 005e 09B2     		sxth	r1, r1
+ 533 0060 A180     		strh	r1, [r4, #4]	@ movhi
+ 131:Core/Src/MPU9250.c ****     dev->ang_vel_raw_y -= dev->gyro_bias_y;
+ 534              		.loc 1 131 5 is_stmt 1 view .LVU136
+ 535              		.loc 1 131 30 is_stmt 0 view .LVU137
+ 536 0062 94ED047A 		vldr.32	s14, [r4, #16]
+ 537              		.loc 1 131 24 view .LVU138
+ 538 0066 07EE902A 		vmov	s15, r2	@ int
+ 539 006a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 540 006e 77EEC77A 		vsub.f32	s15, s15, s14
+ 541 0072 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 542 0076 17EE902A 		vmov	r2, s15	@ int
+ 543 007a 12B2     		sxth	r2, r2
+ 544 007c E280     		strh	r2, [r4, #6]	@ movhi
+ 132:Core/Src/MPU9250.c ****     dev->ang_vel_raw_z -= dev->gyro_bias_z;
+ 545              		.loc 1 132 5 is_stmt 1 view .LVU139
+ 546              		.loc 1 132 30 is_stmt 0 view .LVU140
+ 547 007e 94ED057A 		vldr.32	s14, [r4, #20]
+ 548              		.loc 1 132 24 view .LVU141
+ 549 0082 07EE903A 		vmov	s15, r3	@ int
+ 550 0086 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 551 008a 77EEC77A 		vsub.f32	s15, s15, s14
+ 552 008e FDEEE77A 		vcvt.s32.f32	s15, s15
+ 553 0092 17EE903A 		vmov	r3, s15	@ int
+ 554 0096 1BB2     		sxth	r3, r3
+ 555 0098 2381     		strh	r3, [r4, #8]	@ movhi
+ 133:Core/Src/MPU9250.c **** 
+ 134:Core/Src/MPU9250.c ****     dev->ang_vel_dps_x = (float)dev->ang_vel_raw_x / 65.5f;
+ 556              		.loc 1 134 5 is_stmt 1 view .LVU142
+ 557              		.loc 1 134 26 is_stmt 0 view .LVU143
+ 558 009a 07EE901A 		vmov	s15, r1	@ int
+ 559 009e F8EEE77A 		vcvt.f32.s32	s15, s15
+ 560              		.loc 1 134 52 view .LVU144
+ 561 00a2 9FED2F7A 		vldr.32	s14, .L21
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 13
 
 
- 568              		@ args = 0, pretend = 0, frame = 8
- 569              		@ frame_needed = 0, uses_anonymous_args = 0
- 570              		.loc 1 130 1 is_stmt 0 view .LVU152
- 571 0000 10B5     		push	{r4, lr}
- 572              	.LCFI18:
- 573              		.cfi_def_cfa_offset 8
- 574              		.cfi_offset 4, -8
- 575              		.cfi_offset 14, -4
- 576 0002 2DED068B 		vpush.64	{d8, d9, d10}
- 577              	.LCFI19:
- 578              		.cfi_def_cfa_offset 32
- 579              		.cfi_offset 80, -32
- 580              		.cfi_offset 81, -28
- 581              		.cfi_offset 82, -24
- 582              		.cfi_offset 83, -20
- 583              		.cfi_offset 84, -16
- 584              		.cfi_offset 85, -12
- 585 0006 82B0     		sub	sp, sp, #8
- 586              	.LCFI20:
- 587              		.cfi_def_cfa_offset 40
- 588 0008 0446     		mov	r4, r0
- 131:Core/Src/MPU9250.c ****     uint8_t data[6];
- 589              		.loc 1 131 5 is_stmt 1 view .LVU153
- 132:Core/Src/MPU9250.c ****     int16_t lin_accel_raw_x = 0, lin_accel_raw_y = 0, lin_accel_raw_z = 0;
- 590              		.loc 1 132 5 view .LVU154
- 591              	.LVL34:
- 133:Core/Src/MPU9250.c ****     static const float accel_bias_x = -1330.8905f, accel_bias_y = -4137.8415f, accel_bias_z = 3963.
- 592              		.loc 1 133 5 view .LVU155
- 134:Core/Src/MPU9250.c ****     float lin_accel_mps2_x = 0.f, lin_accel_mps2_y = 0.f, lin_accel_mps2_z = 0.f;
- 593              		.loc 1 134 5 view .LVU156
- 135:Core/Src/MPU9250.c **** 
- 136:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_IMU_ADDR, MPU9250_IMU_REG_ACCEL_XOUT_H, data, sizeof(data));
- 594              		.loc 1 136 5 view .LVU157
- 595 000a 0623     		movs	r3, #6
- 596 000c 6A46     		mov	r2, sp
- 597 000e 3B21     		movs	r1, #59
- 598 0010 D220     		movs	r0, #210
- 599              	.LVL35:
- 600              		.loc 1 136 5 is_stmt 0 view .LVU158
- 601 0012 FFF7FEFF 		bl	MPU9250_Read_Registers
- 602              	.LVL36:
+ 562 00a6 87EE879A 		vdiv.f32	s18, s15, s14
+ 563              		.loc 1 134 24 view .LVU145
+ 564 00aa 84ED069A 		vstr.32	s18, [r4, #24]
+ 135:Core/Src/MPU9250.c ****     dev->ang_vel_dps_y = (float)dev->ang_vel_raw_y / 65.5f;
+ 565              		.loc 1 135 5 is_stmt 1 view .LVU146
+ 566              		.loc 1 135 26 is_stmt 0 view .LVU147
+ 567 00ae 07EE902A 		vmov	s15, r2	@ int
+ 568 00b2 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 569              		.loc 1 135 52 view .LVU148
+ 570 00b6 87EE878A 		vdiv.f32	s16, s15, s14
+ 571              		.loc 1 135 24 view .LVU149
+ 572 00ba 84ED078A 		vstr.32	s16, [r4, #28]
+ 136:Core/Src/MPU9250.c ****     dev->ang_vel_dps_z = (float)dev->ang_vel_raw_z / 65.5f;
+ 573              		.loc 1 136 5 is_stmt 1 view .LVU150
+ 574              		.loc 1 136 26 is_stmt 0 view .LVU151
+ 575 00be 07EE903A 		vmov	s15, r3	@ int
+ 576 00c2 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 577              		.loc 1 136 52 view .LVU152
+ 578 00c6 C7EE878A 		vdiv.f32	s17, s15, s14
+ 579              		.loc 1 136 24 view .LVU153
+ 580 00ca C4ED088A 		vstr.32	s17, [r4, #32]
  137:Core/Src/MPU9250.c **** 
- 138:Core/Src/MPU9250.c ****     lin_accel_raw_x = ((int16_t)data[0] << 8) | data[1];
- 603              		.loc 1 138 5 is_stmt 1 view .LVU159
- 604              		.loc 1 138 37 is_stmt 0 view .LVU160
- 605 0016 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
- 606              		.loc 1 138 41 view .LVU161
- 607 001a 1B02     		lsls	r3, r3, #8
- 608              		.loc 1 138 47 view .LVU162
- 609 001c 1BB2     		sxth	r3, r3
- 610              		.loc 1 138 53 view .LVU163
- 611 001e 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
- 612              		.loc 1 138 21 view .LVU164
- 613 0022 1343     		orrs	r3, r3, r2
- 614 0024 09EE103A 		vmov	s18, r3	@ int
- 615              	.LVL37:
- 139:Core/Src/MPU9250.c ****     lin_accel_raw_y = ((int16_t)data[2] << 8) | data[3];
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 14
+ 138:Core/Src/MPU9250.c ****     ang_vel_dps_ned_x = dev->ang_vel_dps_x + tanf(dev->pitch * DEG2RAD) * (sinf(dev->roll * DEG2RAD
+ 581              		.loc 1 138 5 is_stmt 1 view .LVU154
+ 582              		.loc 1 138 54 is_stmt 0 view .LVU155
+ 583 00ce D4ED10AA 		vldr.32	s21, [r4, #64]
+ 584              		.loc 1 138 62 view .LVU156
+ 585 00d2 DFED249A 		vldr.32	s19, .L21+4
+ 586 00d6 2AEEA90A 		vmul.f32	s0, s21, s19
+ 587              		.loc 1 138 46 view .LVU157
+ 588 00da DFED23BA 		vldr.32	s23, .L21+8
+ 589 00de 80EE2B0A 		vdiv.f32	s0, s0, s23
+ 590 00e2 FFF7FEFF 		bl	tanf
+ 591              	.LVL38:
+ 592 00e6 B0EE40AA 		vmov.f32	s20, s0
+ 593              		.loc 1 138 84 view .LVU158
+ 594 00ea 94ED0FBA 		vldr.32	s22, [r4, #60]
+ 595              		.loc 1 138 91 view .LVU159
+ 596 00ee 6BEE299A 		vmul.f32	s19, s22, s19
+ 597              		.loc 1 138 76 view .LVU160
+ 598 00f2 89EEABCA 		vdiv.f32	s24, s19, s23
+ 599 00f6 B0EE4C0A 		vmov.f32	s0, s24
+ 600 00fa FFF7FEFF 		bl	sinf
+ 601              	.LVL39:
+ 602 00fe F0EE409A 		vmov.f32	s19, s0
+ 603              		.loc 1 138 102 view .LVU161
+ 604 0102 68EE00BA 		vmul.f32	s23, s16, s0
+ 605              		.loc 1 138 125 view .LVU162
+ 606 0106 B0EE4C0A 		vmov.f32	s0, s24
+ 607 010a FFF7FEFF 		bl	cosf
+ 608              	.LVL40:
+ 609              		.loc 1 138 151 view .LVU163
+ 610 010e 68EE807A 		vmul.f32	s15, s17, s0
+ 611              		.loc 1 138 123 view .LVU164
+ 612 0112 7BEEA7BA 		vadd.f32	s23, s23, s15
+ 613              		.loc 1 138 73 view .LVU165
+ 614 0116 2AEE2BAA 		vmul.f32	s20, s20, s23
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 14
 
 
- 616              		.loc 1 139 5 is_stmt 1 view .LVU165
- 617              		.loc 1 139 37 is_stmt 0 view .LVU166
- 618 0028 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
- 619              		.loc 1 139 41 view .LVU167
- 620 002c 1B02     		lsls	r3, r3, #8
- 621              		.loc 1 139 47 view .LVU168
- 622 002e 1BB2     		sxth	r3, r3
- 623              		.loc 1 139 53 view .LVU169
- 624 0030 9DF80320 		ldrb	r2, [sp, #3]	@ zero_extendqisi2
- 625              		.loc 1 139 21 view .LVU170
- 626 0034 1343     		orrs	r3, r3, r2
- 627 0036 08EE103A 		vmov	s16, r3	@ int
- 628              	.LVL38:
- 140:Core/Src/MPU9250.c ****     lin_accel_raw_z = ((int16_t)data[4] << 8) | data[5];
- 629              		.loc 1 140 5 is_stmt 1 view .LVU171
- 630              		.loc 1 140 37 is_stmt 0 view .LVU172
- 631 003a 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
- 632              		.loc 1 140 41 view .LVU173
- 633 003e 1B02     		lsls	r3, r3, #8
- 634              		.loc 1 140 47 view .LVU174
- 635 0040 1BB2     		sxth	r3, r3
- 636              		.loc 1 140 53 view .LVU175
- 637 0042 9DF80520 		ldrb	r2, [sp, #5]	@ zero_extendqisi2
- 638              		.loc 1 140 21 view .LVU176
- 639 0046 1343     		orrs	r3, r3, r2
- 640 0048 08EE903A 		vmov	s17, r3	@ int
- 641              	.LVL39:
- 141:Core/Src/MPU9250.c **** 
- 142:Core/Src/MPU9250.c ****     lin_accel_raw_x -= accel_bias_x;
- 642              		.loc 1 142 5 is_stmt 1 view .LVU177
- 643              		.loc 1 142 21 is_stmt 0 view .LVU178
- 644 004c B8EEC99A 		vcvt.f32.s32	s18, s18
- 645              	.LVL40:
- 646              		.loc 1 142 21 view .LVU179
- 647 0050 DFED467A 		vldr.32	s15, .L25
- 648 0054 39EE279A 		vadd.f32	s18, s18, s15
- 649 0058 BDEEC99A 		vcvt.s32.f32	s18, s18
- 650 005c 19EE103A 		vmov	r3, s18	@ int
- 651 0060 1BB2     		sxth	r3, r3
- 652 0062 09EE103A 		vmov	s18, r3	@ int
- 653              	.LVL41:
- 143:Core/Src/MPU9250.c ****     lin_accel_raw_y -= accel_bias_y;
- 654              		.loc 1 143 5 is_stmt 1 view .LVU180
- 655              		.loc 1 143 21 is_stmt 0 view .LVU181
- 656 0066 B8EEC88A 		vcvt.f32.s32	s16, s16
- 657              	.LVL42:
- 658              		.loc 1 143 21 view .LVU182
- 659 006a DFED417A 		vldr.32	s15, .L25+4
- 660 006e 38EE278A 		vadd.f32	s16, s16, s15
- 661 0072 BDEEC88A 		vcvt.s32.f32	s16, s16
- 662 0076 18EE103A 		vmov	r3, s16	@ int
- 663 007a 1BB2     		sxth	r3, r3
- 664 007c 08EE103A 		vmov	s16, r3	@ int
- 665              	.LVL43:
- 144:Core/Src/MPU9250.c ****     lin_accel_raw_z -= accel_bias_z;
- 666              		.loc 1 144 5 is_stmt 1 view .LVU183
- 667              		.loc 1 144 21 is_stmt 0 view .LVU184
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 15
+ 615              		.loc 1 138 23 view .LVU166
+ 616 011a 39EE0A9A 		vadd.f32	s18, s18, s20
+ 617              	.LVL41:
+ 139:Core/Src/MPU9250.c ****     ang_vel_dps_ned_y = cosf(dev->roll * DEG2RAD) * dev->ang_vel_dps_y - sinf(dev->roll * DEG2RAD) 
+ 618              		.loc 1 139 5 is_stmt 1 view .LVU167
+ 619              		.loc 1 139 51 is_stmt 0 view .LVU168
+ 620 011e 28EE008A 		vmul.f32	s16, s16, s0
+ 621              		.loc 1 139 100 view .LVU169
+ 622 0122 68EEA99A 		vmul.f32	s19, s17, s19
+ 623              		.loc 1 139 23 view .LVU170
+ 624 0126 38EE698A 		vsub.f32	s16, s16, s19
+ 625              	.LVL42:
+ 140:Core/Src/MPU9250.c **** 
+ 141:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_x = ang_vel_dps_ned_x * Ts + dev->roll;
+ 626              		.loc 1 141 5 is_stmt 1 view .LVU171
+ 627              		.loc 1 141 47 is_stmt 0 view .LVU172
+ 628 012a DFED107A 		vldr.32	s15, .L21+12
+ 629 012e 29EE279A 		vmul.f32	s18, s18, s15
+ 630              	.LVL43:
+ 631              		.loc 1 141 52 view .LVU173
+ 632 0132 3BEE099A 		vadd.f32	s18, s22, s18
+ 633              		.loc 1 141 27 view .LVU174
+ 634 0136 84ED099A 		vstr.32	s18, [r4, #36]
+ 142:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_y = ang_vel_dps_ned_y * Ts + dev->pitch;
+ 635              		.loc 1 142 5 is_stmt 1 view .LVU175
+ 636              		.loc 1 142 47 is_stmt 0 view .LVU176
+ 637 013a 28EE278A 		vmul.f32	s16, s16, s15
+ 638              	.LVL44:
+ 639              		.loc 1 142 52 view .LVU177
+ 640 013e 3AEE888A 		vadd.f32	s16, s21, s16
+ 641              		.loc 1 142 27 view .LVU178
+ 642 0142 84ED0A8A 		vstr.32	s16, [r4, #40]
+ 143:Core/Src/MPU9250.c ****     dev->gyro_angle_deg_z = dev->ang_vel_dps_z * Ts + dev->yaw;
+ 643              		.loc 1 143 5 is_stmt 1 view .LVU179
+ 644              		.loc 1 143 48 is_stmt 0 view .LVU180
+ 645 0146 68EEA78A 		vmul.f32	s17, s17, s15
+ 646              		.loc 1 143 58 view .LVU181
+ 647 014a D4ED117A 		vldr.32	s15, [r4, #68]
+ 648              		.loc 1 143 53 view .LVU182
+ 649 014e 78EEA78A 		vadd.f32	s17, s17, s15
+ 650              		.loc 1 143 27 view .LVU183
+ 651 0152 C4ED0B8A 		vstr.32	s17, [r4, #44]
+ 144:Core/Src/MPU9250.c **** }
+ 652              		.loc 1 144 1 view .LVU184
+ 653 0156 02B0     		add	sp, sp, #8
+ 654              	.LCFI18:
+ 655              		.cfi_def_cfa_offset 48
+ 656              		@ sp needed
+ 657 0158 BDEC0A8B 		vldm	sp!, {d8-d12}
+ 658              	.LCFI19:
+ 659              		.cfi_restore 88
+ 660              		.cfi_restore 89
+ 661              		.cfi_restore 86
+ 662              		.cfi_restore 87
+ 663              		.cfi_restore 84
+ 664              		.cfi_restore 85
+ 665              		.cfi_restore 82
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 15
 
 
- 668 0080 F8EEE88A 		vcvt.f32.s32	s17, s17
- 669              	.LVL44:
- 670              		.loc 1 144 21 view .LVU185
- 671 0084 DFED3B7A 		vldr.32	s15, .L25+8
- 672 0088 78EEE78A 		vsub.f32	s17, s17, s15
- 673 008c FDEEE88A 		vcvt.s32.f32	s17, s17
- 674 0090 18EE903A 		vmov	r3, s17	@ int
- 675 0094 1BB2     		sxth	r3, r3
- 676 0096 08EE903A 		vmov	s17, r3	@ int
- 677              	.LVL45:
+ 666              		.cfi_restore 83
+ 667              		.cfi_restore 80
+ 668              		.cfi_restore 81
+ 669              		.cfi_def_cfa_offset 8
+ 670 015c 10BD     		pop	{r4, pc}
+ 671              	.LVL45:
+ 672              	.L22:
+ 673              		.loc 1 144 1 view .LVU185
+ 674 015e 00BF     		.align	2
+ 675              	.L21:
+ 676 0160 00008342 		.word	1115881472
+ 677 0164 D80F4940 		.word	1078530008
+ 678 0168 00003443 		.word	1127481344
+ 679 016c 0AD7233C 		.word	1008981770
+ 680              		.cfi_endproc
+ 681              	.LFE245:
+ 683              		.section	.text.MPU9250_Read_Accelerometer,"ax",%progbits
+ 684              		.align	1
+ 685              		.global	MPU9250_Read_Accelerometer
+ 686              		.syntax unified
+ 687              		.thumb
+ 688              		.thumb_func
+ 689              		.fpu fpv4-sp-d16
+ 691              	MPU9250_Read_Accelerometer:
+ 692              	.LVL46:
+ 693              	.LFB246:
  145:Core/Src/MPU9250.c **** 
- 146:Core/Src/MPU9250.c ****     lin_accel_mps2_x = (float)lin_accel_raw_x / 4096.f * 9.80665f;
- 678              		.loc 1 146 5 is_stmt 1 view .LVU186
- 679              		.loc 1 146 24 is_stmt 0 view .LVU187
- 680 009a B8EEC99A 		vcvt.f32.s32	s18, s18
- 681              	.LVL46:
- 682              		.loc 1 146 47 view .LVU188
- 683 009e 9FED367A 		vldr.32	s14, .L25+12
- 684 00a2 29EE079A 		vmul.f32	s18, s18, s14
- 685              		.loc 1 146 22 view .LVU189
- 686 00a6 DFED357A 		vldr.32	s15, .L25+16
- 687 00aa 29EE279A 		vmul.f32	s18, s18, s15
- 688              	.LVL47:
- 147:Core/Src/MPU9250.c ****     lin_accel_mps2_y = (float)lin_accel_raw_y / 4096.f * 9.80665f;
- 689              		.loc 1 147 5 is_stmt 1 view .LVU190
- 690              		.loc 1 147 24 is_stmt 0 view .LVU191
- 691 00ae B8EEC88A 		vcvt.f32.s32	s16, s16
- 692              	.LVL48:
- 693              		.loc 1 147 47 view .LVU192
- 694 00b2 28EE078A 		vmul.f32	s16, s16, s14
- 695              		.loc 1 147 22 view .LVU193
- 696 00b6 28EE278A 		vmul.f32	s16, s16, s15
- 697              	.LVL49:
- 148:Core/Src/MPU9250.c ****     lin_accel_mps2_z = (float)lin_accel_raw_z / 4096.f * 9.80665f;
- 698              		.loc 1 148 5 is_stmt 1 view .LVU194
- 699              		.loc 1 148 24 is_stmt 0 view .LVU195
- 700 00ba F8EEE88A 		vcvt.f32.s32	s17, s17
- 701              	.LVL50:
- 702              		.loc 1 148 47 view .LVU196
- 703 00be 68EE878A 		vmul.f32	s17, s17, s14
- 704              		.loc 1 148 22 view .LVU197
- 705 00c2 68EEA78A 		vmul.f32	s17, s17, s15
- 706              	.LVL51:
- 149:Core/Src/MPU9250.c **** 
- 150:Core/Src/MPU9250.c ****     // accel_angle_deg[0] = atan2f(lin_accel_ms2[1], sqrtf(powf(lin_accel_ms2[0], 2) + powf(lin_acc
- 151:Core/Src/MPU9250.c ****     dev->accel_angle_deg_x = asinf(lin_accel_mps2_y / sqrtf(powf(lin_accel_mps2_x, 2) + powf(lin_ac
- 707              		.loc 1 151 5 is_stmt 1 view .LVU198
- 708              		.loc 1 151 61 is_stmt 0 view .LVU199
- 709 00c6 F0EE000A 		vmov.f32	s1, #2.0e+0
- 710 00ca B0EE490A 		vmov.f32	s0, s18
- 711 00ce FFF7FEFF 		bl	powf
- 712              	.LVL52:
- 713              		.loc 1 151 61 view .LVU200
- 714 00d2 F0EE409A 		vmov.f32	s19, s0
- 715              		.loc 1 151 89 view .LVU201
- 716 00d6 F0EE000A 		vmov.f32	s1, #2.0e+0
- 717 00da B0EE480A 		vmov.f32	s0, s16
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 16
+ 146:Core/Src/MPU9250.c **** void MPU9250_Read_Accelerometer(MPU9250 *dev)
+ 147:Core/Src/MPU9250.c **** {
+ 694              		.loc 1 147 1 is_stmt 1 view -0
+ 695              		.cfi_startproc
+ 696              		@ args = 0, pretend = 0, frame = 8
+ 697              		@ frame_needed = 0, uses_anonymous_args = 0
+ 698              		.loc 1 147 1 is_stmt 0 view .LVU187
+ 699 0000 10B5     		push	{r4, lr}
+ 700              	.LCFI20:
+ 701              		.cfi_def_cfa_offset 8
+ 702              		.cfi_offset 4, -8
+ 703              		.cfi_offset 14, -4
+ 704 0002 2DED048B 		vpush.64	{d8, d9}
+ 705              	.LCFI21:
+ 706              		.cfi_def_cfa_offset 24
+ 707              		.cfi_offset 80, -24
+ 708              		.cfi_offset 81, -20
+ 709              		.cfi_offset 82, -16
+ 710              		.cfi_offset 83, -12
+ 711 0006 82B0     		sub	sp, sp, #8
+ 712              	.LCFI22:
+ 713              		.cfi_def_cfa_offset 32
+ 714 0008 0446     		mov	r4, r0
+ 148:Core/Src/MPU9250.c ****     uint8_t data[6];
+ 715              		.loc 1 148 5 is_stmt 1 view .LVU188
+ 149:Core/Src/MPU9250.c ****     int16_t lin_accel_raw_x = 0, lin_accel_raw_y = 0, lin_accel_raw_z = 0;
+ 716              		.loc 1 149 5 view .LVU189
+ 717              	.LVL47:
+ 150:Core/Src/MPU9250.c ****     static const float accel_bias_x = -1330.8905f, accel_bias_y = -4137.8415f, accel_bias_z = 3963.
+ 718              		.loc 1 150 5 view .LVU190
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 16
 
 
- 718 00de FFF7FEFF 		bl	powf
- 719              	.LVL53:
- 720              		.loc 1 151 87 view .LVU202
- 721 00e2 79EE809A 		vadd.f32	s19, s19, s0
- 722              		.loc 1 151 117 view .LVU203
- 723 00e6 F0EE000A 		vmov.f32	s1, #2.0e+0
- 724 00ea B0EE680A 		vmov.f32	s0, s17
- 725 00ee FFF7FEFF 		bl	powf
- 726              	.LVL54:
- 727              		.loc 1 151 55 view .LVU204
- 728 00f2 39EE800A 		vadd.f32	s0, s19, s0
- 729 00f6 FFF7FEFF 		bl	sqrtf
- 730              	.LVL55:
- 731              		.loc 1 151 30 view .LVU205
- 732 00fa 88EE000A 		vdiv.f32	s0, s16, s0
- 733 00fe FFF7FEFF 		bl	asinf
- 734              	.LVL56:
- 735              		.loc 1 151 145 view .LVU206
- 736 0102 9FED1FAA 		vldr.32	s20, .L25+20
- 737 0106 20EE0A0A 		vmul.f32	s0, s0, s20
- 738              		.loc 1 151 153 view .LVU207
- 739 010a DFED1E9A 		vldr.32	s19, .L25+24
- 740 010e C0EE297A 		vdiv.f32	s15, s0, s19
- 741              		.loc 1 151 28 view .LVU208
- 742 0112 C4ED0C7A 		vstr.32	s15, [r4, #48]
- 152:Core/Src/MPU9250.c ****     // accel_angle_deg[1] = atan2f(-lin_accel_ms2[0], sqrtf(powf(lin_accel_ms2[1], 2) + powf(lin_ac
- 153:Core/Src/MPU9250.c ****     dev->accel_angle_deg_y = asinf(-lin_accel_mps2_x / sqrtf(powf(lin_accel_mps2_x, 2) + powf(lin_a
- 743              		.loc 1 153 5 is_stmt 1 view .LVU209
- 744              		.loc 1 153 36 is_stmt 0 view .LVU210
- 745 0116 F1EE49AA 		vneg.f32	s21, s18
- 746              		.loc 1 153 62 view .LVU211
- 747 011a F0EE000A 		vmov.f32	s1, #2.0e+0
- 748 011e B0EE490A 		vmov.f32	s0, s18
- 749 0122 FFF7FEFF 		bl	powf
- 750              	.LVL57:
- 751 0126 B0EE409A 		vmov.f32	s18, s0
- 752              	.LVL58:
- 753              		.loc 1 153 90 view .LVU212
- 754 012a F0EE000A 		vmov.f32	s1, #2.0e+0
- 755 012e B0EE480A 		vmov.f32	s0, s16
- 756 0132 FFF7FEFF 		bl	powf
- 757              	.LVL59:
- 758              		.loc 1 153 88 view .LVU213
- 759 0136 39EE009A 		vadd.f32	s18, s18, s0
- 760              		.loc 1 153 118 view .LVU214
- 761 013a F0EE000A 		vmov.f32	s1, #2.0e+0
- 762 013e B0EE680A 		vmov.f32	s0, s17
- 763 0142 FFF7FEFF 		bl	powf
- 764              	.LVL60:
- 765              		.loc 1 153 56 view .LVU215
- 766 0146 39EE000A 		vadd.f32	s0, s18, s0
- 767 014a FFF7FEFF 		bl	sqrtf
- 768              	.LVL61:
- 769              		.loc 1 153 30 view .LVU216
- 770 014e 8AEE800A 		vdiv.f32	s0, s21, s0
- 771 0152 FFF7FEFF 		bl	asinf
- 772              	.LVL62:
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 17
+ 151:Core/Src/MPU9250.c ****     float lin_accel_mps2_x = 0.f, lin_accel_mps2_y = 0.f, lin_accel_mps2_z = 0.f, norm = 0.f;
+ 719              		.loc 1 151 5 view .LVU191
+ 152:Core/Src/MPU9250.c **** 
+ 153:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_IMU_ADDR, MPU9250_IMU_REG_ACCEL_XOUT_H, data, sizeof(data));
+ 720              		.loc 1 153 5 view .LVU192
+ 721 000a 0623     		movs	r3, #6
+ 722 000c 6A46     		mov	r2, sp
+ 723 000e 3B21     		movs	r1, #59
+ 724 0010 D220     		movs	r0, #210
+ 725              	.LVL48:
+ 726              		.loc 1 153 5 is_stmt 0 view .LVU193
+ 727 0012 FFF7FEFF 		bl	MPU9250_Read_Registers
+ 728              	.LVL49:
+ 154:Core/Src/MPU9250.c **** 
+ 155:Core/Src/MPU9250.c ****     lin_accel_raw_x = ((int16_t)data[0] << 8) | data[1];
+ 729              		.loc 1 155 5 is_stmt 1 view .LVU194
+ 730              		.loc 1 155 37 is_stmt 0 view .LVU195
+ 731 0016 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 732              		.loc 1 155 41 view .LVU196
+ 733 001a 1B02     		lsls	r3, r3, #8
+ 734              		.loc 1 155 47 view .LVU197
+ 735 001c 1BB2     		sxth	r3, r3
+ 736              		.loc 1 155 53 view .LVU198
+ 737 001e 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
+ 738              		.loc 1 155 21 view .LVU199
+ 739 0022 1343     		orrs	r3, r3, r2
+ 740 0024 08EE103A 		vmov	s16, r3	@ int
+ 741              	.LVL50:
+ 156:Core/Src/MPU9250.c ****     lin_accel_raw_y = ((int16_t)data[2] << 8) | data[3];
+ 742              		.loc 1 156 5 is_stmt 1 view .LVU200
+ 743              		.loc 1 156 37 is_stmt 0 view .LVU201
+ 744 0028 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 745              		.loc 1 156 41 view .LVU202
+ 746 002c 1B02     		lsls	r3, r3, #8
+ 747              		.loc 1 156 47 view .LVU203
+ 748 002e 1BB2     		sxth	r3, r3
+ 749              		.loc 1 156 53 view .LVU204
+ 750 0030 9DF80320 		ldrb	r2, [sp, #3]	@ zero_extendqisi2
+ 751              		.loc 1 156 21 view .LVU205
+ 752 0034 1343     		orrs	r3, r3, r2
+ 753 0036 00EE103A 		vmov	s0, r3	@ int
+ 754              	.LVL51:
+ 157:Core/Src/MPU9250.c ****     lin_accel_raw_z = ((int16_t)data[4] << 8) | data[5];
+ 755              		.loc 1 157 5 is_stmt 1 view .LVU206
+ 756              		.loc 1 157 37 is_stmt 0 view .LVU207
+ 757 003a 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 758              		.loc 1 157 41 view .LVU208
+ 759 003e 1B02     		lsls	r3, r3, #8
+ 760              		.loc 1 157 47 view .LVU209
+ 761 0040 1BB2     		sxth	r3, r3
+ 762              		.loc 1 157 53 view .LVU210
+ 763 0042 9DF80520 		ldrb	r2, [sp, #5]	@ zero_extendqisi2
+ 764              		.loc 1 157 21 view .LVU211
+ 765 0046 1343     		orrs	r3, r3, r2
+ 766 0048 07EE903A 		vmov	s15, r3	@ int
+ 767              	.LVL52:
+ 158:Core/Src/MPU9250.c **** 
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 17
 
 
- 773              		.loc 1 153 146 view .LVU217
- 774 0156 20EE0A0A 		vmul.f32	s0, s0, s20
- 775              		.loc 1 153 154 view .LVU218
- 776 015a C0EE297A 		vdiv.f32	s15, s0, s19
- 777              		.loc 1 153 28 view .LVU219
- 778 015e C4ED0D7A 		vstr.32	s15, [r4, #52]
- 154:Core/Src/MPU9250.c **** }
- 779              		.loc 1 154 1 view .LVU220
- 780 0162 02B0     		add	sp, sp, #8
- 781              	.LCFI21:
- 782              		.cfi_def_cfa_offset 32
- 783              		@ sp needed
- 784 0164 BDEC068B 		vldm	sp!, {d8-d10}
- 785              	.LCFI22:
- 786              		.cfi_restore 84
- 787              		.cfi_restore 85
- 788              		.cfi_restore 82
- 789              		.cfi_restore 83
- 790              		.cfi_restore 80
- 791              		.cfi_restore 81
- 792              		.cfi_def_cfa_offset 8
- 793              	.LVL63:
- 794              		.loc 1 154 1 view .LVU221
- 795 0168 10BD     		pop	{r4, pc}
- 796              	.LVL64:
- 797              	.L26:
- 798              		.loc 1 154 1 view .LVU222
- 799 016a 00BF     		.align	2
- 800              	.L25:
- 801 016c 7F5CA644 		.word	1151753343
- 802 0170 BB4E8145 		.word	1166102203
- 803 0174 F2DEFB45 		.word	1174134514
- 804 0178 00008039 		.word	964689920
- 805 017c 0AE81C41 		.word	1092413450
- 806 0180 00003443 		.word	1127481344
- 807 0184 D80F4940 		.word	1078530008
- 808              		.cfi_endproc
- 809              	.LFE242:
- 811              		.section	.text.MPU9250_Calibrate,"ax",%progbits
- 812              		.align	1
- 813              		.global	MPU9250_Calibrate
- 814              		.syntax unified
- 815              		.thumb
- 816              		.thumb_func
- 817              		.fpu fpv4-sp-d16
- 819              	MPU9250_Calibrate:
- 820              	.LVL65:
- 821              	.LFB240:
-  81:Core/Src/MPU9250.c ****     float avg_gyro_bias_x = 0, avg_gyro_bias_y = 0, avg_gyro_bias_z = 0;
- 822              		.loc 1 81 1 is_stmt 1 view -0
- 823              		.cfi_startproc
- 824              		@ args = 0, pretend = 0, frame = 0
- 825              		@ frame_needed = 0, uses_anonymous_args = 0
-  81:Core/Src/MPU9250.c ****     float avg_gyro_bias_x = 0, avg_gyro_bias_y = 0, avg_gyro_bias_z = 0;
- 826              		.loc 1 81 1 is_stmt 0 view .LVU224
- 827 0000 38B5     		push	{r3, r4, r5, lr}
- 828              	.LCFI23:
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 18
+ 159:Core/Src/MPU9250.c ****     lin_accel_raw_x -= accel_bias_x;
+ 768              		.loc 1 159 5 is_stmt 1 view .LVU212
+ 769              		.loc 1 159 21 is_stmt 0 view .LVU213
+ 770 004c B8EEC88A 		vcvt.f32.s32	s16, s16
+ 771              	.LVL53:
+ 772              		.loc 1 159 21 view .LVU214
+ 773 0050 9FED2C7A 		vldr.32	s14, .L25
+ 774 0054 38EE078A 		vadd.f32	s16, s16, s14
+ 775 0058 BDEEC88A 		vcvt.s32.f32	s16, s16
+ 776 005c 18EE103A 		vmov	r3, s16	@ int
+ 777 0060 1BB2     		sxth	r3, r3
+ 778 0062 08EE103A 		vmov	s16, r3	@ int
+ 779              	.LVL54:
+ 160:Core/Src/MPU9250.c ****     lin_accel_raw_y -= accel_bias_y;
+ 780              		.loc 1 160 5 is_stmt 1 view .LVU215
+ 781              		.loc 1 160 21 is_stmt 0 view .LVU216
+ 782 0066 B8EEC00A 		vcvt.f32.s32	s0, s0
+ 783              	.LVL55:
+ 784              		.loc 1 160 21 view .LVU217
+ 785 006a 9FED277A 		vldr.32	s14, .L25+4
+ 786 006e 30EE070A 		vadd.f32	s0, s0, s14
+ 787 0072 BDEEC00A 		vcvt.s32.f32	s0, s0
+ 788 0076 10EE103A 		vmov	r3, s0	@ int
+ 789 007a 1BB2     		sxth	r3, r3
+ 790 007c 00EE103A 		vmov	s0, r3	@ int
+ 791              	.LVL56:
+ 161:Core/Src/MPU9250.c ****     lin_accel_raw_z -= accel_bias_z;
+ 792              		.loc 1 161 5 is_stmt 1 view .LVU218
+ 793              		.loc 1 161 21 is_stmt 0 view .LVU219
+ 794 0080 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 795              	.LVL57:
+ 796              		.loc 1 161 21 view .LVU220
+ 797 0084 9FED217A 		vldr.32	s14, .L25+8
+ 798 0088 77EEC77A 		vsub.f32	s15, s15, s14
+ 799 008c FDEEE77A 		vcvt.s32.f32	s15, s15
+ 800 0090 17EE903A 		vmov	r3, s15	@ int
+ 801 0094 1BB2     		sxth	r3, r3
+ 802 0096 07EE903A 		vmov	s15, r3	@ int
+ 803              	.LVL58:
+ 162:Core/Src/MPU9250.c **** 
+ 163:Core/Src/MPU9250.c ****     lin_accel_mps2_x = (float)lin_accel_raw_x / 4096.f * 9.80665f;
+ 804              		.loc 1 163 5 is_stmt 1 view .LVU221
+ 805              		.loc 1 163 24 is_stmt 0 view .LVU222
+ 806 009a B8EEC88A 		vcvt.f32.s32	s16, s16
+ 807              	.LVL59:
+ 808              		.loc 1 163 47 view .LVU223
+ 809 009e 9FED1C7A 		vldr.32	s14, .L25+12
+ 810 00a2 28EE078A 		vmul.f32	s16, s16, s14
+ 811              		.loc 1 163 22 view .LVU224
+ 812 00a6 DFED1B8A 		vldr.32	s17, .L25+16
+ 813 00aa 28EE288A 		vmul.f32	s16, s16, s17
+ 814              	.LVL60:
+ 164:Core/Src/MPU9250.c ****     lin_accel_mps2_y = (float)lin_accel_raw_y / 4096.f * 9.80665f;
+ 815              		.loc 1 164 5 is_stmt 1 view .LVU225
+ 816              		.loc 1 164 24 is_stmt 0 view .LVU226
+ 817 00ae B8EEC00A 		vcvt.f32.s32	s0, s0
+ 818              	.LVL61:
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 18
 
 
- 829              		.cfi_def_cfa_offset 16
- 830              		.cfi_offset 3, -16
- 831              		.cfi_offset 4, -12
- 832              		.cfi_offset 5, -8
- 833              		.cfi_offset 14, -4
- 834 0002 2DED048B 		vpush.64	{d8, d9}
- 835              	.LCFI24:
- 836              		.cfi_def_cfa_offset 32
- 837              		.cfi_offset 80, -32
- 838              		.cfi_offset 81, -28
- 839              		.cfi_offset 82, -24
- 840              		.cfi_offset 83, -20
- 841 0006 0446     		mov	r4, r0
-  82:Core/Src/MPU9250.c **** 
- 842              		.loc 1 82 5 is_stmt 1 view .LVU225
- 843              	.LVL66:
-  84:Core/Src/MPU9250.c ****     {
- 844              		.loc 1 84 5 view .LVU226
- 845              	.LBB2:
-  84:Core/Src/MPU9250.c ****     {
- 846              		.loc 1 84 10 view .LVU227
-  84:Core/Src/MPU9250.c ****     {
- 847              		.loc 1 84 14 is_stmt 0 view .LVU228
- 848 0008 0025     		movs	r5, #0
- 849              	.LBE2:
-  82:Core/Src/MPU9250.c **** 
- 850              		.loc 1 82 53 view .LVU229
- 851 000a 9FED208A 		vldr.32	s16, .L31
-  82:Core/Src/MPU9250.c **** 
- 852              		.loc 1 82 32 view .LVU230
- 853 000e F0EE488A 		vmov.f32	s17, s16
-  82:Core/Src/MPU9250.c **** 
- 854              		.loc 1 82 11 view .LVU231
- 855 0012 B0EE489A 		vmov.f32	s18, s16
- 856              	.LBB3:
-  84:Core/Src/MPU9250.c ****     {
- 857              		.loc 1 84 5 view .LVU232
- 858 0016 21E0     		b	.L28
- 859              	.LVL67:
- 860              	.L29:
-  86:Core/Src/MPU9250.c **** 
- 861              		.loc 1 86 9 is_stmt 1 discriminator 3 view .LVU233
- 862 0018 2046     		mov	r0, r4
- 863 001a FFF7FEFF 		bl	MPU9250_Read_Gyroscope
- 864              	.LVL68:
-  88:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
- 865              		.loc 1 88 9 discriminator 3 view .LVU234
-  88:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
- 866              		.loc 1 88 31 is_stmt 0 discriminator 3 view .LVU235
- 867 001e B4F90430 		ldrsh	r3, [r4, #4]
- 868 0022 07EE903A 		vmov	s15, r3	@ int
-  88:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
- 869              		.loc 1 88 25 discriminator 3 view .LVU236
- 870 0026 F8EEE77A 		vcvt.f32.s32	s15, s15
- 871 002a 39EE279A 		vadd.f32	s18, s18, s15
- 872              	.LVL69:
-  89:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 19
-
-
- 873              		.loc 1 89 9 is_stmt 1 discriminator 3 view .LVU237
-  89:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
- 874              		.loc 1 89 31 is_stmt 0 discriminator 3 view .LVU238
- 875 002e B4F90630 		ldrsh	r3, [r4, #6]
- 876 0032 07EE903A 		vmov	s15, r3	@ int
-  89:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
- 877              		.loc 1 89 25 discriminator 3 view .LVU239
- 878 0036 F8EEE77A 		vcvt.f32.s32	s15, s15
- 879 003a 78EEA78A 		vadd.f32	s17, s17, s15
- 880              	.LVL70:
-  90:Core/Src/MPU9250.c **** 
- 881              		.loc 1 90 9 is_stmt 1 discriminator 3 view .LVU240
-  90:Core/Src/MPU9250.c **** 
- 882              		.loc 1 90 31 is_stmt 0 discriminator 3 view .LVU241
- 883 003e B4F90830 		ldrsh	r3, [r4, #8]
- 884 0042 07EE903A 		vmov	s15, r3	@ int
-  90:Core/Src/MPU9250.c **** 
- 885              		.loc 1 90 25 discriminator 3 view .LVU242
- 886 0046 F8EEE77A 		vcvt.f32.s32	s15, s15
- 887 004a 38EE278A 		vadd.f32	s16, s16, s15
- 888              	.LVL71:
-  92:Core/Src/MPU9250.c **** 
- 889              		.loc 1 92 9 is_stmt 1 discriminator 3 view .LVU243
- 890 004e 2046     		mov	r0, r4
- 891 0050 FFF7FEFF 		bl	MPU9250_Read_Accelerometer
- 892              	.LVL72:
-  94:Core/Src/MPU9250.c ****     }
- 893              		.loc 1 94 9 discriminator 3 view .LVU244
- 894 0054 0A20     		movs	r0, #10
- 895 0056 FFF7FEFF 		bl	HAL_Delay
- 896              	.LVL73:
-  84:Core/Src/MPU9250.c ****     {
- 897              		.loc 1 84 31 discriminator 3 view .LVU245
-  84:Core/Src/MPU9250.c ****     {
- 898              		.loc 1 84 32 is_stmt 0 discriminator 3 view .LVU246
- 899 005a 0135     		adds	r5, r5, #1
- 900              	.LVL74:
- 901              	.L28:
-  84:Core/Src/MPU9250.c ****     {
- 902              		.loc 1 84 21 is_stmt 1 discriminator 1 view .LVU247
-  84:Core/Src/MPU9250.c ****     {
- 903              		.loc 1 84 5 is_stmt 0 discriminator 1 view .LVU248
- 904 005c B5F5FA6F 		cmp	r5, #2000
- 905 0060 DADB     		blt	.L29
- 906              	.LBE3:
-  97:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
- 907              		.loc 1 97 5 is_stmt 1 view .LVU249
-  97:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
- 908              		.loc 1 97 40 is_stmt 0 view .LVU250
- 909 0062 DFED0B7A 		vldr.32	s15, .L31+4
- 910 0066 89EE277A 		vdiv.f32	s14, s18, s15
-  97:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
- 911              		.loc 1 97 22 view .LVU251
- 912 006a 84ED037A 		vstr.32	s14, [r4, #12]
-  98:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
- 913              		.loc 1 98 5 is_stmt 1 view .LVU252
-  98:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 20
-
-
- 914              		.loc 1 98 40 is_stmt 0 view .LVU253
- 915 006e 88EEA77A 		vdiv.f32	s14, s17, s15
-  98:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
- 916              		.loc 1 98 22 view .LVU254
- 917 0072 84ED047A 		vstr.32	s14, [r4, #16]
-  99:Core/Src/MPU9250.c **** 
- 918              		.loc 1 99 5 is_stmt 1 view .LVU255
-  99:Core/Src/MPU9250.c **** 
- 919              		.loc 1 99 40 is_stmt 0 view .LVU256
- 920 0076 88EE277A 		vdiv.f32	s14, s16, s15
-  99:Core/Src/MPU9250.c **** 
- 921              		.loc 1 99 22 view .LVU257
- 922 007a 84ED057A 		vstr.32	s14, [r4, #20]
- 101:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
- 923              		.loc 1 101 5 is_stmt 1 view .LVU258
- 101:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
- 924              		.loc 1 101 20 is_stmt 0 view .LVU259
- 925 007e 236B     		ldr	r3, [r4, #48]	@ float
- 101:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
- 926              		.loc 1 101 15 view .LVU260
- 927 0080 E363     		str	r3, [r4, #60]	@ float
- 102:Core/Src/MPU9250.c **** }
- 928              		.loc 1 102 5 is_stmt 1 view .LVU261
- 102:Core/Src/MPU9250.c **** }
- 929              		.loc 1 102 21 is_stmt 0 view .LVU262
- 930 0082 636B     		ldr	r3, [r4, #52]	@ float
- 102:Core/Src/MPU9250.c **** }
- 931              		.loc 1 102 16 view .LVU263
- 932 0084 2364     		str	r3, [r4, #64]	@ float
- 103:Core/Src/MPU9250.c **** 
- 933              		.loc 1 103 1 view .LVU264
- 934 0086 BDEC048B 		vldm	sp!, {d8-d9}
- 935              	.LCFI25:
- 936              		.cfi_restore 82
- 937              		.cfi_restore 83
- 938              		.cfi_restore 80
- 939              		.cfi_restore 81
- 940              		.cfi_def_cfa_offset 16
- 941              	.LVL75:
- 103:Core/Src/MPU9250.c **** 
- 942              		.loc 1 103 1 view .LVU265
- 943 008a 38BD     		pop	{r3, r4, r5, pc}
- 944              	.LVL76:
- 945              	.L32:
- 103:Core/Src/MPU9250.c **** 
- 946              		.loc 1 103 1 view .LVU266
- 947              		.align	2
- 948              	.L31:
- 949 008c 00000000 		.word	0
- 950 0090 0000FA44 		.word	1157234688
- 951              		.cfi_endproc
- 952              	.LFE240:
- 954              		.section	.text.MPU9250_Read_Magnetometer,"ax",%progbits
- 955              		.align	1
- 956              		.global	MPU9250_Read_Magnetometer
- 957              		.syntax unified
- 958              		.thumb
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 21
-
-
- 959              		.thumb_func
- 960              		.fpu fpv4-sp-d16
- 962              	MPU9250_Read_Magnetometer:
- 963              	.LVL77:
- 964              	.LFB243:
- 155:Core/Src/MPU9250.c **** 
- 156:Core/Src/MPU9250.c **** void MPU9250_Read_Magnetometer(MPU9250 *dev)
- 157:Core/Src/MPU9250.c **** {
- 965              		.loc 1 157 1 is_stmt 1 view -0
- 966              		.cfi_startproc
- 967              		@ args = 0, pretend = 0, frame = 8
- 968              		@ frame_needed = 0, uses_anonymous_args = 0
- 969              		.loc 1 157 1 is_stmt 0 view .LVU268
- 970 0000 10B5     		push	{r4, lr}
- 971              	.LCFI26:
- 972              		.cfi_def_cfa_offset 8
- 973              		.cfi_offset 4, -8
- 974              		.cfi_offset 14, -4
- 975 0002 2DED0A8B 		vpush.64	{d8, d9, d10, d11, d12}
- 976              	.LCFI27:
- 977              		.cfi_def_cfa_offset 48
- 978              		.cfi_offset 80, -48
- 979              		.cfi_offset 81, -44
- 980              		.cfi_offset 82, -40
- 981              		.cfi_offset 83, -36
- 982              		.cfi_offset 84, -32
- 983              		.cfi_offset 85, -28
- 984              		.cfi_offset 86, -24
- 985              		.cfi_offset 87, -20
- 986              		.cfi_offset 88, -16
- 987              		.cfi_offset 89, -12
- 988 0006 82B0     		sub	sp, sp, #8
- 989              	.LCFI28:
- 990              		.cfi_def_cfa_offset 56
- 991 0008 0446     		mov	r4, r0
- 158:Core/Src/MPU9250.c ****     uint8_t data[6];
- 992              		.loc 1 158 5 is_stmt 1 view .LVU269
- 159:Core/Src/MPU9250.c ****     int16_t mag_field_raw_x = 0, mag_field_raw_y = 0, mag_field_raw_z = 0;
- 993              		.loc 1 159 5 view .LVU270
- 994              	.LVL78:
- 160:Core/Src/MPU9250.c ****     float mag_bias_x = 0.f, mag_bias_y = 0.f, mag_bias_z = 0.f,
- 995              		.loc 1 160 5 view .LVU271
- 161:Core/Src/MPU9250.c ****           mag_scale_x = 0.f, mag_scale_y = 0.f, mag_scale_z = 0.f,
- 162:Core/Src/MPU9250.c ****           mag_field_raw_adj_x = 0.f, mag_field_raw_adj_y = 0.f, mag_field_raw_adj_z = 0.f,
- 163:Core/Src/MPU9250.c ****           mag_angle_deg_x = 0.f, mag_angle_deg_y = 0.f;
- 164:Core/Src/MPU9250.c **** 
- 165:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_MAG_ADDR, MPU9250_MAG_REG_HXL, data, sizeof(data));
- 996              		.loc 1 165 5 view .LVU272
- 997 000a 0623     		movs	r3, #6
- 998 000c 6A46     		mov	r2, sp
- 999 000e 0321     		movs	r1, #3
- 1000 0010 1820     		movs	r0, #24
- 1001              	.LVL79:
- 1002              		.loc 1 165 5 is_stmt 0 view .LVU273
- 1003 0012 FFF7FEFF 		bl	MPU9250_Read_Registers
- 1004              	.LVL80:
+ 819              		.loc 1 164 47 view .LVU227
+ 820 00b2 20EE070A 		vmul.f32	s0, s0, s14
+ 821              	.LVL62:
+ 165:Core/Src/MPU9250.c ****     lin_accel_mps2_z = (float)lin_accel_raw_z / 4096.f * 9.80665f;
+ 822              		.loc 1 165 5 is_stmt 1 view .LVU228
+ 823              		.loc 1 165 24 is_stmt 0 view .LVU229
+ 824 00b6 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 825              	.LVL63:
+ 826              		.loc 1 165 47 view .LVU230
+ 827 00ba 67EE877A 		vmul.f32	s15, s15, s14
+ 828              		.loc 1 165 22 view .LVU231
+ 829 00be 67EEA87A 		vmul.f32	s15, s15, s17
+ 830              	.LVL64:
  166:Core/Src/MPU9250.c **** 
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 22
+ 167:Core/Src/MPU9250.c ****     dev->accel_angle_deg_x = atanf(-lin_accel_mps2_y / lin_accel_mps2_z) * RAD2DEG;
+ 831              		.loc 1 167 5 is_stmt 1 view .LVU232
+ 832              		.loc 1 167 36 is_stmt 0 view .LVU233
+ 833 00c2 28EEC00A 		vnmul.f32	s0, s17, s0
+ 834              	.LVL65:
+ 835              		.loc 1 167 30 view .LVU234
+ 836 00c6 80EE270A 		vdiv.f32	s0, s0, s15
+ 837 00ca FFF7FEFF 		bl	atanf
+ 838              	.LVL66:
+ 839              		.loc 1 167 74 view .LVU235
+ 840 00ce DFED129A 		vldr.32	s19, .L25+20
+ 841 00d2 20EE290A 		vmul.f32	s0, s0, s19
+ 842              		.loc 1 167 76 view .LVU236
+ 843 00d6 9FED119A 		vldr.32	s18, .L25+24
+ 844 00da C0EE097A 		vdiv.f32	s15, s0, s18
+ 845              		.loc 1 167 28 view .LVU237
+ 846 00de C4ED0C7A 		vstr.32	s15, [r4, #48]
+ 168:Core/Src/MPU9250.c ****     dev->accel_angle_deg_y = asinf(-lin_accel_mps2_x / G) * RAD2DEG;
+ 847              		.loc 1 168 5 is_stmt 1 view .LVU238
+ 848              		.loc 1 168 36 is_stmt 0 view .LVU239
+ 849 00e2 B1EE480A 		vneg.f32	s0, s16
+ 850              		.loc 1 168 30 view .LVU240
+ 851 00e6 80EE280A 		vdiv.f32	s0, s0, s17
+ 852 00ea FFF7FEFF 		bl	asinf
+ 853              	.LVL67:
+ 854              		.loc 1 168 59 view .LVU241
+ 855 00ee 20EE290A 		vmul.f32	s0, s0, s19
+ 856              		.loc 1 168 61 view .LVU242
+ 857 00f2 C0EE097A 		vdiv.f32	s15, s0, s18
+ 858              		.loc 1 168 28 view .LVU243
+ 859 00f6 C4ED0D7A 		vstr.32	s15, [r4, #52]
+ 169:Core/Src/MPU9250.c **** 
+ 170:Core/Src/MPU9250.c ****     // dev->accel_angle_deg_x = asinf(lin_accel_mps2_y / sqrtf(powf(lin_accel_mps2_x, 2) + powf(lin
+ 171:Core/Src/MPU9250.c ****     // dev->accel_angle_deg_y = asinf(-lin_accel_mps2_x / sqrtf(powf(lin_accel_mps2_x, 2) + powf(li
+ 172:Core/Src/MPU9250.c **** }
+ 860              		.loc 1 172 1 view .LVU244
+ 861 00fa 02B0     		add	sp, sp, #8
+ 862              	.LCFI23:
+ 863              		.cfi_def_cfa_offset 24
+ 864              		@ sp needed
+ 865 00fc BDEC048B 		vldm	sp!, {d8-d9}
+ 866              	.LCFI24:
+ 867              		.cfi_restore 82
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 19
 
 
- 167:Core/Src/MPU9250.c ****     mag_field_raw_x = ((int16_t)data[1] << 8) | data[0];
- 1005              		.loc 1 167 5 is_stmt 1 view .LVU274
- 1006              		.loc 1 167 37 is_stmt 0 view .LVU275
- 1007 0016 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
- 1008              		.loc 1 167 41 view .LVU276
- 1009 001a 1B02     		lsls	r3, r3, #8
- 1010              		.loc 1 167 47 view .LVU277
- 1011 001c 1BB2     		sxth	r3, r3
- 1012              		.loc 1 167 53 view .LVU278
- 1013 001e 9DF80020 		ldrb	r2, [sp]	@ zero_extendqisi2
- 1014              		.loc 1 167 21 view .LVU279
- 1015 0022 1343     		orrs	r3, r3, r2
- 1016 0024 09EE103A 		vmov	s18, r3	@ int
- 1017              	.LVL81:
- 168:Core/Src/MPU9250.c ****     mag_field_raw_y = ((int16_t)data[3] << 8) | data[2];
- 1018              		.loc 1 168 5 is_stmt 1 view .LVU280
- 1019              		.loc 1 168 37 is_stmt 0 view .LVU281
- 1020 0028 9DF80330 		ldrb	r3, [sp, #3]	@ zero_extendqisi2
- 1021              		.loc 1 168 41 view .LVU282
- 1022 002c 1B02     		lsls	r3, r3, #8
- 1023              		.loc 1 168 47 view .LVU283
- 1024 002e 1BB2     		sxth	r3, r3
- 1025              		.loc 1 168 53 view .LVU284
- 1026 0030 9DF80220 		ldrb	r2, [sp, #2]	@ zero_extendqisi2
- 1027              		.loc 1 168 21 view .LVU285
- 1028 0034 1343     		orrs	r3, r3, r2
- 1029 0036 08EE103A 		vmov	s16, r3	@ int
- 1030              	.LVL82:
- 169:Core/Src/MPU9250.c ****     mag_field_raw_z = ((int16_t)data[5] << 8) | data[4];
- 1031              		.loc 1 169 5 is_stmt 1 view .LVU286
- 1032              		.loc 1 169 37 is_stmt 0 view .LVU287
- 1033 003a 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
- 1034              		.loc 1 169 41 view .LVU288
- 1035 003e 1B02     		lsls	r3, r3, #8
- 1036              		.loc 1 169 47 view .LVU289
- 1037 0040 1BB2     		sxth	r3, r3
- 1038              		.loc 1 169 53 view .LVU290
- 1039 0042 9DF80420 		ldrb	r2, [sp, #4]	@ zero_extendqisi2
- 1040              		.loc 1 169 21 view .LVU291
- 1041 0046 1343     		orrs	r3, r3, r2
- 1042 0048 08EE903A 		vmov	s17, r3	@ int
- 1043              	.LVL83:
- 170:Core/Src/MPU9250.c **** 
- 171:Core/Src/MPU9250.c ****     mag_field_raw_x -= mag_bias_x;
- 1044              		.loc 1 171 5 is_stmt 1 view .LVU292
- 1045              		.loc 1 171 21 is_stmt 0 view .LVU293
- 1046 004c B8EEC99A 		vcvt.f32.s32	s18, s18
- 1047              	.LVL84:
- 172:Core/Src/MPU9250.c ****     mag_field_raw_y -= mag_bias_y;
- 1048              		.loc 1 172 5 is_stmt 1 view .LVU294
- 1049              		.loc 1 172 21 is_stmt 0 view .LVU295
- 1050 0050 B8EEC88A 		vcvt.f32.s32	s16, s16
- 1051              	.LVL85:
- 173:Core/Src/MPU9250.c ****     mag_field_raw_z -= mag_bias_z;
- 1052              		.loc 1 173 5 is_stmt 1 view .LVU296
- 1053              		.loc 1 173 21 is_stmt 0 view .LVU297
- 1054 0054 F8EEE87A 		vcvt.f32.s32	s15, s17
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 23
+ 868              		.cfi_restore 83
+ 869              		.cfi_restore 80
+ 870              		.cfi_restore 81
+ 871              		.cfi_def_cfa_offset 8
+ 872              	.LVL68:
+ 873              		.loc 1 172 1 view .LVU245
+ 874 0100 10BD     		pop	{r4, pc}
+ 875              	.LVL69:
+ 876              	.L26:
+ 877              		.loc 1 172 1 view .LVU246
+ 878 0102 00BF     		.align	2
+ 879              	.L25:
+ 880 0104 7F5CA644 		.word	1151753343
+ 881 0108 BB4E8145 		.word	1166102203
+ 882 010c F2DEFB45 		.word	1174134514
+ 883 0110 00008039 		.word	964689920
+ 884 0114 0AE81C41 		.word	1092413450
+ 885 0118 00003443 		.word	1127481344
+ 886 011c D80F4940 		.word	1078530008
+ 887              		.cfi_endproc
+ 888              	.LFE246:
+ 890              		.global	__aeabi_f2d
+ 891              		.global	__aeabi_dadd
+ 892              		.global	__aeabi_d2f
+ 893              		.section	.text.MPU9250_Read_Magnetometer,"ax",%progbits
+ 894              		.align	1
+ 895              		.global	MPU9250_Read_Magnetometer
+ 896              		.syntax unified
+ 897              		.thumb
+ 898              		.thumb_func
+ 899              		.fpu fpv4-sp-d16
+ 901              	MPU9250_Read_Magnetometer:
+ 902              	.LVL70:
+ 903              	.LFB247:
+ 173:Core/Src/MPU9250.c **** 
+ 174:Core/Src/MPU9250.c **** void MPU9250_Read_Magnetometer(MPU9250 *dev)
+ 175:Core/Src/MPU9250.c **** {
+ 904              		.loc 1 175 1 is_stmt 1 view -0
+ 905              		.cfi_startproc
+ 906              		@ args = 0, pretend = 0, frame = 8
+ 907              		@ frame_needed = 0, uses_anonymous_args = 0
+ 908              		.loc 1 175 1 is_stmt 0 view .LVU248
+ 909 0000 D0B5     		push	{r4, r6, r7, lr}
+ 910              	.LCFI25:
+ 911              		.cfi_def_cfa_offset 16
+ 912              		.cfi_offset 4, -16
+ 913              		.cfi_offset 6, -12
+ 914              		.cfi_offset 7, -8
+ 915              		.cfi_offset 14, -4
+ 916 0002 2DED0A8B 		vpush.64	{d8, d9, d10, d11, d12}
+ 917              	.LCFI26:
+ 918              		.cfi_def_cfa_offset 56
+ 919              		.cfi_offset 80, -56
+ 920              		.cfi_offset 81, -52
+ 921              		.cfi_offset 82, -48
+ 922              		.cfi_offset 83, -44
+ 923              		.cfi_offset 84, -40
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 20
 
 
- 1055              	.LVL86:
- 174:Core/Src/MPU9250.c **** 
- 175:Core/Src/MPU9250.c ****     mag_field_raw_adj_x = (float)mag_field_raw_x * ((float)dev->mag_coef_x - 128.f) * 0.5f / 128.f 
- 1056              		.loc 1 175 5 is_stmt 1 view .LVU298
- 1057              		.loc 1 175 63 is_stmt 0 view .LVU299
- 1058 0058 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
- 1059              	.LVL87:
- 1060              		.loc 1 175 63 view .LVU300
- 1061 005a 07EE103A 		vmov	s14, r3	@ int
- 1062              		.loc 1 175 53 view .LVU301
- 1063 005e B8EE477A 		vcvt.f32.u32	s14, s14
- 1064              		.loc 1 175 76 view .LVU302
- 1065 0062 DFED3B5A 		vldr.32	s11, .L35
- 1066 0066 37EE657A 		vsub.f32	s14, s14, s11
- 1067              		.loc 1 175 50 view .LVU303
- 1068 006a 29EE079A 		vmul.f32	s18, s18, s14
- 1069              		.loc 1 175 85 view .LVU304
- 1070 006e B6EE006A 		vmov.f32	s12, #5.0e-1
- 1071 0072 29EE069A 		vmul.f32	s18, s18, s12
- 1072              		.loc 1 175 92 view .LVU305
- 1073 0076 DFED376A 		vldr.32	s13, .L35+4
- 1074 007a 29EE269A 		vmul.f32	s18, s18, s13
- 1075              		.loc 1 175 25 view .LVU306
- 1076 007e F7EE000A 		vmov.f32	s1, #1.0e+0
- 1077 0082 39EE209A 		vadd.f32	s18, s18, s1
- 1078              	.LVL88:
- 176:Core/Src/MPU9250.c ****     mag_field_raw_adj_y = (float)mag_field_raw_y * ((float)dev->mag_coef_y - 128.f) * 0.5f / 128.f 
- 1079              		.loc 1 176 5 is_stmt 1 view .LVU307
- 1080              		.loc 1 176 63 is_stmt 0 view .LVU308
- 1081 0086 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
- 1082 0088 07EE103A 		vmov	s14, r3	@ int
- 1083              		.loc 1 176 53 view .LVU309
- 1084 008c B8EE477A 		vcvt.f32.u32	s14, s14
- 1085              		.loc 1 176 76 view .LVU310
- 1086 0090 37EE657A 		vsub.f32	s14, s14, s11
- 1087              		.loc 1 176 50 view .LVU311
- 1088 0094 28EE078A 		vmul.f32	s16, s16, s14
- 1089              		.loc 1 176 85 view .LVU312
- 1090 0098 28EE068A 		vmul.f32	s16, s16, s12
- 1091              		.loc 1 176 92 view .LVU313
- 1092 009c 28EE268A 		vmul.f32	s16, s16, s13
- 1093              		.loc 1 176 25 view .LVU314
- 1094 00a0 38EE208A 		vadd.f32	s16, s16, s1
- 1095              	.LVL89:
- 177:Core/Src/MPU9250.c ****     mag_field_raw_adj_z = (float)mag_field_raw_z * ((float)dev->mag_coef_z - 128.f) * 0.5f / 128.f 
- 1096              		.loc 1 177 5 is_stmt 1 view .LVU315
- 1097              		.loc 1 177 63 is_stmt 0 view .LVU316
- 1098 00a4 A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
- 1099 00a6 08EE903A 		vmov	s17, r3	@ int
- 1100              	.LVL90:
- 1101              		.loc 1 177 53 view .LVU317
- 1102 00aa F8EE688A 		vcvt.f32.u32	s17, s17
- 1103              		.loc 1 177 76 view .LVU318
- 1104 00ae 78EEE58A 		vsub.f32	s17, s17, s11
- 1105              		.loc 1 177 50 view .LVU319
- 1106 00b2 67EEA88A 		vmul.f32	s17, s15, s17
- 1107              		.loc 1 177 85 view .LVU320
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 24
+ 924              		.cfi_offset 85, -36
+ 925              		.cfi_offset 86, -32
+ 926              		.cfi_offset 87, -28
+ 927              		.cfi_offset 88, -24
+ 928              		.cfi_offset 89, -20
+ 929 0006 82B0     		sub	sp, sp, #8
+ 930              	.LCFI27:
+ 931              		.cfi_def_cfa_offset 64
+ 932 0008 0446     		mov	r4, r0
+ 176:Core/Src/MPU9250.c ****     uint8_t data[7];
+ 933              		.loc 1 176 5 is_stmt 1 view .LVU249
+ 177:Core/Src/MPU9250.c ****     int16_t mag_field_raw_x = 0, mag_field_raw_y = 0, mag_field_raw_z = 0;
+ 934              		.loc 1 177 5 view .LVU250
+ 935              	.LVL71:
+ 178:Core/Src/MPU9250.c ****     static const float mag_bias_x = -81.67f, mag_bias_y = 196.65f, mag_bias_z = -151.76f,
+ 936              		.loc 1 178 5 view .LVU251
+ 179:Core/Src/MPU9250.c ****                        mag_scale_x = 1.07f, mag_scale_y = 1.17f, mag_scale_z = 0.82f;
+ 180:Core/Src/MPU9250.c ****     float mag_field_raw_adj_x = 0.f, mag_field_raw_adj_y = 0.f, mag_field_raw_adj_z = 0.f,
+ 937              		.loc 1 180 5 view .LVU252
+ 181:Core/Src/MPU9250.c ****           mag_field_uT_x = 0.f, mag_field_uT_y = 0.f, mag_field_uT_z = 0.f, norm = 0.f,
+ 182:Core/Src/MPU9250.c ****           mag_angle_deg_x = 0.f, mag_angle_deg_y = 0.f;
+ 183:Core/Src/MPU9250.c **** 
+ 184:Core/Src/MPU9250.c ****     MPU9250_Read_Registers(MPU9250_MAG_ADDR, MPU9250_MAG_REG_HXL, data, sizeof(data));
+ 938              		.loc 1 184 5 view .LVU253
+ 939 000a 0723     		movs	r3, #7
+ 940 000c 6A46     		mov	r2, sp
+ 941 000e 0321     		movs	r1, #3
+ 942 0010 1820     		movs	r0, #24
+ 943              	.LVL72:
+ 944              		.loc 1 184 5 is_stmt 0 view .LVU254
+ 945 0012 FFF7FEFF 		bl	MPU9250_Read_Registers
+ 946              	.LVL73:
+ 185:Core/Src/MPU9250.c **** 
+ 186:Core/Src/MPU9250.c ****     if (!(data[6] & 0x08)) // ST2 hasn't overflow indication
+ 947              		.loc 1 186 5 is_stmt 1 view .LVU255
+ 948              		.loc 1 186 15 is_stmt 0 view .LVU256
+ 949 0016 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 950              		.loc 1 186 8 view .LVU257
+ 951 001a 13F0080F 		tst	r3, #8
+ 952 001e 40F05181 		bne	.L34
+ 187:Core/Src/MPU9250.c ****     {
+ 188:Core/Src/MPU9250.c ****         mag_field_raw_x = ((int16_t)data[1] << 8) | data[0];
+ 953              		.loc 1 188 9 is_stmt 1 view .LVU258
+ 954              		.loc 1 188 41 is_stmt 0 view .LVU259
+ 955 0022 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
+ 956              		.loc 1 188 45 view .LVU260
+ 957 0026 1B02     		lsls	r3, r3, #8
+ 958              		.loc 1 188 51 view .LVU261
+ 959 0028 1BB2     		sxth	r3, r3
+ 960              		.loc 1 188 57 view .LVU262
+ 961 002a 9DF80020 		ldrb	r2, [sp]	@ zero_extendqisi2
+ 962              		.loc 1 188 25 view .LVU263
+ 963 002e 1343     		orrs	r3, r3, r2
+ 964 0030 08EE903A 		vmov	s17, r3	@ int
+ 965              	.LVL74:
+ 189:Core/Src/MPU9250.c ****         mag_field_raw_y = ((int16_t)data[3] << 8) | data[2];
+ 966              		.loc 1 189 9 is_stmt 1 view .LVU264
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 21
 
 
- 1108 00b6 68EE868A 		vmul.f32	s17, s17, s12
- 1109              		.loc 1 177 92 view .LVU321
- 1110 00ba 68EEA68A 		vmul.f32	s17, s17, s13
- 1111              		.loc 1 177 25 view .LVU322
- 1112 00be 78EEA08A 		vadd.f32	s17, s17, s1
- 1113              	.LVL91:
- 178:Core/Src/MPU9250.c **** 
- 179:Core/Src/MPU9250.c ****     /*mag_field_raw_adj_x = mag_field_raw_adj_x * 0.6f * 0.01f;
- 180:Core/Src/MPU9250.c ****     mag_field_raw_adj_y = mag_field_raw_adj_y * 0.6f * 0.01f;
- 181:Core/Src/MPU9250.c ****     mag_field_raw_adj_z = mag_field_raw_adj_z * 0.6f * 0.01f;*/
- 182:Core/Src/MPU9250.c **** 
- 183:Core/Src/MPU9250.c ****     mag_angle_deg_x = mag_field_raw_adj_z * sinf(dev->roll * PI / 180.f) - mag_field_raw_adj_y * co
- 1114              		.loc 1 183 5 is_stmt 1 view .LVU323
- 1115              		.loc 1 183 53 is_stmt 0 view .LVU324
- 1116 00c2 D4ED0F7A 		vldr.32	s15, [r4, #60]
- 1117              		.loc 1 183 60 view .LVU325
- 1118 00c6 DFED24AA 		vldr.32	s21, .L35+8
- 1119 00ca 67EEAA7A 		vmul.f32	s15, s15, s21
- 1120              		.loc 1 183 45 view .LVU326
- 1121 00ce 9FED23BA 		vldr.32	s22, .L35+12
- 1122 00d2 C7EE8B9A 		vdiv.f32	s19, s15, s22
- 1123 00d6 B0EE690A 		vmov.f32	s0, s19
- 1124 00da FFF7FEFF 		bl	sinf
- 1125              	.LVL92:
- 1126              		.loc 1 183 45 view .LVU327
- 1127 00de B0EE40AA 		vmov.f32	s20, s0
- 1128              		.loc 1 183 43 view .LVU328
- 1129 00e2 60EE28BA 		vmul.f32	s23, s0, s17
- 1130              		.loc 1 183 98 view .LVU329
- 1131 00e6 B0EE690A 		vmov.f32	s0, s19
- 1132 00ea FFF7FEFF 		bl	cosf
- 1133              	.LVL93:
- 1134 00ee F0EE409A 		vmov.f32	s19, s0
- 1135              		.loc 1 183 96 view .LVU330
- 1136 00f2 60EE087A 		vmul.f32	s15, s0, s16
- 1137              		.loc 1 183 21 view .LVU331
- 1138 00f6 7BEEE7BA 		vsub.f32	s23, s23, s15
- 1139              	.LVL94:
- 184:Core/Src/MPU9250.c ****     mag_angle_deg_y = mag_field_raw_adj_x * cosf(dev->pitch * PI / 180.f) + mag_field_raw_adj_y * s
- 1140              		.loc 1 184 5 is_stmt 1 view .LVU332
- 1141              		.loc 1 184 53 is_stmt 0 view .LVU333
- 1142 00fa D4ED107A 		vldr.32	s15, [r4, #64]
- 1143              		.loc 1 184 61 view .LVU334
- 1144 00fe 67EEAA7A 		vmul.f32	s15, s15, s21
- 1145              		.loc 1 184 45 view .LVU335
- 1146 0102 87EE8BCA 		vdiv.f32	s24, s15, s22
- 1147 0106 B0EE4C0A 		vmov.f32	s0, s24
- 1148 010a FFF7FEFF 		bl	cosf
- 1149              	.LVL95:
- 1150              		.loc 1 184 43 view .LVU336
- 1151 010e 20EE099A 		vmul.f32	s18, s0, s18
- 1152              	.LVL96:
- 1153              		.loc 1 184 99 view .LVU337
- 1154 0112 B0EE4C0A 		vmov.f32	s0, s24
- 1155 0116 FFF7FEFF 		bl	sinf
- 1156              	.LVL97:
- 1157              		.loc 1 184 97 view .LVU338
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 25
+ 967              		.loc 1 189 41 is_stmt 0 view .LVU265
+ 968 0034 9DF80330 		ldrb	r3, [sp, #3]	@ zero_extendqisi2
+ 969              		.loc 1 189 45 view .LVU266
+ 970 0038 1B02     		lsls	r3, r3, #8
+ 971              		.loc 1 189 51 view .LVU267
+ 972 003a 1BB2     		sxth	r3, r3
+ 973              		.loc 1 189 57 view .LVU268
+ 974 003c 9DF80220 		ldrb	r2, [sp, #2]	@ zero_extendqisi2
+ 975              		.loc 1 189 25 view .LVU269
+ 976 0040 1343     		orrs	r3, r3, r2
+ 977 0042 09EE103A 		vmov	s18, r3	@ int
+ 978              	.LVL75:
+ 190:Core/Src/MPU9250.c ****         mag_field_raw_z = ((int16_t)data[5] << 8) | data[4];
+ 979              		.loc 1 190 9 is_stmt 1 view .LVU270
+ 980              		.loc 1 190 41 is_stmt 0 view .LVU271
+ 981 0046 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 982              		.loc 1 190 45 view .LVU272
+ 983 004a 1B02     		lsls	r3, r3, #8
+ 984              		.loc 1 190 51 view .LVU273
+ 985 004c 1BB2     		sxth	r3, r3
+ 986              		.loc 1 190 57 view .LVU274
+ 987 004e 9DF80420 		ldrb	r2, [sp, #4]	@ zero_extendqisi2
+ 988              		.loc 1 190 25 view .LVU275
+ 989 0052 1343     		orrs	r3, r3, r2
+ 990              	.LVL76:
+ 991              	.L28:
+ 191:Core/Src/MPU9250.c ****     }
+ 192:Core/Src/MPU9250.c **** 
+ 193:Core/Src/MPU9250.c ****     mag_field_raw_x -= mag_bias_x;
+ 992              		.loc 1 193 5 is_stmt 1 view .LVU276
+ 993              		.loc 1 193 21 is_stmt 0 view .LVU277
+ 994 0054 F8EEE88A 		vcvt.f32.s32	s17, s17
+ 995              	.LVL77:
+ 996              		.loc 1 193 21 view .LVU278
+ 997 0058 DFEDA37A 		vldr.32	s15, .L39+8
+ 998 005c 78EEA78A 		vadd.f32	s17, s17, s15
+ 999 0060 FDEEE88A 		vcvt.s32.f32	s17, s17
+ 1000 0064 18EE902A 		vmov	r2, s17	@ int
+ 1001 0068 12B2     		sxth	r2, r2
+ 1002 006a 08EE902A 		vmov	s17, r2	@ int
+ 1003              	.LVL78:
+ 194:Core/Src/MPU9250.c ****     mag_field_raw_y -= mag_bias_y;
+ 1004              		.loc 1 194 5 is_stmt 1 view .LVU279
+ 1005              		.loc 1 194 21 is_stmt 0 view .LVU280
+ 1006 006e B8EEC99A 		vcvt.f32.s32	s18, s18
+ 1007              	.LVL79:
+ 1008              		.loc 1 194 21 view .LVU281
+ 1009 0072 DFED9E7A 		vldr.32	s15, .L39+12
+ 1010 0076 39EE679A 		vsub.f32	s18, s18, s15
+ 1011 007a BDEEC99A 		vcvt.s32.f32	s18, s18
+ 1012 007e 19EE102A 		vmov	r2, s18	@ int
+ 1013 0082 12B2     		sxth	r2, r2
+ 1014 0084 09EE102A 		vmov	s18, r2	@ int
+ 1015              	.LVL80:
+ 195:Core/Src/MPU9250.c ****     mag_field_raw_z -= mag_bias_z;
+ 1016              		.loc 1 195 5 is_stmt 1 view .LVU282
+ 1017              		.loc 1 195 21 is_stmt 0 view .LVU283
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 22
 
 
- 1158 011a 20EE088A 		vmul.f32	s16, s0, s16
- 1159              	.LVL98:
- 1160              		.loc 1 184 129 view .LVU339
- 1161 011e 2AEE08AA 		vmul.f32	s20, s20, s16
- 1162              		.loc 1 184 75 view .LVU340
- 1163 0122 39EE0A9A 		vadd.f32	s18, s18, s20
- 1164              		.loc 1 184 182 view .LVU341
- 1165 0126 20EE280A 		vmul.f32	s0, s0, s17
- 1166              		.loc 1 184 214 view .LVU342
- 1167 012a 29EE800A 		vmul.f32	s0, s19, s0
- 1168              	.LVL99:
- 185:Core/Src/MPU9250.c ****     dev->mag_angle_deg_z = atan2f(mag_angle_deg_x, mag_angle_deg_y) * 180.f / PI;
- 1169              		.loc 1 185 5 is_stmt 1 view .LVU343
- 1170              		.loc 1 185 28 is_stmt 0 view .LVU344
- 1171 012e 79EE000A 		vadd.f32	s1, s18, s0
- 1172              	.LVL100:
- 1173              		.loc 1 185 28 view .LVU345
- 1174 0132 B0EE6B0A 		vmov.f32	s0, s23
- 1175 0136 FFF7FEFF 		bl	atan2f
- 1176              	.LVL101:
- 1177              		.loc 1 185 69 view .LVU346
- 1178 013a 20EE0BBA 		vmul.f32	s22, s0, s22
- 1179              		.loc 1 185 77 view .LVU347
- 1180 013e CBEE2A7A 		vdiv.f32	s15, s22, s21
- 1181              		.loc 1 185 26 view .LVU348
- 1182 0142 C4ED0E7A 		vstr.32	s15, [r4, #56]
- 186:Core/Src/MPU9250.c **** }
- 1183              		.loc 1 186 1 view .LVU349
- 1184 0146 02B0     		add	sp, sp, #8
- 1185              	.LCFI29:
- 1186              		.cfi_def_cfa_offset 48
- 1187              		@ sp needed
- 1188 0148 BDEC0A8B 		vldm	sp!, {d8-d12}
- 1189              	.LCFI30:
- 1190              		.cfi_restore 88
- 1191              		.cfi_restore 89
- 1192              		.cfi_restore 86
- 1193              		.cfi_restore 87
- 1194              		.cfi_restore 84
- 1195              		.cfi_restore 85
- 1196              		.cfi_restore 82
- 1197              		.cfi_restore 83
- 1198              		.cfi_restore 80
- 1199              		.cfi_restore 81
- 1200              		.cfi_def_cfa_offset 8
- 1201              		.loc 1 186 1 view .LVU350
- 1202 014c 10BD     		pop	{r4, pc}
- 1203              	.LVL102:
- 1204              	.L36:
- 1205              		.loc 1 186 1 view .LVU351
- 1206 014e 00BF     		.align	2
- 1207              	.L35:
- 1208 0150 00000043 		.word	1124073472
- 1209 0154 0000003C 		.word	1006632960
- 1210 0158 D80F4940 		.word	1078530008
- 1211 015c 00003443 		.word	1127481344
- 1212              		.cfi_endproc
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 26
+ 1018 0088 07EE903A 		vmov	s15, r3	@ int
+ 1019 008c B8EEE78A 		vcvt.f32.s32	s16, s15
+ 1020 0090 DFED977A 		vldr.32	s15, .L39+16
+ 1021 0094 38EE278A 		vadd.f32	s16, s16, s15
+ 1022 0098 BDEEC88A 		vcvt.s32.f32	s16, s16
+ 1023 009c 18EE103A 		vmov	r3, s16	@ int
+ 1024              	.LVL81:
+ 1025              		.loc 1 195 21 view .LVU284
+ 1026 00a0 1BB2     		sxth	r3, r3
+ 1027 00a2 08EE103A 		vmov	s16, r3	@ int
+ 1028              	.LVL82:
+ 196:Core/Src/MPU9250.c **** 
+ 197:Core/Src/MPU9250.c ****     mag_field_raw_x *= mag_scale_x;
+ 1029              		.loc 1 197 5 is_stmt 1 view .LVU285
+ 1030              		.loc 1 197 21 is_stmt 0 view .LVU286
+ 1031 00a6 F8EEE88A 		vcvt.f32.s32	s17, s17
+ 1032              	.LVL83:
+ 1033              		.loc 1 197 21 view .LVU287
+ 1034 00aa DFED927A 		vldr.32	s15, .L39+20
+ 1035 00ae 68EEA78A 		vmul.f32	s17, s17, s15
+ 1036 00b2 FDEEE88A 		vcvt.s32.f32	s17, s17
+ 1037 00b6 18EE903A 		vmov	r3, s17	@ int
+ 1038 00ba 1BB2     		sxth	r3, r3
+ 1039 00bc 08EE903A 		vmov	s17, r3	@ int
+ 1040              	.LVL84:
+ 198:Core/Src/MPU9250.c ****     mag_field_raw_y *= mag_scale_y;
+ 1041              		.loc 1 198 5 is_stmt 1 view .LVU288
+ 1042              		.loc 1 198 21 is_stmt 0 view .LVU289
+ 1043 00c0 B8EEC99A 		vcvt.f32.s32	s18, s18
+ 1044              	.LVL85:
+ 1045              		.loc 1 198 21 view .LVU290
+ 1046 00c4 DFED8C7A 		vldr.32	s15, .L39+24
+ 1047 00c8 29EE279A 		vmul.f32	s18, s18, s15
+ 1048 00cc BDEEC99A 		vcvt.s32.f32	s18, s18
+ 1049 00d0 19EE103A 		vmov	r3, s18	@ int
+ 1050 00d4 1BB2     		sxth	r3, r3
+ 1051 00d6 09EE103A 		vmov	s18, r3	@ int
+ 1052              	.LVL86:
+ 199:Core/Src/MPU9250.c ****     mag_field_raw_z *= mag_scale_z;
+ 1053              		.loc 1 199 5 is_stmt 1 view .LVU291
+ 1054              		.loc 1 199 21 is_stmt 0 view .LVU292
+ 1055 00da B8EEC88A 		vcvt.f32.s32	s16, s16
+ 1056              	.LVL87:
+ 1057              		.loc 1 199 21 view .LVU293
+ 1058 00de DFED877A 		vldr.32	s15, .L39+28
+ 1059 00e2 28EE278A 		vmul.f32	s16, s16, s15
+ 1060 00e6 BDEEC88A 		vcvt.s32.f32	s16, s16
+ 1061 00ea 18EE103A 		vmov	r3, s16	@ int
+ 1062 00ee 1BB2     		sxth	r3, r3
+ 1063 00f0 08EE103A 		vmov	s16, r3	@ int
+ 1064              	.LVL88:
+ 200:Core/Src/MPU9250.c **** 
+ 201:Core/Src/MPU9250.c ****     mag_field_raw_adj_x = (float)mag_field_raw_x * ((float)dev->mag_coef_x - 128.f) * 0.5f / 128.f 
+ 1065              		.loc 1 201 5 is_stmt 1 view .LVU294
+ 1066              		.loc 1 201 27 is_stmt 0 view .LVU295
+ 1067 00f4 F8EEE88A 		vcvt.f32.s32	s17, s17
+ 1068              	.LVL89:
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 23
 
 
- 1213              	.LFE243:
- 1215              		.text
- 1216              	.Letext0:
- 1217              		.file 2 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\inc
- 1218              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\inc
- 1219              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 1220              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1221              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1222              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 1223              		.file 8 "Core/Inc/MPU9250.h"
- 1224              		.file 9 "Core/Inc/i2c.h"
- 1225              		.file 10 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\in
- 1226              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s 			page 27
+ 1069              		.loc 1 201 63 view .LVU296
+ 1070 00f8 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 1071 00fa 07EE903A 		vmov	s15, r3	@ int
+ 1072              		.loc 1 201 53 view .LVU297
+ 1073 00fe F8EE677A 		vcvt.f32.u32	s15, s15
+ 1074              		.loc 1 201 76 view .LVU298
+ 1075 0102 9FED7F6A 		vldr.32	s12, .L39+32
+ 1076 0106 77EEC67A 		vsub.f32	s15, s15, s12
+ 1077              		.loc 1 201 50 view .LVU299
+ 1078 010a 68EEA78A 		vmul.f32	s17, s17, s15
+ 1079              		.loc 1 201 85 view .LVU300
+ 1080 010e F6EE006A 		vmov.f32	s13, #5.0e-1
+ 1081 0112 68EEA68A 		vmul.f32	s17, s17, s13
+ 1082              		.loc 1 201 92 view .LVU301
+ 1083 0116 9FED7B7A 		vldr.32	s14, .L39+36
+ 1084 011a 68EE878A 		vmul.f32	s17, s17, s14
+ 1085              		.loc 1 201 25 view .LVU302
+ 1086 011e B7EE000A 		vmov.f32	s0, #1.0e+0
+ 1087 0122 78EE808A 		vadd.f32	s17, s17, s0
+ 1088              	.LVL90:
+ 202:Core/Src/MPU9250.c ****     mag_field_raw_adj_y = (float)mag_field_raw_y * ((float)dev->mag_coef_y - 128.f) * 0.5f / 128.f 
+ 1089              		.loc 1 202 5 is_stmt 1 view .LVU303
+ 1090              		.loc 1 202 27 is_stmt 0 view .LVU304
+ 1091 0126 B8EEC99A 		vcvt.f32.s32	s18, s18
+ 1092              	.LVL91:
+ 1093              		.loc 1 202 63 view .LVU305
+ 1094 012a 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 1095 012c 07EE903A 		vmov	s15, r3	@ int
+ 1096              		.loc 1 202 53 view .LVU306
+ 1097 0130 F8EE677A 		vcvt.f32.u32	s15, s15
+ 1098              		.loc 1 202 76 view .LVU307
+ 1099 0134 77EEC67A 		vsub.f32	s15, s15, s12
+ 1100              		.loc 1 202 50 view .LVU308
+ 1101 0138 29EE279A 		vmul.f32	s18, s18, s15
+ 1102              		.loc 1 202 85 view .LVU309
+ 1103 013c 29EE269A 		vmul.f32	s18, s18, s13
+ 1104              		.loc 1 202 92 view .LVU310
+ 1105 0140 29EE079A 		vmul.f32	s18, s18, s14
+ 1106              		.loc 1 202 25 view .LVU311
+ 1107 0144 39EE009A 		vadd.f32	s18, s18, s0
+ 1108              	.LVL92:
+ 203:Core/Src/MPU9250.c ****     mag_field_raw_adj_z = (float)mag_field_raw_z * ((float)dev->mag_coef_z - 128.f) * 0.5f / 128.f 
+ 1109              		.loc 1 203 5 is_stmt 1 view .LVU312
+ 1110              		.loc 1 203 27 is_stmt 0 view .LVU313
+ 1111 0148 F8EEC87A 		vcvt.f32.s32	s15, s16
+ 1112              		.loc 1 203 63 view .LVU314
+ 1113 014c A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
+ 1114 014e 08EE103A 		vmov	s16, r3	@ int
+ 1115              	.LVL93:
+ 1116              		.loc 1 203 53 view .LVU315
+ 1117 0152 B8EE488A 		vcvt.f32.u32	s16, s16
+ 1118              		.loc 1 203 76 view .LVU316
+ 1119 0156 38EE468A 		vsub.f32	s16, s16, s12
+ 1120              		.loc 1 203 50 view .LVU317
+ 1121 015a 27EE888A 		vmul.f32	s16, s15, s16
+ 1122              		.loc 1 203 85 view .LVU318
+ 1123 015e 28EE268A 		vmul.f32	s16, s16, s13
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 24
+
+
+ 1124              		.loc 1 203 92 view .LVU319
+ 1125 0162 28EE078A 		vmul.f32	s16, s16, s14
+ 1126              		.loc 1 203 25 view .LVU320
+ 1127 0166 38EE008A 		vadd.f32	s16, s16, s0
+ 1128              	.LVL94:
+ 204:Core/Src/MPU9250.c **** 
+ 205:Core/Src/MPU9250.c ****     mag_field_uT_x = mag_field_raw_adj_x * 0.6f; // uT
+ 1129              		.loc 1 205 5 is_stmt 1 view .LVU321
+ 1130              		.loc 1 205 20 is_stmt 0 view .LVU322
+ 1131 016a 9FED670A 		vldr.32	s0, .L39+40
+ 1132 016e 68EE808A 		vmul.f32	s17, s17, s0
+ 1133              	.LVL95:
+ 206:Core/Src/MPU9250.c ****     mag_field_uT_y = mag_field_raw_adj_y * 0.6f;
+ 1134              		.loc 1 206 5 is_stmt 1 view .LVU323
+ 1135              		.loc 1 206 20 is_stmt 0 view .LVU324
+ 1136 0172 29EE009A 		vmul.f32	s18, s18, s0
+ 1137              	.LVL96:
+ 207:Core/Src/MPU9250.c ****     mag_field_uT_z = mag_field_raw_adj_z * 0.6f;
+ 1138              		.loc 1 207 5 is_stmt 1 view .LVU325
+ 1139              		.loc 1 207 20 is_stmt 0 view .LVU326
+ 1140 0176 28EE008A 		vmul.f32	s16, s16, s0
+ 1141              	.LVL97:
+ 208:Core/Src/MPU9250.c **** 
+ 209:Core/Src/MPU9250.c ****     norm = sqrtf(pow(mag_field_uT_x, 2) + pow(mag_field_uT_y, 2) + pow(mag_field_uT_z, 2));
+ 1142              		.loc 1 209 5 is_stmt 1 view .LVU327
+ 1143              		.loc 1 209 18 is_stmt 0 view .LVU328
+ 1144 017a 9FED59AB 		vldr.64	d10, .L39
+ 1145 017e 18EE900A 		vmov	r0, s17
+ 1146 0182 FFF7FEFF 		bl	__aeabi_f2d
+ 1147              	.LVL98:
+ 1148              		.loc 1 209 18 view .LVU329
+ 1149 0186 B0EE4A1A 		vmov.f32	s2, s20
+ 1150 018a F0EE6A1A 		vmov.f32	s3, s21
+ 1151 018e 41EC100B 		vmov	d0, r0, r1
+ 1152 0192 FFF7FEFF 		bl	pow
+ 1153              	.LVL99:
+ 1154 0196 57EC106B 		vmov	r6, r7, d0
+ 1155              		.loc 1 209 43 view .LVU330
+ 1156 019a 19EE100A 		vmov	r0, s18
+ 1157 019e FFF7FEFF 		bl	__aeabi_f2d
+ 1158              	.LVL100:
+ 1159 01a2 B0EE4A1A 		vmov.f32	s2, s20
+ 1160 01a6 F0EE6A1A 		vmov.f32	s3, s21
+ 1161 01aa 41EC100B 		vmov	d0, r0, r1
+ 1162 01ae FFF7FEFF 		bl	pow
+ 1163              	.LVL101:
+ 1164 01b2 53EC102B 		vmov	r2, r3, d0
+ 1165              		.loc 1 209 41 view .LVU331
+ 1166 01b6 3046     		mov	r0, r6
+ 1167 01b8 3946     		mov	r1, r7
+ 1168 01ba FFF7FEFF 		bl	__aeabi_dadd
+ 1169              	.LVL102:
+ 1170 01be 0646     		mov	r6, r0
+ 1171 01c0 0F46     		mov	r7, r1
+ 1172              		.loc 1 209 68 view .LVU332
+ 1173 01c2 18EE100A 		vmov	r0, s16
+ 1174 01c6 FFF7FEFF 		bl	__aeabi_f2d
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 25
+
+
+ 1175              	.LVL103:
+ 1176 01ca B0EE4A1A 		vmov.f32	s2, s20
+ 1177 01ce F0EE6A1A 		vmov.f32	s3, s21
+ 1178 01d2 41EC100B 		vmov	d0, r0, r1
+ 1179 01d6 FFF7FEFF 		bl	pow
+ 1180              	.LVL104:
+ 1181 01da 53EC102B 		vmov	r2, r3, d0
+ 1182              		.loc 1 209 66 view .LVU333
+ 1183 01de 3046     		mov	r0, r6
+ 1184 01e0 3946     		mov	r1, r7
+ 1185 01e2 FFF7FEFF 		bl	__aeabi_dadd
+ 1186              	.LVL105:
+ 1187              		.loc 1 209 12 view .LVU334
+ 1188 01e6 FFF7FEFF 		bl	__aeabi_d2f
+ 1189              	.LVL106:
+ 1190 01ea 00EE100A 		vmov	s0, r0
+ 1191 01ee FFF7FEFF 		bl	sqrtf
+ 1192              	.LVL107:
+ 210:Core/Src/MPU9250.c **** 
+ 211:Core/Src/MPU9250.c ****     if (norm)
+ 1193              		.loc 1 211 5 is_stmt 1 view .LVU335
+ 1194              		.loc 1 211 8 is_stmt 0 view .LVU336
+ 1195 01f2 B5EE400A 		vcmp.f32	s0, #0
+ 1196 01f6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1197 01fa 05D0     		beq	.L29
+ 212:Core/Src/MPU9250.c ****     {
+ 213:Core/Src/MPU9250.c ****         mag_field_uT_x /= norm;
+ 1198              		.loc 1 213 9 is_stmt 1 view .LVU337
+ 1199              		.loc 1 213 24 is_stmt 0 view .LVU338
+ 1200 01fc C8EE808A 		vdiv.f32	s17, s17, s0
+ 1201              	.LVL108:
+ 214:Core/Src/MPU9250.c ****         mag_field_uT_y /= norm;
+ 1202              		.loc 1 214 9 is_stmt 1 view .LVU339
+ 1203              		.loc 1 214 24 is_stmt 0 view .LVU340
+ 1204 0200 89EE009A 		vdiv.f32	s18, s18, s0
+ 1205              	.LVL109:
+ 215:Core/Src/MPU9250.c ****         mag_field_uT_z /= norm;
+ 1206              		.loc 1 215 9 is_stmt 1 view .LVU341
+ 1207              		.loc 1 215 24 is_stmt 0 view .LVU342
+ 1208 0204 88EE008A 		vdiv.f32	s16, s16, s0
+ 1209              	.LVL110:
+ 1210              	.L29:
+ 216:Core/Src/MPU9250.c ****     }
+ 217:Core/Src/MPU9250.c **** 
+ 218:Core/Src/MPU9250.c ****     mag_angle_deg_x = -(mag_field_uT_x * cosf(dev->pitch * PI / 180.f) + mag_field_uT_y * sinf(dev-
+ 1211              		.loc 1 218 5 is_stmt 1 view .LVU343
+ 1212              		.loc 1 218 50 is_stmt 0 view .LVU344
+ 1213 0208 D4ED107A 		vldr.32	s15, [r4, #64]
+ 1214              		.loc 1 218 58 view .LVU345
+ 1215 020c DFED3FAA 		vldr.32	s21, .L39+44
+ 1216 0210 67EEAA7A 		vmul.f32	s15, s15, s21
+ 1217              		.loc 1 218 42 view .LVU346
+ 1218 0214 9FED3EBA 		vldr.32	s22, .L39+48
+ 1219 0218 87EE8BAA 		vdiv.f32	s20, s15, s22
+ 1220 021c B0EE4A0A 		vmov.f32	s0, s20
+ 1221              	.LVL111:
+ 1222              		.loc 1 218 42 view .LVU347
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 26
+
+
+ 1223 0220 FFF7FEFF 		bl	cosf
+ 1224              	.LVL112:
+ 1225              		.loc 1 218 40 view .LVU348
+ 1226 0224 60EE288A 		vmul.f32	s17, s0, s17
+ 1227              	.LVL113:
+ 1228              		.loc 1 218 99 view .LVU349
+ 1229 0228 D4ED0F7A 		vldr.32	s15, [r4, #60]
+ 1230              		.loc 1 218 106 view .LVU350
+ 1231 022c 67EEAA7A 		vmul.f32	s15, s15, s21
+ 1232              		.loc 1 218 91 view .LVU351
+ 1233 0230 87EE8BCA 		vdiv.f32	s24, s15, s22
+ 1234 0234 B0EE4C0A 		vmov.f32	s0, s24
+ 1235 0238 FFF7FEFF 		bl	sinf
+ 1236              	.LVL114:
+ 1237 023c F0EE409A 		vmov.f32	s19, s0
+ 1238              		.loc 1 218 89 view .LVU352
+ 1239 0240 60EE09BA 		vmul.f32	s23, s0, s18
+ 1240              		.loc 1 218 122 view .LVU353
+ 1241 0244 B0EE4A0A 		vmov.f32	s0, s20
+ 1242 0248 FFF7FEFF 		bl	sinf
+ 1243              	.LVL115:
+ 1244 024c B0EE40AA 		vmov.f32	s20, s0
+ 1245              		.loc 1 218 120 view .LVU354
+ 1246 0250 6BEE80BA 		vmul.f32	s23, s23, s0
+ 1247              		.loc 1 218 72 view .LVU355
+ 1248 0254 78EEAB8A 		vadd.f32	s17, s17, s23
+ 1249              		.loc 1 218 171 view .LVU356
+ 1250 0258 B0EE4C0A 		vmov.f32	s0, s24
+ 1251 025c FFF7FEFF 		bl	cosf
+ 1252              	.LVL116:
+ 1253              		.loc 1 218 169 view .LVU357
+ 1254 0260 60EE080A 		vmul.f32	s1, s0, s16
+ 1255              		.loc 1 218 200 view .LVU358
+ 1256 0264 2AEE20AA 		vmul.f32	s20, s20, s1
+ 1257              		.loc 1 218 152 view .LVU359
+ 1258 0268 78EECA8A 		vsub.f32	s17, s17, s20
+ 1259              	.LVL117:
+ 219:Core/Src/MPU9250.c ****     mag_angle_deg_y = mag_field_uT_y * cosf(dev->roll * PI / 180.f) + mag_field_uT_z * sinf(dev->ro
+ 1260              		.loc 1 219 5 is_stmt 1 view .LVU360
+ 1261              		.loc 1 219 38 is_stmt 0 view .LVU361
+ 1262 026c 20EE090A 		vmul.f32	s0, s0, s18
+ 1263              		.loc 1 219 86 view .LVU362
+ 1264 0270 29EE888A 		vmul.f32	s16, s19, s16
+ 1265              	.LVL118:
+ 220:Core/Src/MPU9250.c ****     dev->mag_angle_deg_z = -atan2f(mag_angle_deg_y, mag_angle_deg_x) * RAD2DEG;
+ 1266              		.loc 1 220 5 is_stmt 1 view .LVU363
+ 1267              		.loc 1 220 29 is_stmt 0 view .LVU364
+ 1268 0274 F1EE680A 		vneg.f32	s1, s17
+ 1269              	.LVL119:
+ 1270              		.loc 1 220 29 view .LVU365
+ 1271 0278 30EE080A 		vadd.f32	s0, s0, s16
+ 1272              	.LVL120:
+ 1273              		.loc 1 220 29 view .LVU366
+ 1274 027c FFF7FEFF 		bl	atan2f
+ 1275              	.LVL121:
+ 1276              		.loc 1 220 70 view .LVU367
+ 1277 0280 20EE4BBA 		vnmul.f32	s22, s0, s22
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 27
+
+
+ 1278              		.loc 1 220 72 view .LVU368
+ 1279 0284 CBEE2A7A 		vdiv.f32	s15, s22, s21
+ 1280              		.loc 1 220 26 view .LVU369
+ 1281 0288 C4ED0E7A 		vstr.32	s15, [r4, #56]
+ 221:Core/Src/MPU9250.c **** 
+ 222:Core/Src/MPU9250.c ****     /*mag_angle_deg_x = mag_field_uT_z * sinf(dev->roll * PI / 180.f) - mag_field_uT_y * cosf(dev->
+ 223:Core/Src/MPU9250.c ****     mag_angle_deg_y = mag_field_uT_x * cosf(dev->pitch * PI / 180.f) + mag_field_uT_y * sinf(dev->r
+ 224:Core/Src/MPU9250.c ****     dev->mag_angle_deg_z = -atan2f(mag_angle_deg_y, mag_angle_deg_x) * RAD2DEG;*/
+ 225:Core/Src/MPU9250.c **** 
+ 226:Core/Src/MPU9250.c ****     /*if (mag_angle_deg_y < 0.f)
+ 227:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z = 180.f - (atan2f(mag_angle_deg_x, mag_angle_deg_y)) * RAD2DEG;
+ 228:Core/Src/MPU9250.c **** 
+ 229:Core/Src/MPU9250.c ****     else if (mag_angle_deg_y > 0.f && mag_angle_deg_x < 0.f)
+ 230:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z = -(atan2f(mag_angle_deg_x, mag_angle_deg_y)) * RAD2DEG;
+ 231:Core/Src/MPU9250.c **** 
+ 232:Core/Src/MPU9250.c ****     else if (mag_angle_deg_y > 0.f && mag_angle_deg_x > 0.f)
+ 233:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z = 360.f - (atan2f(mag_angle_deg_x, mag_angle_deg_y)) * RAD2DEG;
+ 234:Core/Src/MPU9250.c **** 
+ 235:Core/Src/MPU9250.c ****     else if (mag_angle_deg_y == 0.f && mag_angle_deg_x < 0.f)
+ 236:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z = 90.f;
+ 237:Core/Src/MPU9250.c **** 
+ 238:Core/Src/MPU9250.c ****     else if (mag_angle_deg_y == 0.f && mag_angle_deg_x > 0.f)
+ 239:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z = 270.f;*/
+ 240:Core/Src/MPU9250.c **** 
+ 241:Core/Src/MPU9250.c ****     dev->mag_angle_deg_z += DECLINATION;
+ 1282              		.loc 1 241 5 is_stmt 1 view .LVU370
+ 1283              		.loc 1 241 26 is_stmt 0 view .LVU371
+ 1284 028c B1EE047A 		vmov.f32	s14, #5.0e+0
+ 1285 0290 77EE877A 		vadd.f32	s15, s15, s14
+ 1286 0294 C4ED0E7A 		vstr.32	s15, [r4, #56]
+ 242:Core/Src/MPU9250.c **** 
+ 243:Core/Src/MPU9250.c ****     if (dev->mag_angle_deg_z < 0.f)
+ 1287              		.loc 1 243 5 is_stmt 1 view .LVU372
+ 1288              		.loc 1 243 8 is_stmt 0 view .LVU373
+ 1289 0298 F5EEC07A 		vcmpe.f32	s15, #0
+ 1290 029c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1291 02a0 16D4     		bmi	.L38
+ 1292              	.L30:
+ 244:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z += 360.f;
+ 245:Core/Src/MPU9250.c ****     if (dev->mag_angle_deg_z > 360.f)
+ 1293              		.loc 1 245 5 is_stmt 1 view .LVU374
+ 1294              		.loc 1 245 12 is_stmt 0 view .LVU375
+ 1295 02a2 D4ED0E7A 		vldr.32	s15, [r4, #56]
+ 1296              		.loc 1 245 8 view .LVU376
+ 1297 02a6 9FED1B7A 		vldr.32	s14, .L39+52
+ 1298 02aa F4EEC77A 		vcmpe.f32	s15, s14
+ 1299 02ae F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1300 02b2 03DD     		ble	.L27
+ 246:Core/Src/MPU9250.c ****         dev->mag_angle_deg_z -= 360.f;
+ 1301              		.loc 1 246 9 is_stmt 1 view .LVU377
+ 1302              		.loc 1 246 30 is_stmt 0 view .LVU378
+ 1303 02b4 77EEC77A 		vsub.f32	s15, s15, s14
+ 1304 02b8 C4ED0E7A 		vstr.32	s15, [r4, #56]
+ 1305              	.L27:
+ 247:Core/Src/MPU9250.c **** }
+ 1306              		.loc 1 247 1 view .LVU379
+ 1307 02bc 02B0     		add	sp, sp, #8
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 28
+
+
+ 1308              	.LCFI28:
+ 1309              		.cfi_remember_state
+ 1310              		.cfi_def_cfa_offset 56
+ 1311              		@ sp needed
+ 1312 02be BDEC0A8B 		vldm	sp!, {d8-d12}
+ 1313              	.LCFI29:
+ 1314              		.cfi_restore 88
+ 1315              		.cfi_restore 89
+ 1316              		.cfi_restore 86
+ 1317              		.cfi_restore 87
+ 1318              		.cfi_restore 84
+ 1319              		.cfi_restore 85
+ 1320              		.cfi_restore 82
+ 1321              		.cfi_restore 83
+ 1322              		.cfi_restore 80
+ 1323              		.cfi_restore 81
+ 1324              		.cfi_def_cfa_offset 16
+ 1325              	.LVL122:
+ 1326              		.loc 1 247 1 view .LVU380
+ 1327 02c2 D0BD     		pop	{r4, r6, r7, pc}
+ 1328              	.LVL123:
+ 1329              	.L34:
+ 1330              	.LCFI30:
+ 1331              		.cfi_restore_state
+ 177:Core/Src/MPU9250.c ****     static const float mag_bias_x = -81.67f, mag_bias_y = 196.65f, mag_bias_z = -151.76f,
+ 1332              		.loc 1 177 55 view .LVU381
+ 1333 02c4 0023     		movs	r3, #0
+ 177:Core/Src/MPU9250.c ****     static const float mag_bias_x = -81.67f, mag_bias_y = 196.65f, mag_bias_z = -151.76f,
+ 1334              		.loc 1 177 34 view .LVU382
+ 1335 02c6 09EE103A 		vmov	s18, r3	@ int
+ 177:Core/Src/MPU9250.c ****     static const float mag_bias_x = -81.67f, mag_bias_y = 196.65f, mag_bias_z = -151.76f,
+ 1336              		.loc 1 177 13 view .LVU383
+ 1337 02ca 08EE903A 		vmov	s17, r3	@ int
+ 1338 02ce C1E6     		b	.L28
+ 1339              	.LVL124:
+ 1340              	.L38:
+ 244:Core/Src/MPU9250.c ****     if (dev->mag_angle_deg_z > 360.f)
+ 1341              		.loc 1 244 9 is_stmt 1 view .LVU384
+ 244:Core/Src/MPU9250.c ****     if (dev->mag_angle_deg_z > 360.f)
+ 1342              		.loc 1 244 30 is_stmt 0 view .LVU385
+ 1343 02d0 9FED107A 		vldr.32	s14, .L39+52
+ 1344 02d4 77EE877A 		vadd.f32	s15, s15, s14
+ 1345 02d8 C4ED0E7A 		vstr.32	s15, [r4, #56]
+ 1346 02dc E1E7     		b	.L30
+ 1347              	.L40:
+ 1348 02de 00BF     		.align	3
+ 1349              	.L39:
+ 1350 02e0 00000000 		.word	0
+ 1351 02e4 00000040 		.word	1073741824
+ 1352 02e8 0A57A342 		.word	1118000906
+ 1353 02ec 66A64443 		.word	1128572518
+ 1354 02f0 8FC21743 		.word	1125630607
+ 1355 02f4 C3F5883F 		.word	1065940419
+ 1356 02f8 8FC2953F 		.word	1066779279
+ 1357 02fc 85EB513F 		.word	1062333317
+ 1358 0300 00000043 		.word	1124073472
+ 1359 0304 0000003C 		.word	1006632960
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 29
+
+
+ 1360 0308 9A99193F 		.word	1058642330
+ 1361 030c D80F4940 		.word	1078530008
+ 1362 0310 00003443 		.word	1127481344
+ 1363 0314 0000B443 		.word	1135869952
+ 1364              		.cfi_endproc
+ 1365              	.LFE247:
+ 1367              		.section	.text.MPU9250_Calibrate,"ax",%progbits
+ 1368              		.align	1
+ 1369              		.global	MPU9250_Calibrate
+ 1370              		.syntax unified
+ 1371              		.thumb
+ 1372              		.thumb_func
+ 1373              		.fpu fpv4-sp-d16
+ 1375              	MPU9250_Calibrate:
+ 1376              	.LVL125:
+ 1377              	.LFB244:
+  90:Core/Src/MPU9250.c ****     float avg_gyro_bias_x = 0, avg_gyro_bias_y = 0, avg_gyro_bias_z = 0;
+ 1378              		.loc 1 90 1 is_stmt 1 view -0
+ 1379              		.cfi_startproc
+ 1380              		@ args = 0, pretend = 0, frame = 40
+ 1381              		@ frame_needed = 0, uses_anonymous_args = 0
+  90:Core/Src/MPU9250.c ****     float avg_gyro_bias_x = 0, avg_gyro_bias_y = 0, avg_gyro_bias_z = 0;
+ 1382              		.loc 1 90 1 is_stmt 0 view .LVU387
+ 1383 0000 30B5     		push	{r4, r5, lr}
+ 1384              	.LCFI31:
+ 1385              		.cfi_def_cfa_offset 12
+ 1386              		.cfi_offset 4, -12
+ 1387              		.cfi_offset 5, -8
+ 1388              		.cfi_offset 14, -4
+ 1389 0002 2DED048B 		vpush.64	{d8, d9}
+ 1390              	.LCFI32:
+ 1391              		.cfi_def_cfa_offset 28
+ 1392              		.cfi_offset 80, -28
+ 1393              		.cfi_offset 81, -24
+ 1394              		.cfi_offset 82, -20
+ 1395              		.cfi_offset 83, -16
+ 1396 0006 8BB0     		sub	sp, sp, #44
+ 1397              	.LCFI33:
+ 1398              		.cfi_def_cfa_offset 72
+ 1399 0008 0446     		mov	r4, r0
+  91:Core/Src/MPU9250.c ****     float mag_temp[3] = {0}, mag_min[3] = {0}, mag_max[3] = {0}, avg_radius = 0;
+ 1400              		.loc 1 91 5 is_stmt 1 view .LVU388
+ 1401              	.LVL126:
+  92:Core/Src/MPU9250.c **** 
+ 1402              		.loc 1 92 5 view .LVU389
+  92:Core/Src/MPU9250.c **** 
+ 1403              		.loc 1 92 11 is_stmt 0 view .LVU390
+ 1404 000a 0025     		movs	r5, #0
+ 1405 000c 0795     		str	r5, [sp, #28]
+ 1406 000e 0895     		str	r5, [sp, #32]
+ 1407 0010 0995     		str	r5, [sp, #36]
+  92:Core/Src/MPU9250.c **** 
+ 1408              		.loc 1 92 30 view .LVU391
+ 1409 0012 0495     		str	r5, [sp, #16]
+ 1410 0014 0595     		str	r5, [sp, #20]
+ 1411 0016 0695     		str	r5, [sp, #24]
+  92:Core/Src/MPU9250.c **** 
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 30
+
+
+ 1412              		.loc 1 92 48 view .LVU392
+ 1413 0018 0195     		str	r5, [sp, #4]
+ 1414 001a 0295     		str	r5, [sp, #8]
+ 1415 001c 0395     		str	r5, [sp, #12]
+ 1416              	.LVL127:
+  94:Core/Src/MPU9250.c ****     {
+ 1417              		.loc 1 94 5 is_stmt 1 view .LVU393
+ 1418              	.LBB2:
+  94:Core/Src/MPU9250.c ****     {
+ 1419              		.loc 1 94 10 view .LVU394
+  94:Core/Src/MPU9250.c ****     {
+ 1420              		.loc 1 94 10 is_stmt 0 view .LVU395
+ 1421              	.LBE2:
+  91:Core/Src/MPU9250.c ****     float mag_temp[3] = {0}, mag_min[3] = {0}, mag_max[3] = {0}, avg_radius = 0;
+ 1422              		.loc 1 91 53 view .LVU396
+ 1423 001e 9FED248A 		vldr.32	s16, .L45
+  91:Core/Src/MPU9250.c ****     float mag_temp[3] = {0}, mag_min[3] = {0}, mag_max[3] = {0}, avg_radius = 0;
+ 1424              		.loc 1 91 32 view .LVU397
+ 1425 0022 F0EE488A 		vmov.f32	s17, s16
+  91:Core/Src/MPU9250.c ****     float mag_temp[3] = {0}, mag_min[3] = {0}, mag_max[3] = {0}, avg_radius = 0;
+ 1426              		.loc 1 91 11 view .LVU398
+ 1427 0026 B0EE489A 		vmov.f32	s18, s16
+ 1428              	.LBB3:
+  94:Core/Src/MPU9250.c ****     {
+ 1429              		.loc 1 94 5 view .LVU399
+ 1430 002a 25E0     		b	.L42
+ 1431              	.LVL128:
+ 1432              	.L43:
+  96:Core/Src/MPU9250.c **** 
+ 1433              		.loc 1 96 9 is_stmt 1 discriminator 3 view .LVU400
+ 1434 002c 2046     		mov	r0, r4
+ 1435 002e FFF7FEFF 		bl	MPU9250_Read_Gyroscope
+ 1436              	.LVL129:
+  98:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
+ 1437              		.loc 1 98 9 discriminator 3 view .LVU401
+  98:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
+ 1438              		.loc 1 98 31 is_stmt 0 discriminator 3 view .LVU402
+ 1439 0032 B4F90430 		ldrsh	r3, [r4, #4]
+ 1440 0036 07EE903A 		vmov	s15, r3	@ int
+  98:Core/Src/MPU9250.c ****         avg_gyro_bias_y += dev->ang_vel_raw_y;
+ 1441              		.loc 1 98 25 discriminator 3 view .LVU403
+ 1442 003a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1443 003e 39EE279A 		vadd.f32	s18, s18, s15
+ 1444              	.LVL130:
+  99:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
+ 1445              		.loc 1 99 9 is_stmt 1 discriminator 3 view .LVU404
+  99:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
+ 1446              		.loc 1 99 31 is_stmt 0 discriminator 3 view .LVU405
+ 1447 0042 B4F90630 		ldrsh	r3, [r4, #6]
+ 1448 0046 07EE903A 		vmov	s15, r3	@ int
+  99:Core/Src/MPU9250.c ****         avg_gyro_bias_z += dev->ang_vel_raw_z;
+ 1449              		.loc 1 99 25 discriminator 3 view .LVU406
+ 1450 004a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1451 004e 78EEA78A 		vadd.f32	s17, s17, s15
+ 1452              	.LVL131:
+ 100:Core/Src/MPU9250.c **** 
+ 1453              		.loc 1 100 9 is_stmt 1 discriminator 3 view .LVU407
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 31
+
+
+ 100:Core/Src/MPU9250.c **** 
+ 1454              		.loc 1 100 31 is_stmt 0 discriminator 3 view .LVU408
+ 1455 0052 B4F90830 		ldrsh	r3, [r4, #8]
+ 1456 0056 07EE903A 		vmov	s15, r3	@ int
+ 100:Core/Src/MPU9250.c **** 
+ 1457              		.loc 1 100 25 discriminator 3 view .LVU409
+ 1458 005a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1459 005e 38EE278A 		vadd.f32	s16, s16, s15
+ 1460              	.LVL132:
+ 102:Core/Src/MPU9250.c **** 
+ 1461              		.loc 1 102 9 is_stmt 1 discriminator 3 view .LVU410
+ 1462 0062 2046     		mov	r0, r4
+ 1463 0064 FFF7FEFF 		bl	MPU9250_Read_Accelerometer
+ 1464              	.LVL133:
+ 104:Core/Src/MPU9250.c **** 
+ 1465              		.loc 1 104 9 discriminator 3 view .LVU411
+ 1466 0068 2046     		mov	r0, r4
+ 1467 006a FFF7FEFF 		bl	MPU9250_Read_Magnetometer
+ 1468              	.LVL134:
+ 106:Core/Src/MPU9250.c ****     }
+ 1469              		.loc 1 106 9 discriminator 3 view .LVU412
+ 1470 006e 0A20     		movs	r0, #10
+ 1471 0070 FFF7FEFF 		bl	HAL_Delay
+ 1472              	.LVL135:
+  94:Core/Src/MPU9250.c ****     {
+ 1473              		.loc 1 94 36 discriminator 3 view .LVU413
+  94:Core/Src/MPU9250.c ****     {
+ 1474              		.loc 1 94 37 is_stmt 0 discriminator 3 view .LVU414
+ 1475 0074 0135     		adds	r5, r5, #1
+ 1476              	.LVL136:
+  94:Core/Src/MPU9250.c ****     {
+ 1477              		.loc 1 94 37 discriminator 3 view .LVU415
+ 1478 0076 ADB2     		uxth	r5, r5
+ 1479              	.LVL137:
+ 1480              	.L42:
+  94:Core/Src/MPU9250.c ****     {
+ 1481              		.loc 1 94 26 is_stmt 1 discriminator 1 view .LVU416
+  94:Core/Src/MPU9250.c ****     {
+ 1482              		.loc 1 94 5 is_stmt 0 discriminator 1 view .LVU417
+ 1483 0078 B5F5FA6F 		cmp	r5, #2000
+ 1484 007c D6D3     		bcc	.L43
+ 1485              	.LBE3:
+ 109:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
+ 1486              		.loc 1 109 5 is_stmt 1 view .LVU418
+ 109:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
+ 1487              		.loc 1 109 40 is_stmt 0 view .LVU419
+ 1488 007e DFED0D7A 		vldr.32	s15, .L45+4
+ 1489 0082 89EE277A 		vdiv.f32	s14, s18, s15
+ 109:Core/Src/MPU9250.c ****     dev->gyro_bias_y = avg_gyro_bias_y / 2000;
+ 1490              		.loc 1 109 22 view .LVU420
+ 1491 0086 84ED037A 		vstr.32	s14, [r4, #12]
+ 110:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
+ 1492              		.loc 1 110 5 is_stmt 1 view .LVU421
+ 110:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
+ 1493              		.loc 1 110 40 is_stmt 0 view .LVU422
+ 1494 008a 88EEA77A 		vdiv.f32	s14, s17, s15
+ 110:Core/Src/MPU9250.c ****     dev->gyro_bias_z = avg_gyro_bias_z / 2000;
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 32
+
+
+ 1495              		.loc 1 110 22 view .LVU423
+ 1496 008e 84ED047A 		vstr.32	s14, [r4, #16]
+ 111:Core/Src/MPU9250.c **** 
+ 1497              		.loc 1 111 5 is_stmt 1 view .LVU424
+ 111:Core/Src/MPU9250.c **** 
+ 1498              		.loc 1 111 40 is_stmt 0 view .LVU425
+ 1499 0092 88EE277A 		vdiv.f32	s14, s16, s15
+ 111:Core/Src/MPU9250.c **** 
+ 1500              		.loc 1 111 22 view .LVU426
+ 1501 0096 84ED057A 		vstr.32	s14, [r4, #20]
+ 113:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
+ 1502              		.loc 1 113 5 is_stmt 1 view .LVU427
+ 113:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
+ 1503              		.loc 1 113 20 is_stmt 0 view .LVU428
+ 1504 009a 236B     		ldr	r3, [r4, #48]	@ float
+ 113:Core/Src/MPU9250.c ****     dev->pitch = dev->accel_angle_deg_y;
+ 1505              		.loc 1 113 15 view .LVU429
+ 1506 009c E363     		str	r3, [r4, #60]	@ float
+ 114:Core/Src/MPU9250.c ****     dev->yaw = dev->mag_angle_deg_z;
+ 1507              		.loc 1 114 5 is_stmt 1 view .LVU430
+ 114:Core/Src/MPU9250.c ****     dev->yaw = dev->mag_angle_deg_z;
+ 1508              		.loc 1 114 21 is_stmt 0 view .LVU431
+ 1509 009e 636B     		ldr	r3, [r4, #52]	@ float
+ 114:Core/Src/MPU9250.c ****     dev->yaw = dev->mag_angle_deg_z;
+ 1510              		.loc 1 114 16 view .LVU432
+ 1511 00a0 2364     		str	r3, [r4, #64]	@ float
+ 115:Core/Src/MPU9250.c **** }
+ 1512              		.loc 1 115 5 is_stmt 1 view .LVU433
+ 115:Core/Src/MPU9250.c **** }
+ 1513              		.loc 1 115 19 is_stmt 0 view .LVU434
+ 1514 00a2 A36B     		ldr	r3, [r4, #56]	@ float
+ 115:Core/Src/MPU9250.c **** }
+ 1515              		.loc 1 115 14 view .LVU435
+ 1516 00a4 6364     		str	r3, [r4, #68]	@ float
+ 116:Core/Src/MPU9250.c **** 
+ 1517              		.loc 1 116 1 view .LVU436
+ 1518 00a6 0BB0     		add	sp, sp, #44
+ 1519              	.LCFI34:
+ 1520              		.cfi_def_cfa_offset 28
+ 1521              		@ sp needed
+ 1522 00a8 BDEC048B 		vldm	sp!, {d8-d9}
+ 1523              	.LCFI35:
+ 1524              		.cfi_restore 82
+ 1525              		.cfi_restore 83
+ 1526              		.cfi_restore 80
+ 1527              		.cfi_restore 81
+ 1528              		.cfi_def_cfa_offset 12
+ 1529              	.LVL138:
+ 116:Core/Src/MPU9250.c **** 
+ 1530              		.loc 1 116 1 view .LVU437
+ 1531 00ac 30BD     		pop	{r4, r5, pc}
+ 1532              	.LVL139:
+ 1533              	.L46:
+ 116:Core/Src/MPU9250.c **** 
+ 1534              		.loc 1 116 1 view .LVU438
+ 1535 00ae 00BF     		.align	2
+ 1536              	.L45:
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 33
+
+
+ 1537 00b0 00000000 		.word	0
+ 1538 00b4 0000FA44 		.word	1157234688
+ 1539              		.cfi_endproc
+ 1540              	.LFE244:
+ 1542              		.text
+ 1543              	.Letext0:
+ 1544              		.file 2 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\inc
+ 1545              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\inc
+ 1546              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 1547              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1548              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1549              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 1550              		.file 8 "Core/Inc/MPU9250.h"
+ 1551              		.file 9 "Core/Inc/i2c.h"
+ 1552              		.file 10 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2020-q4-major\\arm-none-eabi\\in
+ 1553              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 MPU9250.c
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:18     .text.MPU9250_Read_Register:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:26     .text.MPU9250_Read_Register:00000000 MPU9250_Read_Register
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:68     .text.MPU9250_Read_Register:00000020 $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:73     .text.MPU9250_Read_Registers:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:80     .text.MPU9250_Read_Registers:00000000 MPU9250_Read_Registers
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:124    .text.MPU9250_Read_Registers:00000020 $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:129    .text.MPU9250_Write_Register:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:136    .text.MPU9250_Write_Register:00000000 MPU9250_Write_Register
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:177    .text.MPU9250_Write_Register:00000020 $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:182    .text.MPU9250_Write_Registers:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:189    .text.MPU9250_Write_Registers:00000000 MPU9250_Write_Registers
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:233    .text.MPU9250_Write_Registers:00000020 $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:238    .text.MPU9250_Initialise:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:245    .text.MPU9250_Initialise:00000000 MPU9250_Initialise
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:388    .text.MPU9250_Read_Gyroscope:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:395    .text.MPU9250_Read_Gyroscope:00000000 MPU9250_Read_Gyroscope
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:550    .text.MPU9250_Read_Gyroscope:00000104 $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:556    .text.MPU9250_Read_Accelerometer:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:563    .text.MPU9250_Read_Accelerometer:00000000 MPU9250_Read_Accelerometer
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:801    .text.MPU9250_Read_Accelerometer:0000016c $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:812    .text.MPU9250_Calibrate:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:819    .text.MPU9250_Calibrate:00000000 MPU9250_Calibrate
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:949    .text.MPU9250_Calibrate:0000008c $d
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:955    .text.MPU9250_Read_Magnetometer:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:962    .text.MPU9250_Read_Magnetometer:00000000 MPU9250_Read_Magnetometer
-C:\Users\user-pc\AppData\Local\Temp\ccOyRBUZ.s:1208   .text.MPU9250_Read_Magnetometer:00000150 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:18     .text.MPU9250_Read_Register:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:26     .text.MPU9250_Read_Register:00000000 MPU9250_Read_Register
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:68     .text.MPU9250_Read_Register:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:73     .text.MPU9250_Read_Registers:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:80     .text.MPU9250_Read_Registers:00000000 MPU9250_Read_Registers
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:124    .text.MPU9250_Read_Registers:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:129    .text.MPU9250_Write_Register:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:136    .text.MPU9250_Write_Register:00000000 MPU9250_Write_Register
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:177    .text.MPU9250_Write_Register:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:182    .text.MPU9250_Write_Registers:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:189    .text.MPU9250_Write_Registers:00000000 MPU9250_Write_Registers
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:233    .text.MPU9250_Write_Registers:00000020 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:238    .text.MPU9250_Initialise:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:245    .text.MPU9250_Initialise:00000000 MPU9250_Initialise
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:443    .text.MPU9250_Read_Gyroscope:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:450    .text.MPU9250_Read_Gyroscope:00000000 MPU9250_Read_Gyroscope
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:676    .text.MPU9250_Read_Gyroscope:00000160 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:684    .text.MPU9250_Read_Accelerometer:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:691    .text.MPU9250_Read_Accelerometer:00000000 MPU9250_Read_Accelerometer
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:880    .text.MPU9250_Read_Accelerometer:00000104 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:894    .text.MPU9250_Read_Magnetometer:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:901    .text.MPU9250_Read_Magnetometer:00000000 MPU9250_Read_Magnetometer
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:1350   .text.MPU9250_Read_Magnetometer:000002e0 $d
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:1368   .text.MPU9250_Calibrate:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:1375   .text.MPU9250_Calibrate:00000000 MPU9250_Calibrate
+C:\Users\user-pc\AppData\Local\Temp\ccq6UIsu.s:1537   .text.MPU9250_Calibrate:000000b0 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Mem_Read
 hi2c2
 HAL_I2C_Mem_Write
-powf
-sqrtf
-asinf
 HAL_Delay
+tanf
 sinf
 cosf
+atanf
+asinf
+__aeabi_f2d
+__aeabi_dadd
+__aeabi_d2f
+pow
+sqrtf
 atan2f

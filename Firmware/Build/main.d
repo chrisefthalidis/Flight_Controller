@@ -44,7 +44,8 @@ Build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
  Core/Inc/gpio.h Core/Inc/SPL06.h Core/Inc/i2c.h Core/Inc/MPU9250.h \
- Core/Inc/NRF24L01.h Core/Inc/spi.h Core/Inc/PID_C.h
+ Core/Inc/NRF24L01.h Core/Inc/spi.h Core/Inc/COMPLEMENTARY.h \
+ Core/Inc/MPU9250.h Core/Inc/PID_C.h
 Core/Inc/main.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 Core/Inc/stm32f4xx_hal_conf.h:
@@ -103,4 +104,6 @@ Core/Inc/i2c.h:
 Core/Inc/MPU9250.h:
 Core/Inc/NRF24L01.h:
 Core/Inc/spi.h:
+Core/Inc/COMPLEMENTARY.h:
+Core/Inc/MPU9250.h:
 Core/Inc/PID_C.h:
