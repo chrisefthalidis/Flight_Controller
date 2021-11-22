@@ -37,9 +37,10 @@ BUILD_DIR = Build
 # C sources
 C_SOURCES =  \
 Core/Src/main.c \
-Core/Src/MPU9250.c \
 Core/Src/SPL06.c \
+Core/Src/MPU9250.c \
 Core/Src/NRF24L01.c \
+Core/Src/COMPLEMENTARY.c \
 Core/Src/PID.c \
 Core/Src/adc.c \
 Core/Src/gpio.c \
