@@ -66,10 +66,10 @@ void SPL06_Initialise(SPL06 *dev)
 
 void SPL06_Calibrate(SPL06 *dev)
 {
-  float avg_bar_bias = 0;
+  float avg_bar_bias = 0.f;
 
   // Take 2000 measurements and average them to get the bias
-  for (int i = 0; i < 2000; i++)
+  for (uint16_t i = 0; i < 2010; i++)
   {
     SPL06_Read(dev);
 
